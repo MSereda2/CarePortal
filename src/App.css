@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-areas: 'nav nav'
+                       'taskContainer map';
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 70px 1fr;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
