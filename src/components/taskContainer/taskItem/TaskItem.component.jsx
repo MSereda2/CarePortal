@@ -4,12 +4,21 @@ import style from './taskItem.module.css';
 const TaskItem = (props) => {
    return(
     <div className={style.task_item}>
-        {/* <div className={style.icon_task}>
-            <i className="fa fa-user icon_task"></i>
-        </div> */}
-        <img className={style.icon_task} src="https://sun9-3.userapi.com/c204816/v204816797/1a6d8/_YC8SmVkK-s.jpg" alt=""/>
-        <p>Научить соблазнению</p>
-        <span className={style.cost}><i className='fa fa-money'></i>300р</span>
+        <img className={style.icon_task} src={props.img} alt=""/>
+        <div className={style.container}>
+            <div className={style.left_block}>
+                <p className={style.task_title}>{props.title}</p>
+                <div className={style.block_icon}>
+                <span> <i className='fa fa-music'></i>{props.time}</span>
+                    <span> <i className='fa fa-map'></i>{props.data}</span>
+                </div>
+            </div>
+            <div className={style.right_block}>
+            <span className={style.cost}><i className='fa fa-money'></i>{props.cost}</span>
+                <a href="#">Подробней</a>
+            </div>
+        </div>
+       
     </div>
    )
 }

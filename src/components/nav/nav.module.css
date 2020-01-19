@@ -3,6 +3,31 @@
     border-bottom: 1px solid rgba(112,64,151,1);
 }
 
+.nav_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo {
+    height: 60px;
+    color: black;
+    align-self: flex-start;
+}
+
+
+.logo_container img {
+    padding-left: 1px;
+}
+
 .heading {
     font-size: 24px;
     font-style: italic;
@@ -11,18 +36,34 @@
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(212,27,103,1) 0%, rgba(249,72,191,1) 0%, rgba(156,28,82,1) 43%, rgba(137,20,108,1) 50%, rgba(112,64,151,1) 60%, rgba(9,187,234,1) 72%, rgba(31,208,255,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-left: 10px;
     padding-right: 10px;
-   
-    
 }
 
-.nav_wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+.link_navigation a {
+    font-size: 18px;
+    margin-right: 25px;
+    text-decoration: none;
+    color: rgb(99, 97, 97);
 }
+
+.link_navigation a:hover {
+    padding-bottom: 5px;
+    color: rgb(115, 39, 177);
+    border-bottom: 2px solid rgb(115, 39, 177);
+}
+
+.nav_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 
 .navLinkContainer {
     display: flex;
@@ -33,6 +74,34 @@
     width: 50px;
     height: 50px;
     padding-right: 20px;
+}
+
+.bell_icon {
+    position: relative;
+    display: block;
+    background-color: rgb(221, 218, 218);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all .2s;
+}
+
+.bell_icon:hover {
+    background-color: rgb(228, 225, 225);
+}
+
+.counter {
+    display: block;
+    background-color: rgba(112,64,151,1);
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    border-radius: 50%;
+    color: white;
+    
 }
 
 .create_post {
@@ -51,21 +120,5 @@
 .create_post:hover {
     background-color: rgb(185, 108, 248) ;
 
-}
-
-.logo {
-    height: 60px;
-    color: black;
-    align-self: flex-start;
-}
-
-.logo_container {
-    display: flex;
-    align-items: center;
-    
-}
-
-.logo_container img {
-    padding-left: 1px;
 }
 

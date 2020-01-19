@@ -1,28 +1,27 @@
 .task_container {
     grid-area: taskContainer;
-    padding: 10px;
-    overflow-y: scroll;
-
+    /* padding: 10px; */
 }
 
-.heading {
-    padding: 15px;
-    margin-bottom: 23px;
-    border-bottom: 1px solid black;
+.dd_wrapper {
+    padding: 10px;
+    /* margin-bottom: 23px; */
+    border-left: 6px solid rgba(112,64,151,1);
     font-weight: 300;
 }
 
-.table {
-    width: 90%;
-    margin: 0 auto;
+.dd_header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
+    align-items: center;
 }
 
-.table p {
-    border: 2.25px solid rgb(197, 46, 177);
-    padding: 10px;
+.dd_header i {
+    font-size: 28px;
+}
+
+.dd_header_title {
+    font-size: 24px;
+    font-weight: 400;
 }
 

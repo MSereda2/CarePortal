@@ -12,7 +12,7 @@ function App() {
         <div className="container">
             <Nav />
             <TaskContainer />
-            <WrapperMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY `} loadingElement={<div style={{ height: `100%` }} />}  containerElement={<div style={{ height: `90vh` }} />} mapElement={<div style={{ height: `100%` }} />}></WrapperMap>
+            <WrapperMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY `} loadingElement={<div style={{ height: `100%`,position: `sticky` }} />}  containerElement={<div style={{ height: `90vh`,position: `sticky` }} />} mapElement={<div style={{ height: `100%`,position: `sticky` }} />}></WrapperMap>
         </div>
     ) 
 }
