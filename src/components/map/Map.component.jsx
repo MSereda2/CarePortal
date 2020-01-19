@@ -1,29 +1,39 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import React, { useState } from 'react';
+import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-google-maps';
+import * as parksData from './data.json';
+import style from './map.module.css';
+import MapStyles from './map.style';
 
-const AnyReactComponent = ({ text }) => <div>{ text }</div>;
+const MapFunction = () => {
+  const [selectedPark, setSelectedPark] = useState(null);
 
-export default class Map extends Component {
-  static defaultProps = {
-    center: { lat: 40.7446790, lng: -73.9485420 },
-    zoom: 11,
-  }
+  return(
+    <GoogleMap defaultZoom={10} defaultCenter={{lat: 45.421532, lng: -75.697189}} defaultOptions={{styles: MapStyles}}>
 
-render() {
-    return (
-      <div className='google-map'>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY' /* YOUR KEY HERE */ }}
-          defaultCenter={ this.props.center }
-          defaultZoom={ this.props.zoom }>
-          <AnyReactComponent
-            lat={ 40.7473310 }
-            lng={ -73.8517440 }
-            text={` Where's Waldo?` }
-          />
-        </GoogleMapReact>
-      </div>
-    )
-  }
+      {parksData.features.map(park => (
+        <Marker
+         key={park.properties.PARK_ID}
+         position={{lat: park.geometry.coordinates[1], lng: park.geometry.coordinates[0]}}
+         onClick={() => {setSelectedPark(park)}} />
+      ))}
+
+      {selectedPark && (
+        <InfoWindow
+         position={{lat: selectedPark.geometry.coordinates[1], lng: selectedPark.geometry.coordinates[0]}}
+         onCloseClick={() => {
+          setSelectedPark(null);
+        }}>
+          <div>
+            <h3>{selectedPark.properties.NAME}</h3>
+            <p className={style.test}>{selectedPark.properties.DESCRIPTIO}</p>
+          </div>
+        </InfoWindow>
+      )}
+       
+    </GoogleMap>
+  )
 }
 
+const WrapperMap = withScriptjs(withGoogleMap(MapFunction));
+
+export default WrapperMap;

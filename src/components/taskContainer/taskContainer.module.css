@@ -1,6 +1,7 @@
 .task_container {
     grid-area: taskContainer;
     padding: 10px;
+    overflow-y: scroll;
 
 }
 
