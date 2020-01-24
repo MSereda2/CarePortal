@@ -24,7 +24,7 @@ const Nav = (props) => {
                    <img className={style.nav_img} src={props.stateNav.profileImg} alt="Profile Img"/>
 
                    <PopUp trigger={<button className={style.create_post}>Создать Пост</button>} modal closeOnDocumentClick contentStyle={{padding: 0, width: `70%`}} >
-                        <Content popUp={props.stateNav.createPost.popUp} addPost={props.stateNav.addPost} taskFun={props.taskFun}/>
+                        <Content inputs={props.stateNav.inputsFields.inputs} taskFun={props.taskFun}/>
                    </PopUp>
                </div>
            </div>

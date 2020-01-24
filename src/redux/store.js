@@ -26,41 +26,48 @@ const state = {
             counter: 4
         },
         profileImg: "https://img5.goodfon.ru/wallpaper/nbig/7/bd/naruto-uzumaki-naruto-paren-sila.jpg",
-        createPost: {
+        inputsFields: {
             name: 'Создать пост',
-            popUp: [
+            inputs: [
                 {
                   placeholder: 'Задание',
-                  name: 'Задание',
-                  id: 'Задание',
-                  for: 'Задание',
+                  id: 1,
                   labelName: 'Задание',
-                  value: '',
+                  task: '',
+                  getValue: (text) => {
+                      state.nav.inputsFields.inputs[0].task = text;
+                      renderEntireTree();
+                  }
                 },
                 {
                     placeholder: 'Опишите задание',
-                    name: 'Опишите задание',
-                    id: 'Опишите задание',
-                    for: 'Опишите задание',
-                    labelName: 'Опишите задание',
-                    value: '',
-
+                    id: 2,
+                    labelName: 'Описание',
+                    description: '',
+                    getValue: (text) => {
+                        state.nav.inputsFields.inputs[1].description = text;
+                        renderEntireTree();
+                    }
                 },
                 {
                     placeholder: 'Ваш адрес',
-                    name: 'Ваш адрес',
-                    id: 'Ваш адрес',
-                    for: 'Ваш адрес',
-                    labelName: 'Ваш адрес',
-                    value: '',
+                    id: 3,
+                    labelName: 'Адрес',
+                    adress: '',
+                    getValue: (text) => {
+                        state.nav.inputsFields.inputs[2].adress = text;
+                        renderEntireTree();
+                    }
                 },
                 {
                     placeholder: 'Цена',
-                    name: 'Цена',
-                    id: 'Цена',
-                    for: 'Цена',
+                    id: 4,
                     labelName: 'Цена',
-                    value: '',
+                    cost: '',
+                    getValue: (text) => {
+                        state.nav.inputsFields.inputs[3].cost = text;
+                        renderEntireTree();
+                    }
                 },
             ]
         },
@@ -113,16 +120,12 @@ const state = {
 
            let newTask = {
                 img: 'https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg',
-                title: state.nav.createPost.popUp[0].value,
-                cost: '500р',
+                title: state.nav.inputsFields.inputs[0].task,
+                cost:  state.nav.inputsFields.inputs[3].cost,
                 time: '3 месяц',
                 data: '0:48'
            };
            state.taskContainer.taskItem.push(newTask);
-           renderEntireTree()
-        },
-        ChangeInput: (text) => {
-           console.log(text);
            renderEntireTree()
         },
     },
