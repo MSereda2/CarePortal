@@ -35,14 +35,7 @@ const Content = (props) => {
         <div className={style.taskColumn}>
 
             <p className={style.taskTitle}>Создать Пост</p>
-                {props.inputs.map(input => (
                 <div class={style.form__group} field>
-                    <input onChange={input.getValue} type="input" className={style.input__field} placeholder={input.placeholder} id={input.id} value={input.task} />
-                    <label class={style.input__label}>{input.labelName}</label>
-                </div>
-                ))}
-
-                {/* <div class={style.form__group} field>
                     <input onChange={onChangeTask} type="input" className={style.input__field} placeholder={props.inputs[0].placeholder} id={props.inputs[0].id} value={props.inputs[0].task} />
                     <label class={style.input__label}>{props.inputs[0].labelName}</label>
                 </div>
@@ -57,7 +50,7 @@ const Content = (props) => {
                 <div class={style.form__group} field>
                     <input onChange={onChangeCost} type="input" className={style.input__field} placeholder={props.inputs[3].placeholder} id={props.inputs[3].id} value={props.inputs[3].cost} />
                     <label class={style.input__label}>{props.inputs[3].labelName}</label>
-                </div> */}
+                </div>
             <button className={style.btn_addPost} onClick={onAddTask}>Создать задание</button>
         </div>
         <div className={style.imgContainer}></div>
