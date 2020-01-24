@@ -1,3 +1,18 @@
-.test {
-    color: blueviolet;
+.cluster_marker {
+    color: #fff;
+    background:  #9e579d;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crime_marker {
+    background: none;
+    border: none;
+}
+
+.crime_marker img {
+    width: 25px;
 }

@@ -7,16 +7,17 @@
     width: 100%;
     margin-bottom: 10px;
     padding: 5px;
+    z-index: 0;
 
 }
 
 .task_item:hover {
     background-color: rgb(230, 229, 229);
-    border-left: 4px solid rgba(112,64,151,1);
+    border-left: 4px solid #9e579d;
 }
 
 .task_item:active {
-    background-color: brown;
+    background-color: rgb(204, 166, 235);
 }
 
 
@@ -54,7 +55,7 @@
 
 .block_icon i {
     padding-right: 10px;
-    color: rgba(112,64,151,1);
+    color: #574b90;
 }
 
 .right_block {
@@ -74,5 +75,5 @@
 
 .right_block a {
     text-decoration: none;
-    color: rgb(177, 41, 177);
+    color: #574b90;
 }

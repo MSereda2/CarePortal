@@ -1,12 +1,13 @@
 .task_container {
     grid-area: taskContainer;
     /* padding: 10px; */
+    /* border-right: 3px solid purple; */
 }
 
 .dd_wrapper {
     padding: 10px;
     /* margin-bottom: 23px; */
-    border-left: 6px solid rgba(112,64,151,1);
+    border-left: 6px solid #9e579d;
     font-weight: 300;
 }
 

@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: space-between;
     padding-left: 20px;
-    padding-right: 20px;
+    /* padding-right: 20px; */
 }
 
 .logo_container {
@@ -33,7 +33,7 @@
     font-style: italic;
     font-weight: 400;
     color: transparent;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(212,27,103,1) 0%, rgba(249,72,191,1) 0%, rgba(156,28,82,1) 43%, rgba(137,20,108,1) 50%, rgba(112,64,151,1) 60%, rgba(9,187,234,1) 72%, rgba(31,208,255,1) 100%);
+    background: linear-gradient(to right, #281392, #9e579d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-left: 10px;
@@ -105,20 +105,23 @@
 }
 
 .create_post {
+    display: flex;
+    align-items: center;
+    height: 9vh;
+    margin: 0 !important;
     background-color: rgba(112,64,151,1) ;
     color: #fff;
-    padding: 10px;
+    /* padding: 10px; */
+    padding-left: 10px;
+    padding-right: 10px;
+
     cursor: pointer;
     transition: background-color .35s, transform .1s;
     border: 1px solid black;
 }
 
-.create_post:active {
-    transform: translateY(2px);
-}
 
 .create_post:hover {
     background-color: rgb(185, 108, 248) ;
-
 }
 

@@ -1,39 +1,103 @@
-import React, { useState } from 'react';
-import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-google-maps';
-import * as parksData from './data.json';
+
+// export default WrapperMap;
+import React, { useState, useRef} from 'react';
+import useSwr from 'swr';
+import GoogleMapReact from 'google-map-react';
+import useSupercluster from 'use-supercluster'
 import style from './map.module.css';
-import MapStyles from './map.style';
 
-const MapFunction = () => {
-  const [selectedPark, setSelectedPark] = useState(null);
+const fetcher = (...args) => fetch(...args).then(response => response.json());
+const Marker = ({children}) => children;
 
-  return(
-    <GoogleMap defaultZoom={10} defaultCenter={{lat: 45.421532, lng: -75.697189}} defaultOptions={{styles: MapStyles}}>
 
-      {parksData.features.map(park => (
-        <Marker
-         key={park.properties.PARK_ID}
-         position={{lat: park.geometry.coordinates[1], lng: park.geometry.coordinates[0]}}
-         onClick={() => {setSelectedPark(park)}} />
-      ))}
+const Map = () => {
 
-      {selectedPark && (
-        <InfoWindow
-         position={{lat: selectedPark.geometry.coordinates[1], lng: selectedPark.geometry.coordinates[0]}}
-         onCloseClick={() => {
-          setSelectedPark(null);
-        }}>
-          <div>
-            <h3>{selectedPark.properties.NAME}</h3>
-            <p className={style.test}>{selectedPark.properties.DESCRIPTIO}</p>
-          </div>
-        </InfoWindow>
-      )}
-       
-    </GoogleMap>
-  )
+  // 1) map setup
+  const mapRef = useRef();
+  const [zoom, setZoom] = useState(10);
+  const [bounds, setBounds] = useState(null);
+
+  // 2) load and format data
+  const url = "https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2019-10";
+  const { data, error } = useSwr(url, fetcher);
+  const crimes = data && !error ? data : [];
+  const points = crimes.map(crime => ({
+    type: "Feature",
+    properties: { cluster: false, crimeId: crime.id, category: crime.category },
+    geometry: {
+      type: "Point",
+      coordinates: [
+        parseFloat(crime.location.longitude),
+        parseFloat(crime.location.latitude)
+      ]
+    }
+  }));
+
+  // 3) get clusters
+  const { clusters, supercluster } = useSupercluster({
+    points,
+    bounds,
+    zoom,
+    options: { radius: 75, maxZoom: 20 }
+  });
+
+  // 4) render map
+  return <div style={{height: '90vh', width: '100%'}}>
+    <GoogleMapReact
+     bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_KEY }}
+     defaultCenter={{lat: 52.6376, lng: -1.135171}}
+     defaultZoom={10}
+     yesIWantToUseGoogleMapApiInternals
+     onGoogleApiLoaded={({map}) => {
+       mapRef.current = map;
+     }}
+     onChange={({zoom, bounds}) => {
+      setZoom(zoom);
+      setBounds([
+        bounds.nw.lng,
+        bounds.se.lat,
+        bounds.se.lng,
+        bounds.nw.lat
+      ]);
+    }}>
+      {clusters.map(cluster => {
+        const [longitude, latitude] = cluster.geometry.coordinates;
+        const {cluster: isCluster, point_count: point_count} =  cluster.properties;
+
+        if(isCluster) {
+          return(
+            <Marker
+             key={cluster.id}
+             lat={latitude} lng={longitude}>
+              <div 
+              className={style.cluster_marker}
+              style={{
+                width: `${10 + (point_count / points.length) *20}px`,
+                height: `${10 + (point_count / points.length) *20}px`
+                }}
+              onClick={() => {
+                const expansionZoom = Math.min(
+                  supercluster.getClusterExpansionZoom(cluster.id),
+                  20
+                );
+                mapRef.current.setZoom(expansionZoom);
+                mapRef.current.panTo({lat: latitude, lng: longitude});
+              }}> 
+              {point_count}
+              </div>
+            </Marker> 
+          ) 
+        }
+        return (
+          <Marker key={cluster.properties.id} lat={latitude} lng={longitude}>
+            <button className={style.crime_marker}>
+              <img src="https://cdn1.iconfinder.com/data/icons/japan-travel-solid-konnichiwa/512/Ninja-512.png" alt="marker"/>
+            </button>
+          </Marker>
+        )
+      })}
+    </GoogleMapReact>
+  </div>
 }
 
-const WrapperMap = withScriptjs(withGoogleMap(MapFunction));
-
-export default WrapperMap;
+export default Map;
