@@ -6,16 +6,28 @@ import TaskItem from './taskItem/TaskItem.component';
 const Task_container = (props) => {
     return(
         <div className={style.task_container}>
-            <div className={style.dd_wrapper}>
-                <div className={style.dd_header}>
-                  <h3 className={style.dd_header_title}>{props.stateTask.ddWrapper.ddHeader.title}</h3>
-                  <i className={props.stateTask.ddWrapper.ddHeader.icon}></i>
-                </div>
+            <div className={style.filter_wrapper}>
+               <div className={style.filter_box}>
+                   <div className={style.form_group}>
+                        <span><i className='fa fa-search'></i></span>
+                        <input class={style.form_field} type="text" placeholder="Поиск задания" />
+                    </div>
+                   <button className={style.filterMap}><i className='fa fa-map'></i>Город</button>
+                   <button className={style.filter}><i className='fa fa-book'></i>Фильтер</button>
+               </div>
+               <p className={style.searchResult}><span className={style.counterTasks}>5 заданий</span> в Краснодаре, Россия</p>
             </div>
             <div className={style.task_list}>
             {
                 props.stateTask.taskItem.map(task => (
-                    <TaskItem img={task.img} title={task.title} cost={task.cost} time={task.time}
+                    <TaskItem 
+                    img={task.img}
+                    userName={task.userName}
+                    recomedation={task.recomedation}
+                    newbie={task.newbie}
+                    location={task.location}
+                    title={task.title}
+                    cost={task.cost}
                     data={task.data} />
                 ))
             }

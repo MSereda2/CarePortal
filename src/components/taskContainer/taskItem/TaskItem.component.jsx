@@ -6,17 +6,22 @@ const TaskItem = (props) => {
     <div className={style.task_item}>
         <img className={style.icon_task} src={props.img} alt=""/>
         <div className={style.container}>
-            <div className={style.left_block}>
-                <p className={style.task_title}>{props.title}</p>
-                <div className={style.block_icon}>
-                <span> <i className='fa fa-music'></i>{props.time}</span>
-                    <span> <i className='fa fa-map'></i>{props.data}</span>
+           
+                <div className={style.userContainer}>
+                    <p className={style.task_userName}>{props.userName}</p>
+                    <button className={style.taskRecomend}><i className='fa fa-star'></i>{props.recomedation}</button>
+                    <button className={style.newbie}><i className='fa fa-heart'></i>{props.newbie}</button>
                 </div>
-            </div>
-            <div className={style.right_block}>
-            <span className={style.cost}><i className='fa fa-money'></i>{props.cost}</span>
-                <a href="#">Подробней</a>
-            </div>
+                <div className={style.taskBody}>
+                    <div className={style.taskItself}> 
+                        <p className={style.task_title}>{props.title}</p>
+                    <p className={style.taskLocation}>{props.location}</p>
+                    </div>
+                    <div className={style.costContainer}>
+                        <span className={style.cost}>{props.cost} &#8381;</span>
+                        <span className={style.data}>{props.data}</span>
+                    </div>
+                </div>
         </div>
        
     </div>

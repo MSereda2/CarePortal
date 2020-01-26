@@ -1,6 +1,11 @@
+.map {
+    margin: 3px;
+    position: fixed;
+}
+
 .cluster_marker {
     color: #fff;
-    background:  #9e579d;
+    background:  #992DF1;
     border-radius: 50%;
     padding: 10px;
     display: flex;

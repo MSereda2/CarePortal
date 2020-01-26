@@ -1,11 +1,11 @@
-import React, {ReactDOM} from 'react';
+import React, {ReactDOM, useState} from 'react';
 import style from './content.module.css';
 
 
 const Content = (props) => {
-
-   const onAddTask = () => {
+    const onAddTask = () => {
         props.taskFun.addTask();
+        props.close()
    }
 
    const onChangeTask = (e) => {

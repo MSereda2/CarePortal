@@ -4,25 +4,75 @@
     /* border-right: 3px solid purple; */
 }
 
-.dd_wrapper {
-    padding: 10px;
-    /* margin-bottom: 23px; */
-    border-left: 6px solid #9e579d;
-    font-weight: 300;
+.filter_wrapper {
+    padding: 20px;
 }
 
-.dd_header {
+.filter_box {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.dd_header i {
-    font-size: 28px;
+.form_group {
+    position: relative;
+    margin-right: 10px;
 }
 
-.dd_header_title {
-    font-size: 24px;
-    font-weight: 400;
+.form_group i {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 20px;
+    padding: 10px;
+
 }
 
+.form_field {
+    padding: 10px;
+    width: 200px;
+    border: .5px solid #ccc;
+    background-color: rgba(236, 235, 235, 0.425);
+    color: rgba(49, 49, 49, 0.425);
+}
+
+.form_field[type="text"] {
+    padding-left: 30px;
+    font-size: 19px;
+}
+
+.filterMap {
+    padding: 10px 25px;
+    box-shadow: 0px 0px 2px 1px rgba(192, 192, 192, 0.75);
+    margin-right: 10px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+
+.filterMap i {
+    padding-right: 5px;
+    color: rgb(149, 112, 218);
+}
+
+.filter {
+    padding: 10px 25px;
+    border: none;
+    box-shadow: 0px 0px 2px 1px rgba(192, 192, 192, 0.75);
+    background-color: rgb(255, 255, 255);
+} 
+
+.filter i {
+    padding-right: 5px;
+    color: rgb(149, 112, 218); 
+}
+
+.searchResult {
+    font-size: 21px;
+    margin-bottom: 0;
+    color: rgb(136, 134, 134);
+}
+
+.counterTasks {
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+}

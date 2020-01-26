@@ -42,10 +42,10 @@ const Map = () => {
   });
 
   // 4) render map
-  return <div style={{height: '90vh', width: '100%'}}>
+  return <div className={style.map}>
     <GoogleMapReact
      bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_KEY }}
-     defaultCenter={{lat: 52.6376, lng: -1.135171}}
+     defaultCenter={{lat: 45.039268, lng: 38.987221}}
      defaultZoom={10}
      yesIWantToUseGoogleMapApiInternals
      onGoogleApiLoaded={({map}) => {
