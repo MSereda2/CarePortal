@@ -1,6 +1,13 @@
+.mapOverall {
+  
+    
+}
+
 .map {
+    position: relative;
     margin: 3px;
-    position: fixed;
+    width: 100%;
+    height: 92vh;
 }
 
 .cluster_marker {

@@ -42,62 +42,66 @@ const Map = () => {
   });
 
   // 4) render map
-  return <div className={style.map}>
-    <GoogleMapReact
-     bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_KEY }}
-     defaultCenter={{lat: 45.039268, lng: 38.987221}}
-     defaultZoom={10}
-     yesIWantToUseGoogleMapApiInternals
-     onGoogleApiLoaded={({map}) => {
-       mapRef.current = map;
-     }}
-     onChange={({zoom, bounds}) => {
-      setZoom(zoom);
-      setBounds([
-        bounds.nw.lng,
-        bounds.se.lat,
-        bounds.se.lng,
-        bounds.nw.lat
-      ]);
-    }}>
-      {clusters.map(cluster => {
-        const [longitude, latitude] = cluster.geometry.coordinates;
-        const {cluster: isCluster, point_count: point_count} =  cluster.properties;
+  return (
+      <div className={style.map}>
+        <GoogleMapReact
+        bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_KEY }}
+        defaultCenter={{lat: 45.039268, lng: 38.987221}}
+        defaultZoom={10}
+        yesIWantToUseGoogleMapApiInternals
+        onGoogleApiLoaded={({map}) => {
+          mapRef.current = map;
+        }}
+        onChange={({zoom, bounds}) => {
+          setZoom(zoom);
+          setBounds([
+            bounds.nw.lng,
+            bounds.se.lat,
+            bounds.se.lng,
+            bounds.nw.lat
+          ]);
+        }}>
+          {clusters.map(cluster => {
+            const [longitude, latitude] = cluster.geometry.coordinates;
+            const {cluster: isCluster, point_count: point_count} =  cluster.properties;
 
-        if(isCluster) {
-          return(
-            <Marker
-             key={cluster.id}
-             lat={latitude} lng={longitude}>
-              <div 
-              className={style.cluster_marker}
-              style={{
-                width: `${10 + (point_count / points.length) *20}px`,
-                height: `${10 + (point_count / points.length) *20}px`
-                }}
-              onClick={() => {
-                const expansionZoom = Math.min(
-                  supercluster.getClusterExpansionZoom(cluster.id),
-                  20
-                );
-                mapRef.current.setZoom(expansionZoom);
-                mapRef.current.panTo({lat: latitude, lng: longitude});
-              }}> 
-              {point_count}
-              </div>
-            </Marker> 
-          ) 
-        }
-        return (
-          <Marker key={cluster.properties.id} lat={latitude} lng={longitude}>
-            <button className={style.crime_marker}>
-              <img src="https://cdn1.iconfinder.com/data/icons/japan-travel-solid-konnichiwa/512/Ninja-512.png" alt="marker"/>
-            </button>
-          </Marker>
-        )
-      })}
-    </GoogleMapReact>
-  </div>
+            if(isCluster) {
+              return(
+                <Marker
+                key={cluster.id}
+                lat={latitude} lng={longitude}>
+                  <div 
+                  className={style.cluster_marker}
+                  style={{
+                    width: `${10 + (point_count / points.length) *20}px`,
+                    height: `${10 + (point_count / points.length) *20}px`
+                    }}
+                  onClick={() => {
+                    const expansionZoom = Math.min(
+                      supercluster.getClusterExpansionZoom(cluster.id),
+                      20
+                    );
+                    mapRef.current.setZoom(expansionZoom);
+                    mapRef.current.panTo({lat: latitude, lng: longitude});
+                  }}> 
+                  {point_count}
+                  </div>
+                </Marker> 
+              ) 
+            }
+            return (
+              <Marker key={cluster.properties.id} lat={latitude} lng={longitude}>
+                <button className={style.crime_marker}>
+                  <img src="https://cdn1.iconfinder.com/data/icons/japan-travel-solid-konnichiwa/512/Ninja-512.png" alt="marker"/>
+                </button>
+              </Marker>
+            )
+          })}
+        </GoogleMapReact>
+    </div>
+  )
+  
+ 
 }
 
 export default Map;

@@ -5,7 +5,7 @@ import TaskItem from './taskItem/TaskItem.component';
 
 const Task_container = (props) => {
     return(
-        <div className={style.task_container}>
+        <div className={`${style.task_container}`}>
             <div className={style.filter_wrapper}>
                <div className={style.filter_box}>
                    <div className={style.form_group}>
