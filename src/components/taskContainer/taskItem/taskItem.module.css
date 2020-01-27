@@ -87,6 +87,7 @@
 .taskLocation {
     font-weight: 300;
     font-style: italic;
+    color: black;
 }
 
 .taskBody {

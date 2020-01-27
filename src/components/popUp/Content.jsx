@@ -47,6 +47,7 @@ const Content = (props) => {
                     <input onChange={onChangeAdress} type="input" className={style.input__field} placeholder={props.inputs[2].placeholder} id={props.inputs[2].id} value={props.inputs[2].adress} />
                     <label class={style.input__label}>{props.inputs[2].labelName}</label>
                 </div>
+                <button>Поиск по карте</button>
                 <div class={style.form__group} field>
                     <input onChange={onChangeCost} type="input" className={style.input__field} placeholder={props.inputs[3].placeholder} id={props.inputs[3].id} value={props.inputs[3].cost} />
                     <label class={style.input__label}>{props.inputs[3].labelName}</label>

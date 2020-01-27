@@ -9,13 +9,13 @@ const TaskItem = (props) => {
            
                 <div className={style.userContainer}>
                     <p className={style.task_userName}>{props.userName}</p>
-                    <button className={style.taskRecomend}><i className='fa fa-star'></i>{props.recomedation}</button>
-                    <button className={style.newbie}><i className='fa fa-heart'></i>{props.newbie}</button>
+                    <button className={style.taskRecomend}><i className='fa fa-star'></i></button>
+                    <button className={style.newbie}><i className='fa fa-heart'></i></button>
                 </div>
                 <div className={style.taskBody}>
                     <div className={style.taskItself}> 
                         <p className={style.task_title}>{props.title}</p>
-                    <p className={style.taskLocation}>{props.location}</p>
+                        <a className={style.taskLocation}>{props.moreInfo}</a>
                     </div>
                     <div className={style.costContainer}>
                         <span className={style.cost}>{props.cost} &#8381;</span>

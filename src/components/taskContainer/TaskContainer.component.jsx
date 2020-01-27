@@ -23,9 +23,7 @@ const Task_container = (props) => {
                     <TaskItem 
                     img={task.img}
                     userName={task.userName}
-                    recomedation={task.recomedation}
-                    newbie={task.newbie}
-                    location={task.location}
+                    moreInfo={task.moreInfo}
                     title={task.title}
                     cost={task.cost}
                     data={task.data} />
