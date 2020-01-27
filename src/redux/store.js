@@ -9,7 +9,7 @@ const state = {
         profileImg: "https://img5.goodfon.ru/wallpaper/nbig/7/bd/naruto-uzumaki-naruto-paren-sila.jpg",
         profileName: 'Наруто узумаки',
         inputsFields: {
-            name: 'Создать пост',
+            name: 'Create task',
             inputs: [
                 {
                   placeholder: 'Task name',
