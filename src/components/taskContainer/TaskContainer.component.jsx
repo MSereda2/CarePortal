@@ -15,7 +15,7 @@ const Task_container = (props) => {
                    <button className={style.filterMap}><i className='fa fa-map'></i>Город</button>
                    <button className={style.filter}><i className='fa fa-book'></i>Фильтер</button>
                </div>
-               <p className={style.searchResult}><span className={style.counterTasks}>5 заданий</span> в Краснодаре, Россия</p>
+               <p className={style.searchResult}><span className={style.counterTasks}>5 task</span> в Krasnodar, Russian</p>
             </div>
             <div className={style.task_list}>
             {

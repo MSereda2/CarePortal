@@ -3,27 +3,8 @@ const state = {
     nav: {
         logo: require('../logo.jpg'),
         logoName: 'Unical',
-        linkNav: [
-            {
-                href: "#",
-                name: 'Dashbord'
-            },
-            {
-                href: "#",
-                name: 'Policy managment'
-            },
-            {
-                href: "#",
-                name: 'User managment'
-            },
-            {
-                href: "#",
-                name: 'Settings'
-            }
-        ],
         navNotice: {
             icon: 'fa fa-bell',
-            counter: 4
         },
         profileImg: "https://img5.goodfon.ru/wallpaper/nbig/7/bd/naruto-uzumaki-naruto-paren-sila.jpg",
         profileName: 'Наруто узумаки',
@@ -31,9 +12,9 @@ const state = {
             name: 'Создать пост',
             inputs: [
                 {
-                  placeholder: 'Задание',
+                  placeholder: 'Task name',
                   id: 1,
-                  labelName: 'Задание',
+                  labelName: 'Task name',
                   task: '',
                   changeTask: (text) => {
                       state.nav.inputsFields.inputs[0].task = text;
@@ -41,9 +22,9 @@ const state = {
                   }
                 },
                 {
-                    placeholder: 'Опишите задание',
+                    placeholder: 'Describe task',
                     id: 2,
-                    labelName: 'Описание',
+                    labelName: 'describe task',
                     description: '',
                     changeDescription: (text) => {
                         state.nav.inputsFields.inputs[1].description = text;
@@ -51,9 +32,9 @@ const state = {
                     }
                 },
                 {
-                    placeholder: 'Ваш адрес',
+                    placeholder: 'your adress',
                     id: 3,
-                    labelName: 'Адрес',
+                    labelName: 'adress',
                     adress: '',
                     changeAdress: (text) => {
                         state.nav.inputsFields.inputs[2].adress = text;
@@ -61,9 +42,9 @@ const state = {
                     }
                 },
                 {
-                    placeholder: 'Цена',
+                    placeholder: 'cost',
                     id: 4,
-                    labelName: 'Цена',
+                    labelName: 'cost',
                     cost: '',
                     changeCost: (text) => {
                         state.nav.inputsFields.inputs[3].cost = text;
