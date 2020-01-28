@@ -1,23 +1,3 @@
-export const addTaskAction = () => (
-    {type: "ADD_TASK"}
-)
-
-export const changeTaskAction = (text) => (
-    {type: "CHANGE_TASK", text: text}
-)
-
-export const changeDescriptionAction = (text) => (
-    {type: "CHANGE_DESCRIPTION", text: text}
-)
-
-export const changeAdressAction = (text) => (
-    {type: "CHANGE_ADRESS", text: text}
-)
-
-export const changeCostAction = (text) => (
-    {type: "CHANGE_COST", text: text}
-)
-
 const initialState = {
         taskUserName: 'Наруто узумаки',
         taskUserImg: 'https://img5.goodfon.ru/wallpaper/nbig/7/bd/naruto-uzumaki-naruto-paren-sila.jpg',
@@ -79,13 +59,15 @@ const createTask = (state = initialState, action) => {
                };
                state.taskContainer.taskItem.push(newTask);
                state.modalWindow.inputs[0].task = '';
+               state.modalWindow.inputs[1].description = '';
+               state.modalWindow.inputs[2].adress = '';
                state.modalWindow.inputs[3].cost = '';        
             }
             return state;
         case "CHANGE_TASK":
-            state.modalWindow.inputs[0].task = action.text; 
+            state.modalWindow.inputs[0].task = action.text;
             return state;
-        case "CHANGE_DESCRIPTION":
+        case  "CHANGE_DESCRIPTION":
             state.modalWindow.inputs[1].description = action.text;
             return state;
         case "CHANGE_ADRESS":
@@ -97,9 +79,7 @@ const createTask = (state = initialState, action) => {
             
         default: return state
     }
-   
 
-    return state;
 }
 
 export default createTask;

@@ -11,7 +11,7 @@ import SideBar from './components/nav/sidebar/SideNav';
 function App(props) {
     return(
         <div className="container">
-            <Nav state={props.store.getState()} dispatch={props.store.dispatch} />
+            <Nav state={props.store.getState()} dispatch={props.dispatch} />
             <SideBar />
             <TaskContainer stateTask={props.store.getState().createTask.taskContainer} />
             <WrapperMap

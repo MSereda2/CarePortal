@@ -8,7 +8,7 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import store from "./redux/reduxStore";
 
  let renderEntireTree = (store) => {
-    ReactDOM.render(<App store={store} />, document.getElementById('root'));
+    ReactDOM.render(<App store={store} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
 }
 
 renderEntireTree(store)

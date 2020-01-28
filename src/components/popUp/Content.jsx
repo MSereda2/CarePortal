@@ -2,34 +2,33 @@ import React from 'react';
 import style from './content.module.css';
 
 // ACTION CREATORS
-import {addTaskAction,changeTaskAction,changeDescriptionAction,changeAdressAction,changeCostAction} from '../../redux/reducers/createTask.reducer';
+import actions from '../../redux/actions/actionCreateTask'
 
 
 const Content = (props) => {
     const onAddTask = () => {
-        props.dispatch(addTaskAction());
+        props.dispatch(actions.addTaskAction());
         props.close();
    }
 
    const onChangeTask = (e) => {
       let text = e.target.value; 
-      debugger;
-      props.dispatch(changeTaskAction(text));
+      props.dispatch(actions.changeTaskAction(text));
    }
 
    const onChangeDescription = (e) => {
       let text = e.target.value; 
-      props.dispatch(changeDescriptionAction(text));
+      props.dispatch(actions.changeDescriptionAction(text));
    }
 
    const onChangeAdress = (e) => {
       let text = e.target.value;
-      props.dispatch(changeAdressAction(text));
+      props.dispatch(actions.changeAdressAction(text));
    }
 
    const onChangeCost = (e) => {
       let text = e.target.value; 
-      props.dispatch(changeCostAction(text));
+      props.dispatch(actions.changeCostAction(text));
    }
 
     return(

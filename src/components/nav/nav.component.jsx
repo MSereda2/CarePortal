@@ -3,7 +3,6 @@ import style from './nav.module.css';
 import PopUp from "reactjs-popup";
 import Content from '../popUp/Content';
 
-debugger;
 const Nav = (props) => {
     return(
         <nav className={style.nav}>
