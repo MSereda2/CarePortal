@@ -1,40 +1,42 @@
-import React, {ReactDOM, useState} from 'react';
+import React from 'react';
 import style from './content.module.css';
+
+// ACTION CREATORS
+import {addTaskAction,changeTaskAction,changeDescriptionAction,changeAdressAction,changeCostAction} from '../../redux/reducers/createTask.reducer';
 
 
 const Content = (props) => {
     const onAddTask = () => {
-        props.taskFun.addTask();
-        props.close()
+        props.dispatch(addTaskAction());
+        props.close();
    }
 
    const onChangeTask = (e) => {
       let text = e.target.value; 
-      props.inputs[0].changeTask(text);
+      debugger;
+      props.dispatch(changeTaskAction(text));
    }
 
    const onChangeDescription = (e) => {
       let text = e.target.value; 
-      props.inputs[1].changeDescription(text);
-
+      props.dispatch(changeDescriptionAction(text));
    }
 
    const onChangeAdress = (e) => {
       let text = e.target.value;
-      props.inputs[2].changeAdress(text);
-
+      props.dispatch(changeAdressAction(text));
    }
 
    const onChangeCost = (e) => {
       let text = e.target.value; 
-      props.inputs[3].changeCost(text);  
+      props.dispatch(changeCostAction(text));
    }
 
     return(
     <div className={style.module}>
         <div className={style.taskColumn}>
 
-            <p className={style.taskTitle}>Создать Пост</p>
+            <p className={style.taskTitle}>Create task</p>
                 <div class={style.form__group} field>
                     <input onChange={onChangeTask} type="input" className={style.input__field} placeholder={props.inputs[0].placeholder} id={props.inputs[0].id} value={props.inputs[0].task} />
                     <label class={style.input__label}>{props.inputs[0].labelName}</label>

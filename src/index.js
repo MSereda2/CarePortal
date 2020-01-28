@@ -5,12 +5,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
-import state from "./redux/store";
-export let renderEntireTree = () => {
-    ReactDOM.render(<App state={state} />,document.getElementById('root'));
-}
-renderEntireTree()
+import store from "./redux/reduxStore";
 
+ let renderEntireTree = (store) => {
+    ReactDOM.render(<App store={store} />, document.getElementById('root'));
+}
+
+renderEntireTree(store)
+
+store.subscribe(() => {
+    renderEntireTree(store)
+})
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
