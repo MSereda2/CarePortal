@@ -4,7 +4,7 @@ import './App.css';
 // COMPONENTS
 import Nav from './components/nav/nav.component';
 import TaskContainer from './components/taskContainer/TaskContainer.component';
-import WrapperMap from './components/map/Map.component';
+import Map from './components/map/Map.component';
 import SideBar from './components/nav/sidebar/SideNav';
 
 
@@ -14,12 +14,7 @@ function App(props) {
             <Nav state={props.store.getState()} dispatch={props.dispatch} />
             <SideBar />
             <TaskContainer stateTask={props.store.getState().createTask.taskContainer} />
-            <WrapperMap
-             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
-             loadingElement={<div style={{height: '100%'}}></div>}
-             containerElement={<div style={{height: '100%'}}></div>}
-             mapElement={<div style={{height: '100%'}}></div>}>
-            </WrapperMap>  
+            <Map defult={props.store.getState().map} />
         </div>
     ) 
 }

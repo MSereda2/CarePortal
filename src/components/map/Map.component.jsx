@@ -2,15 +2,18 @@ import React from 'react';
 
 import GoogleMapReact from 'google-map-react';
 
-const Map = () => {
-
-    return(
+const Map = (props) => {
+    let Map = () => (
         <GoogleMapReact
-            bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_KEY}}
-            defaultCenter={{lat: 45.039268, lng: 38.987221}}
-            defaultZoom={13}>
+            bootstrapURLKeys={props.defult.bootstrapURLKeys}
+            defaultCenter={props.defult.defaultCenter}
+            defaultZoom={props.defult.defaultZoom}>
             {/* Markers */}
         </GoogleMapReact>
+    )
+
+    return(
+      <Map />
     )
 }
 
