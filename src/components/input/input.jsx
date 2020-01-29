@@ -1,14 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
+
+import style from "./input.module.css";
 
 const Input = props => {
-  const onChangeInput = e => {
-    props.ChangeInput(e);
-  };
-
   return props.popUp.map(input => (
-    <div class={style.form__group} field>
+    <div className={style.form__group} field>
       <input
-        onChange={onChangeInput}
+        onChange={e => props.changeInput(e)}
         value={input.value}
         type="input"
         className={style.input__field}
@@ -23,4 +22,8 @@ const Input = props => {
   ));
 };
 
-export default Input;
+const mapDispatchToProps = dispatch => ({
+  changeInput: e => dispatch(changeInput(e))
+});
+
+export default connect(null, mapDispatchToProps)(Input);
