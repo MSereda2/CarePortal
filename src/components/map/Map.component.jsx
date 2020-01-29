@@ -4,7 +4,6 @@ import GoogleMapReact from "google-map-react";
 import { getCoordinates } from "../../redux/map/map.actions";
 
 const MyMap = props => {
-  console.log("Nice ", props.state);
   return (
     <GoogleMapReact
       //   bootstrapURLKeys={"AIzaSyB8W9IB-mRvjpjMa5AxJ0Ea3Hy8biThLvI"}
