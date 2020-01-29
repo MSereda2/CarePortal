@@ -9,23 +9,20 @@ const MyMap = (props) => {
         props.dispatch(actions.getCoordinateAction());
     }
    
-    let MyMap = () => (
-        <GoogleMapReact
+    let MyMapWrapper = () => (
+            <GoogleMapReact
             bootstrapURLKeys={props.defult.bootstrapURLKeys}
             defaultCenter={props.defult.defaultCenter}
             defaultZoom={props.defult.defaultZoom}>
                 {<div>
-                <button onClick={OnGetLocation}>click me</button>
-                <p>{console.log(props.defult.latitude)}</p>
-                <p>{props.defult.longitude}</p>
-            </div>
-            }
-        </GoogleMapReact>
+                    <button onClick={OnGetLocation}>click me</button>
+                    <p>{console.log(props.defult.latitude)}</p>
+                    <p>{props.defult.longitude}</p>
+                </div>}
+            </GoogleMapReact>
     )
-    
-    return(
-      <MyMap />  
-    )
+     return <MyMapWrapper />
+  
 }
 
 
