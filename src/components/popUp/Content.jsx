@@ -12,81 +12,53 @@ import {
 } from "../../redux/task/task.actions";
 
 const Content = props => {
-  const onAddTask = () => {
-    props.addTaskAction();
-    props.close();
-  };
-
-  const onChangeTask = e => {
-    const text = e.target.value;
-    props.changeTask(text);
-  };
-
-  const onChangeDescription = e => {
-    let text = e.target.value;
-    props.changeDescription(text);
-  };
-
-  const onChangeAdress = e => {
-    const text = e.target.value;
-    props.changeAdress(text);
-  };
-
-  const onChangeCost = e => {
-    let text = e.target.value;
-    props.changeCost(text);
-  };
-
+  console.log(props);
   return (
     <div className={style.module}>
       <div className={style.taskColumn}>
         <p className={style.taskTitle}>Create task</p>
-        <div class={style.form__group} field>
+        <div className={style.form__group} field>
           <input
-            onChange={onChangeTask}
+            onChange={e => props.changeTask(e.target.value)}
             type="input"
             className={style.input__field}
-            placeholder={props.inputs[0].placeholder}
-            id={props.inputs[0].id}
-            value={props.inputs[0].task}
+            placeholder="Task name"
+            value={props.inputs.task}
           />
-          <label class={style.input__label}>{props.inputs[0].labelName}</label>
+          <label className={style.input__label}>Task name</label>
         </div>
-        <div class={style.form__group} field>
+        <div className={style.form__group} field>
           <input
-            onChange={onChangeDescription}
+            onChange={e => props.changeDescription(e.target.value)}
             type="input"
             className={style.input__field}
-            placeholder={props.inputs[1].placeholder}
-            id={props.inputs[1].id}
-            value={props.inputs[1].description}
+            placeholder="Describe task"
+            value={props.inputs.description}
           />
-          <label class={style.input__label}>{props.inputs[1].labelName}</label>
+          <label className={style.input__label}>Describe task</label>
         </div>
-        <div class={style.form__group} field>
+        <div className={style.form__group} field>
           <input
-            onChange={onChangeAdress}
+            onChange={e => props.changeAddress(e.target.value)}
             type="input"
             className={style.input__field}
-            placeholder={props.inputs[2].placeholder}
-            id={props.inputs[2].id}
-            value={props.inputs[2].adress}
+            placeholder="Your Address"
+            value={props.inputs.address}
           />
-          <label class={style.input__label}>{props.inputs[2].labelName}</label>
+          <label className={style.input__label}>Your Address</label>
         </div>
         <button>Поиск по карте</button>
-        <div class={style.form__group} field>
+        <div className={style.form__group} field>
           <input
-            onChange={onChangeCost}
+            onChange={e => props.changeCost(e.target.value)}
             type="input"
             className={style.input__field}
-            placeholder={props.inputs[3].placeholder}
-            id={props.inputs[3].id}
-            value={props.inputs[3].cost}
+            placeholder="Cost"
+            value={props.inputs.cost}
           />
-          <label class={style.input__label}>{props.inputs[3].labelName}</label>
+          <label className={style.input__label}>Cost</label>
         </div>
-        <button className={style.btn_addPost} onClick={onAddTask}>
+        <button className={style.btn_addPost} onClick={() => props.addTask()}>
           Создать задание
         </button>
       </div>
@@ -94,12 +66,16 @@ const Content = props => {
     </div>
   );
 };
+const mapStateToProps = state => ({
+  state,
+  inputs: state.task.inputs
+});
 const mapDispatchToProps = dispatch => ({
-  addTask: text => dispatch(addTask(text)),
+  addTask: () => dispatch(addTask()),
   changeTask: text => dispatch(changeTask(text)),
   changeDescription: text => dispatch(changeDescription(text)),
   changeAddress: text => dispatch(changeAddress(text)),
   changeCost: text => dispatch(changeCost(text))
 });
 
-export default connect(null, mapDispatchToProps)(Content);
+export default connect(mapStateToProps, mapDispatchToProps)(Content);
