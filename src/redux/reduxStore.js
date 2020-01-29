@@ -1,17 +1,13 @@
-import { createStore,combineReducers } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
 
-import nav from './reducers/nav.reducer';
-import createTask from './reducers/createTask.reducer';
-import profileUser from './reducers/profileUser.reducer';
-import map from './reducers/Map.reducer';
+import rootReducer from "./rootReducer";
 
-let reducers = combineReducers({ // it's like our state `cause every reducer return state 
-    nav,
-    createTask,
-    profileUser,
-    map
-})
+const middleware = [];
+if (process.env.NODE_ENV === "development") {
+  middleware.push(logger);
+}
 
-let store = createStore(reducers);
+const store = createStore(rootReducer, applyMiddleware(...middleware));
 
 export default store;
