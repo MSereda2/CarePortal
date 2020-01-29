@@ -13,7 +13,7 @@ import {
 
 const Content = props => {
   const onAddTask = () => {
-    props.addTaskAction();
+    props.addTask();
     props.close();
   };
 
@@ -74,7 +74,6 @@ const Content = props => {
           />
           <label class={style.input__label}>{props.inputs[2].labelName}</label>
         </div>
-        <button>Поиск по карте</button>
         <div class={style.form__group} field>
           <input
             onChange={onChangeCost}
@@ -94,6 +93,7 @@ const Content = props => {
     </div>
   );
 };
+
 const mapDispatchToProps = dispatch => ({
   addTask: text => dispatch(addTask(text)),
   changeTask: text => dispatch(changeTask(text)),
