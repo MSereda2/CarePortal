@@ -13,7 +13,7 @@ function App(props) {
     <div className="container">
       <Nav nav={props.nav} profileImg={props.user.profileImg} dispatch={props.dispatch} />
       <SideBar />
-      <TaskContainer task={props.task} nav={props.nav} />
+      <TaskContainer task={props.task.taskContainer} nav={props.nav} />
       <MyMap />
     </div>
   );
@@ -21,6 +21,6 @@ function App(props) {
 const mapStateToProps = state => ({
   user: state.user,
   nav: state.nav,
-  task: state.task.taskContainer
+  task: state.task
 });
 export default connect(mapStateToProps)(App);

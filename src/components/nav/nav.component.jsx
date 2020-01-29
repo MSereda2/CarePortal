@@ -15,7 +15,11 @@ const Nav = props => {
           <PopUp
             trigger={
               <button className={style.create_post}>
+<<<<<<< HEAD
                 {props.nav.buttonCreate}
+=======
+                Create Task
+>>>>>>> cb32f2c8bc962bd6234b88383bb5809c33b3f882
                 <i className="fa fa-plus"></i>
               </button>
             }
@@ -23,15 +27,8 @@ const Nav = props => {
             closeOnDocumentClick
             contentStyle={{ padding: 0, width: `70%` }}
           >
-            {close => (
-              <Content
-                close={close}
-                inputs={props.task.modalWindow.inputs}
-                dispatch={props.dispatch}
-              />
-            )}
+            {close => <Content close={close} />}
           </PopUp>
-
           <i className={`fa fa-comments ${style.chat_icon}`}>
             <span className={style.counterChat}></span>
           </i>
