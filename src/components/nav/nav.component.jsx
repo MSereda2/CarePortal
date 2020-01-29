@@ -15,11 +15,7 @@ const Nav = props => {
           <PopUp
             trigger={
               <button className={style.create_post}>
-<<<<<<< HEAD
-                {props.nav.buttonCreate}
-=======
                 Create Task
->>>>>>> cb32f2c8bc962bd6234b88383bb5809c33b3f882
                 <i className="fa fa-plus"></i>
               </button>
             }

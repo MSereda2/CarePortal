@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./taskContainer.module.css";
 
-import TaskItem from "./taskItem/TaskItem.component";
+import TaskItem from "../taskItem/TaskItem.component";
 
 const TaskContainer = props => {
   return (

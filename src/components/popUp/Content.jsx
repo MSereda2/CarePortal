@@ -12,35 +12,6 @@ import {
 } from "../../redux/task/task.actions";
 
 const Content = props => {
-<<<<<<< HEAD
-  const onAddTask = () => {
-    props.addTask();
-    props.close();
-  };
-
-  const onChangeTask = e => {
-    const text = e.target.value;
-    props.changeTask(text);
-  };
-
-  const onChangeDescription = e => {
-    let text = e.target.value;
-    props.changeDescription(text);
-  };
-
-  const onChangeAdress = e => {
-    const text = e.target.value;
-    props.changeAdress(text);
-  };
-
-  const onChangeCost = e => {
-    let text = e.target.value;
-    props.changeCost(text);
-  };
-
-=======
-  console.log(props);
->>>>>>> cb32f2c8bc962bd6234b88383bb5809c33b3f882
   return (
     <div className={style.module}>
       <div className={style.taskColumn}>
@@ -75,12 +46,8 @@ const Content = props => {
           />
           <label className={style.input__label}>Your Address</label>
         </div>
-<<<<<<< HEAD
-        <div class={style.form__group} field>
-=======
         <button>Поиск по карте</button>
         <div className={style.form__group} field>
->>>>>>> cb32f2c8bc962bd6234b88383bb5809c33b3f882
           <input
             onChange={e => props.changeCost(e.target.value)}
             type="input"
@@ -98,14 +65,10 @@ const Content = props => {
     </div>
   );
 };
-<<<<<<< HEAD
-
-=======
 const mapStateToProps = state => ({
   state,
   inputs: state.task.inputs
 });
->>>>>>> cb32f2c8bc962bd6234b88383bb5809c33b3f882
 const mapDispatchToProps = dispatch => ({
   addTask: () => dispatch(addTask()),
   changeTask: text => dispatch(changeTask(text)),

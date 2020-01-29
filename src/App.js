@@ -6,7 +6,7 @@ import "./App.css";
 import Nav from "./components/nav/nav.component";
 import TaskContainer from "./components/taskContainer/TaskContainer.component";
 import MyMap from "./components/map/Map.component";
-import SideBar from "./components/nav/sidebar/SideNav";
+import SideBar from "./components/sidebar/SideNav";
 
 function App(props) {
   return (
