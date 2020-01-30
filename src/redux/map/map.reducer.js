@@ -18,9 +18,7 @@ const mapReducer = (state = INITIAL_STATE, action) => {
       };
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getCoordinates);
-        store.subscribe(() => {
-            
-        })
+       
         console.log(state.latitude)
       } else {
         alert(`doesn't work`);

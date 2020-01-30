@@ -14,8 +14,7 @@ const MyMap = props => {
     >
       {
         <div>
-                    <h1>{`${props.latitude}/${props.longitude}`}</h1>
-
+          <h1>{`${props.latitude}/${props.longitude}`}</h1>
           <button onClick={() => props.getLocation()}>click me</button>
         </div>
       }
