@@ -1,6 +1,7 @@
+import store from '../../redux/reduxStore'
 import MapTypes from "./map.types";
 const INITIAL_STATE = {
-  bootstrapURLKeys: { key: process.env.REACT_APP_GOOGLE_KEY },
+  bootstrapURLKeys: 'AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY',
   defaultCenter: { lat: 45.039268, lng: 38.987221 },
   defaultZoom: 13,
   latitude: null,
@@ -17,6 +18,10 @@ const mapReducer = (state = INITIAL_STATE, action) => {
       };
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getCoordinates);
+        store.subscribe(() => {
+            
+        })
+        console.log(state.latitude)
       } else {
         alert(`doesn't work`);
       }
