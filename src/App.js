@@ -11,7 +11,7 @@ import SideBar from "./components/sidebar/SideNav";
 function App(props) {
   return (
     <div className="container">
-      <Nav nav={props.nav} profileImg={props.user.profileImg} dispatch={props.dispatch} />
+      <Nav nav={props.nav} profileImg={props.user.profileImg} />
       <SideBar />
       <TaskContainer task={props.task.taskContainer} nav={props.nav} />
       <MyMap />

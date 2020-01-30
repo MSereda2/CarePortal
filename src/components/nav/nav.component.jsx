@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./nav.module.css";
-import PopUp from "reactjs-popup";
-import Content from "../popUp/Content";
+import PopUp from '../popUp/PopUp';
+import UserIcons from '../user/UserIcons';
 
 const Nav = props => {
   return (
@@ -12,30 +12,8 @@ const Nav = props => {
           <h1 className={style.heading}>{props.nav.logoName}</h1>
         </div>
         <div className={style.navLinkContainer}>
-          <PopUp
-            trigger={
-              <button className={style.create_post}>
-                Create Task
-                <i className="fa fa-plus"></i>
-              </button>
-            }
-            modal
-            closeOnDocumentClick
-            contentStyle={{ padding: 0, width: `70%` }}
-          >
-            {close => <Content close={close} />}
-          </PopUp>
-          <i className={`fa fa-comments ${style.chat_icon}`}>
-            <span className={style.counterChat}></span>
-          </i>
-          <i className={` ${props.nav.navNotice.icon} ${style.bell_icon}`}>
-            <span className={style.counter}></span>
-          </i>
-          <img
-            className={style.nav_img}
-            src={props.profileImg}
-            alt="Profile Img"
-          />
+          <PopUp />
+          <UserIcons navNotice={props.nav.navNotice.icon} profileImg={props.profileImg} />
         </div>
       </div>
     </nav>
