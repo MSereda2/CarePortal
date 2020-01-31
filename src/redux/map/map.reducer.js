@@ -1,4 +1,3 @@
-import store from '../../redux/reduxStore'
 import MapTypes from "./map.types";
 const INITIAL_STATE = {
   bootstrapURLKeys: 'AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY',
@@ -18,7 +17,6 @@ const mapReducer = (state = INITIAL_STATE, action) => {
       };
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getCoordinates);
-       
         console.log(state.latitude)
       } else {
         alert(`doesn't work`);
