@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import GoogleMapReact from "google-map-react";
-import {GoogleComponent} from 'react-google-location';
+import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+
 
 // REDUX ACTIONS
 import { getCoordinates } from "../../redux/map/map.actions";
 
 const MyMap = props => {
 
- return(
-    <GoogleMapReact
-    bootstrapURLKeys={{key: 'AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY'}}
-    defaultCenter={props.defaultCenter}
-    defaultZoom={props.defaultZoom}>
-      <GoogleComponent
-        apiKey='AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY'
-        language={'ru'}
-        coordinates={true} />
-    </GoogleMapReact>
- )
+  return(
+    <GoogleMap
+       defaultZoom={props.defaultZoom} 
+        defaultCenter={{lat: props.defaultCenter.lat, lng: props.defaultCenter.lng}} >
+
+    </GoogleMap>
+  )
+ 
 };
+
+const WrappedMap = withScriptjs(withGoogleMap(MyMap))
 
 const mapStateToProps = state => ({
   defaultCenter: state.map.defaultCenter,
@@ -32,4 +31,4 @@ const mapDispatchToProps = dispatch => ({
   getLocation: () => dispatch(getCoordinates())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyMap);
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedMap);

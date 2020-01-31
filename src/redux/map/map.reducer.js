@@ -3,8 +3,8 @@ const INITIAL_STATE = {
   bootstrapURLKeys: 'AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY',
   defaultCenter: { lat: 45.039268, lng: 38.987221 },
   defaultZoom: 13,
-  latitude: null,
-  longitude: null,
+  latitude: 12,
+  longitude: 11,
   userAdress: null
 };
 
