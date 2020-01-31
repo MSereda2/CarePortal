@@ -6,9 +6,10 @@ import GoogleMapReact from "google-map-react";
 import { getCoordinates } from "../../redux/map/map.actions";
 
 const MyMap = props => {
+  console.log(props);
   return (
     <GoogleMapReact
-      bootstrapURLKeys={{key: 'AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY'}}
+      bootstrapURLKeys={{ key: "AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY" }}
       defaultCenter={props.defaultCenter}
       defaultZoom={props.defaultZoom}
     >
@@ -23,12 +24,10 @@ const MyMap = props => {
 };
 
 const mapStateToProps = state => ({
-  
   defaultCenter: state.map.defaultCenter,
   defaultZoom: state.map.defaultZoom,
   latitude: state.map.latitude,
   longitude: state.map.longitude
-
 });
 const mapDispatchToProps = dispatch => ({
   getLocation: () => dispatch(getCoordinates())
