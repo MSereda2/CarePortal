@@ -3,8 +3,8 @@ const INITIAL_STATE = {
   bootstrapURLKeys: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`,
   defaultCenter: { lat: 45.039268, lng: 38.987221 },
   defaultZoom: 13,
-  latitude: 12,
-  longitude: 11,
+  latitude: null,
+  longitude: null,
   userAdress: null
 };
 

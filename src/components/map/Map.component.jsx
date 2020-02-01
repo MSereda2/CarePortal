@@ -5,6 +5,7 @@ import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-map
 
 // REDUX ACTIONS
 import { getCoordinates } from "../../redux/map/map.actions";
+import { useEffect } from "react";
 
 
 const WrappedMap = props => {
@@ -13,11 +14,7 @@ const WrappedMap = props => {
   const [longitude, setLongitude] = useState(props.longitude);
 
   let getLocation = () => {
-    if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(getCordinates)
-    } else {
-      alert('doesnt worl')
-    }
+    props.getLocation()
   }
 
    let getCordinates = (position) => {
@@ -25,13 +22,14 @@ const WrappedMap = props => {
       setLongitude(position.coords.longitude)
   }
 
+  useEffect(() =>  getLocation());
+
+
   const myMap = () => (
     <GoogleMap
       defaultZoom={props.defaultZoom} 
-      defaultCenter={{lat: props.defaultCenter.lat, lng: props.defaultCenter.lng}} >
-            <Marker key={25} position={{lat: props.latitude, lng: props.longitude}} />
-            <button onClick={getLocation}>click</button>
-            <p>{`${latitude}/${longitude}`}</p>
+      defaultCenter={{lat: latitude, lng: longitude}} >
+            <Marker label={'Это верное место?'} key={25} position={{lat: latitude, lng: longitude}} />
     </GoogleMap>
   )
   const WrappedMap = withScriptjs(withGoogleMap(myMap))
