@@ -15,7 +15,7 @@ function App(props) {
       <Nav nav={props.nav} profileImg={props.user.profileImg} />
       <SideBar />
       <TaskContainer task={props.task.taskContainer} nav={props.nav} />
-      <MyMap map={props.map}></MyMap>
+      <MyMap />
     </div>
   );
 }
