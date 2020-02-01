@@ -14,7 +14,7 @@ const WrappedMap = props => {
   const [longitude, setLongitude] = useState(props.longitude);
 
   let getLocation = () => {
-    props.getLocation()
+    props.getLocation(location)
   }
 
    let getCordinates = (position) => {
