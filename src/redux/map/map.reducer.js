@@ -22,7 +22,6 @@ const mapReducer = (state = INITIAL_STATE, action) => {
         alert(`doesn't work`);
       }
       return state;
-
     default:
       return state;
   }

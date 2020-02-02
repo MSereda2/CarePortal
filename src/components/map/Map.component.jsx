@@ -10,30 +10,37 @@ import { useEffect } from "react";
 
 const WrappedMap = props => {
 
-  const [latitude, setLatitude] = useState(props.latitude);
-  const [longitude, setLongitude] = useState(props.longitude);
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
+  const [adress, setAdress] = useState(null);
 
-  let getLocation = () => {
-    props.getLocation(location)
+  const myMap = () => {
+    let getLocation = () => {
+      let getCordinates = (position) => {
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+    }
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getCordinates)
+      } else {
+        alert('doesnt worl')
+      }
+     
+    }
+
+    return(
+      <GoogleMap
+        defaultZoom={props.defaultZoom} 
+        defaultCenter={{lat: 45.039268, lng: 38.987221}} >
+        {latitude === null && longitude === null ? getLocation()  : null}
+        <Marker label={adress} key={25} position={{lat: latitude, lng: longitude}} /> 
+
+      </GoogleMap>
+    )
   }
 
-   let getCordinates = (position) => {
-      setLatitude(position.coords.latitude);
-      setLongitude(position.coords.longitude)
-  }
-
-  useEffect(() =>  getLocation());
-
-
-  const myMap = () => (
-    <GoogleMap
-      defaultZoom={props.defaultZoom} 
-      defaultCenter={{lat: latitude, lng: longitude}} >
-            <Marker label={'Это верное место?'} key={25} position={{lat: latitude, lng: longitude}} />
-    </GoogleMap>
-  )
+  
   const WrappedMap = withScriptjs(withGoogleMap(myMap))
-
 
   return(
     <WrappedMap
@@ -44,16 +51,11 @@ const WrappedMap = props => {
   )
 }
 
+
+
+
 const mapStateToProps = state => ({
-  key: state.map.bootstrapURLKeys,
-  defaultCenter: state.map.defaultCenter,
   defaultZoom: state.map.defaultZoom,
-  latitude: state.map.latitude,
-  longitude: state.map.longitude
-
-});
-const mapDispatchToProps = dispatch => ({
-  getLocation: () => dispatch(getCoordinates())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(WrappedMap);
+export default connect(mapStateToProps,null)(WrappedMap);
