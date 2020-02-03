@@ -47,6 +47,8 @@
     margin-right: 10px;
     background-color: rgb(255, 255, 255);
     border: none;
+    display: flex;
+    align-items: center;
 }
 
 .filterMap i {
@@ -59,6 +61,8 @@
     border: none;
     box-shadow: 0px 0px 2px 1px rgba(192, 192, 192, 0.75);
     background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
 } 
 
 .filter i {

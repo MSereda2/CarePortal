@@ -5,7 +5,7 @@ import "./App.css";
 // COMPONENTS
 import Nav from "./components/nav/nav.component";
 import TaskContainer from "./components/taskContainer/TaskContainer.component";
-import MyMap from "./components/map/Map.component";
+import MyMap from "./components/map/MapGetLocation";
 import SideBar from "./components/sidebar/SideNav";
 import store from "./redux/reduxStore";
 
@@ -15,7 +15,10 @@ function App(props) {
       <Nav nav={props.nav} profileImg={props.user.profileImg} />
       <SideBar />
       <TaskContainer task={props.task.taskContainer} nav={props.nav} />
-      <MyMap />
+      <MyMap google={props.google}
+     center={{lat: 45.039268, lng: 38.987221}}
+     height='100%'
+     zoom={16} />
     </div>
   );
 }
