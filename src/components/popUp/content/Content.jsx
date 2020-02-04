@@ -2,6 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import style from "./content.module.css";
 
+import Autocomplete from 'react-google-autocomplete';
+
+
 // REDUX ACTIONS
 import {
   addTask,
@@ -9,7 +12,7 @@ import {
   changeDescription,
   changeAddress,
   changeCost
-} from "../../redux/task/task.actions";
+} from "../../../redux/task/task.actions";
 
 const Content = props => {
   return (
@@ -24,7 +27,6 @@ const Content = props => {
             placeholder="Task name"
             value={props.inputs.task}
           />
-          <label className={style.input__label}>Task name</label>
         </div>
         <div className={style.form__group} field>
           <input
@@ -34,19 +36,16 @@ const Content = props => {
             placeholder="Describe task"
             value={props.inputs.description}
           />
-          <label className={style.input__label}>Describe task</label>
         </div>
         <div className={style.form__group} field>
-          <input
-            onChange={e => props.changeAddress(e.target.value)}
-            type="input"
-            className={style.input__field}
-            placeholder="Your Address"
-            value={props.inputs.address}
-          />
-          <label className={style.input__label}>Your Address</label>
+          <Autocomplete
+          className={style.input__field}
+          types={['(regions)']}
+          componentRestrictions={{country: "ru"}}
+          placeholder={'Поиск улицы'}
+					>
+          </ Autocomplete>
         </div>
-        <button>Поиск по карте</button>
         <div className={style.form__group} field>
           <input
             onChange={e => props.changeCost(e.target.value)}
@@ -55,9 +54,11 @@ const Content = props => {
             placeholder="Cost"
             value={props.inputs.cost}
           />
-          <label className={style.input__label}>Cost</label>
         </div>
-        <button className={style.btn_addPost} onClick={() => props.addTask()}>
+      <button className={style.btn_addPost} onClick={() => {
+        props.addTask();
+        props.close();
+        }}>
           Создать задание
         </button>
       </div>

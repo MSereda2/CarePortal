@@ -31,12 +31,11 @@ const TaskContainer = props => {
         </p>
       </div>
       <div className={style.task_list}>
-        {props.task.taskItem.map(task => (
+        {props.task.taskContainer.taskList.map(task => (
           <TaskItem
-            key={task.userName}
             img={task.img}
             userName={task.userName}
-            moreInfo={task.moreInfo}
+            description={task.description}
             title={task.title}
             cost={task.cost}
             data={task.data}

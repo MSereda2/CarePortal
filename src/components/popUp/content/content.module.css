@@ -64,7 +64,7 @@
     transition: border-color 0.2s;
   }
   .input__field::placeholder {
-    color: transparent;
+    /* color: transparent; */
   }
   .input__field:placeholder-shown ~ .input__label {
     font-size: 1.3rem;
@@ -78,7 +78,7 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: #9b9b9b;
+    color: #0f0f0f;
   }
   
   .input__field:focus {

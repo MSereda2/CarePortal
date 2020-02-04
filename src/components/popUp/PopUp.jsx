@@ -1,6 +1,6 @@
 import React from 'react';
 import PopUp from "reactjs-popup";
-import Content from "./Content";
+import Content from "./content/Content";
 import style from "./popUp.module.css";
 
 const Popup = props => (

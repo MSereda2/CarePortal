@@ -1,24 +1,35 @@
 import TaskTypes from "./task.types";
 const INITIAL_STATE = {
   taskUserName: "Наруто узумаки",
-  taskUserImg:
-    "https://img5.goodfon.ru/wallpaper/nbig/7/bd/naruto-uzumaki-naruto-paren-sila.jpg",
+  taskUserImg: "https://img5.goodfon.ru/wallpaper/nbig/7/bd/naruto-uzumaki-naruto-paren-sila.jpg",
   inputs: {
     task: "",
     description: "",
-    address: "",
+    adress: "",
     cost: ""
   },
   taskContainer: {
-    taskItem: [
+    taskList: [
       {
-        img:
-          "https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg",
+        img: "https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg",
         userName: "Тимур Саникидзе",
         title: "Как развить харизму.",
-        moreInfo: "Подробней",
+        description: "Подробней",
+        adress: '',
         cost: "500",
-        data: "25.01.2020"
+        data: "25.01.2020",
+      }
+    ],
+    taskOnMap: [
+      {
+        task: '',
+        cost: '',
+        popUp: {},
+        coordinates: {
+          lat: null,
+          lng: null,
+        },
+        icon: ''
       }
     ]
   }
@@ -27,20 +38,16 @@ const INITIAL_STATE = {
 const taskReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case TaskTypes.ADD_TASK:
-      console.log(state.inputs);
       if (state.inputs.task !== "") {
         let newTask = {
-          // moreInfo: "Подробней",
-          img: state.taskUserImg,
-          userName: state.taskUserName,
+          img: "https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg",
+          userName: 'Naruto Yuzymaki',
           title: state.inputs.task,
-          moreInfo: state.inputs.description
-            ? state.inputs.description
-            : "Подробней",
+          description: state.inputs.description !== '' ? state.inputs.description : 'Подробней',
           cost: state.inputs.cost,
           data: "27.01.2020"
         };
-        state.taskContainer.taskItem.push(newTask);
+        state.taskContainer.taskList.push(newTask);
         state.inputs.task = "";
         state.inputs.description = "";
         state.inputs.address = "";
