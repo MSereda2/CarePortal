@@ -10,7 +10,7 @@ import {
   changeDescription,
   changeAddress,
   changeCost
-} from "../../../redux/task/task.actions";
+} from "../../../redux/taskPage/taskPage.actions";
 
 const Content = props => {
   return (

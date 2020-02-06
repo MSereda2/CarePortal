@@ -1,15 +1,12 @@
 import { combineReducers } from "redux";
 
-import taskReducer from "./task/task.reducer";
-import navReducer from "./nav/nav.reducer";
-import userReducer from "./user/user.reducer";
-import mapReducer from "./map/map.reducer";
+import headerReducer from "./header/header.reducer";
+import taskPageReducer from "./taskPage/taskPage.reducer";
 
 const rootReducer = combineReducers({
   // it's like our state `cause every reducer return state
-  nav: navReducer,
-  task: taskReducer,
-  map: mapReducer
+  header: headerReducer,
+  taskPage: taskPageReducer,
 });
 
 export default rootReducer;

@@ -4,14 +4,15 @@ import "./App.css";
 
 // COMPONENTS
 import Header from "./components/header/Header.component";
-import TaskPage from "./components/taskPage/TaskPage.component";
 import SideBar from "./components/sidebar/SideNav";
+import TaskPage from "./components/pages/taskPage/TaskPage";
+
 
 function App(props) {
   return (
     <div className="container">
-      <Header />
-      <SideBar />
+      <Header header={props.header} />
+      <SideBar sideBar={props.sideBar} />
       <TaskPage />
     </div>
   );

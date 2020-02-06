@@ -1,9 +1,4 @@
-.task_container {
-    grid-area: taskContainer;
-    /* padding: 10px; */
-    /* border-right: 3px solid purple; */
-    overflow-y: scroll;
-}
+
 
 .filter_wrapper {
     padding: 20px;

@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./taskContainer.module.css";
 
-import TaskItem from "../taskItem/TaskItem.component";
+import TaskItem from "./taskItem/TaskItem.component";
 
 const TaskContainer = props => {
   return (
@@ -31,7 +31,7 @@ const TaskContainer = props => {
         </p>
       </div>
       <div className={style.task_list}>
-        {props.task.taskContainer.taskList.map(task => (
+        {props.taskList.map(task => (
           <TaskItem
             img={task.img}
             userName={task.userName}
