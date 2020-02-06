@@ -8,12 +8,12 @@ const UserIcons = props => (
     <i className={`fa fa-comments ${style.chat_icon}`}>
       <span className={style.counterChat}></span>
     </i>
-    <i className={` ${props.navNotice} ${style.bell_icon}`}>
+    <i className={` ${props.headerNotice} ${style.bell_icon}`}>
       <span className={style.counter}></span>
     </i>
     <img
       className={style.nav_img}
-      src={props.profileImg}
+      src={props.userImg}
       alt="Profile Img"
     />
   </div>

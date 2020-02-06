@@ -1,22 +1,22 @@
 import React from "react";
-import style from "./nav.module.css";
-import AddTask from '../pages/taskPage/addTask/createTask/CreateTask';
+import style from "./header.module.css";
+import PopUp from '../pages/taskPage/addTask/PopUp';
 import UserIcons from './headerIcon/UserIcons';
 
 const Header = props => {
   return (
-    <Header className={style.header}>
+    <header className={style.header}>
       <div className={style.header_wrapper}>
         <div className={style.logo_container}>
-          <img src={props.header.logo} className={style.logo} alt="logo" />
-          <h1 className={style.heading}>{props.header.logoName}</h1>
+          <img src={props.headerState.logo} className={style.logo} alt="logo" />
+          <h1 className={style.heading}>{props.headerState.logoName}</h1>
         </div>
         <div className={style.headerLinkContainer}>
-          <AddTask />
-          <UserIcons headerNotice={props.header.headerNotice.icon} userImg={props.userImg} />
+          <PopUp />
+          <UserIcons headerNotice={props.headerState.headerNotice.icon} userImg={props.headerState.userImg} />
         </div>
       </div>
-    </Header>
+    </header>
   );
 };
 

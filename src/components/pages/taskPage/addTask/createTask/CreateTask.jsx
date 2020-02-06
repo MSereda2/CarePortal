@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import style from "./content.module.css";
-import Autocomplete from 'react-google-autocomplete';
+// import Autocomplete from 'react-google-autocomplete';
 
 // REDUX ACTIONS
 import {
@@ -10,7 +10,7 @@ import {
   changeDescription,
   changeAddress,
   changeCost
-} from "../../../redux/taskPage/taskPage.actions";
+} from "../../../../../redux/taskPage/taskPage.actions";
 
 const Content = props => {
   return (
@@ -36,13 +36,13 @@ const Content = props => {
           />
         </div>
         <div className={style.form__group} field>
-          <Autocomplete
+          {/* <Autocomplete
             className={style.input__field}
             types={['(regions)']}
             componentRestrictions={{country: "ru"}}
             placeholder={'Поиск улицы'}
             >
-          </ Autocomplete>
+          </ Autocomplete> */}
         </div>
         <div className={style.form__group} field>
           <input
@@ -67,7 +67,7 @@ const Content = props => {
 
 const mapStateToProps = state => ({
   state,
-  inputs: state.task.inputs
+  inputs: state.taskPage.popUp.inputFields
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,4 +1,6 @@
-
+.task_container {
+    grid-area: taskPage;
+}
 
 .filter_wrapper {
     padding: 20px;
