@@ -1,4 +1,4 @@
-import TaskTypes from "./task.types";
+import TaskTypes from "./taskPage.types";
 export const addTask = () => ({ type: TaskTypes.ADD_TASK });
 
 export const changeTask = text => ({ type: TaskTypes.CHANGE_TASK, text: text });
