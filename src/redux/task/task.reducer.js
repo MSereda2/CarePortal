@@ -12,11 +12,22 @@ const INITIAL_STATE = {
     taskList: [
       {
         img: "https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg",
+        id: 1,
         userName: "Тимур Саникидзе",
         title: "Как развить харизму.",
         description: "Подробней",
         adress: '',
         cost: "500",
+        data: "25.01.2020",
+      },
+      {
+        img: "https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg",
+        id: 2,
+        userName: "Тимур Саникидзе",
+        title: "Как найти собаку.",
+        description: "Подробней",
+        adress: '',
+        cost: "600",
         data: "25.01.2020",
       }
     ],

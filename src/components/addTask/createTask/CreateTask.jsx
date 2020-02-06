@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import style from "./content.module.css";
-
 import Autocomplete from 'react-google-autocomplete';
-
 
 // REDUX ACTIONS
 import {
@@ -39,11 +37,11 @@ const Content = props => {
         </div>
         <div className={style.form__group} field>
           <Autocomplete
-          className={style.input__field}
-          types={['(regions)']}
-          componentRestrictions={{country: "ru"}}
-          placeholder={'Поиск улицы'}
-					>
+            className={style.input__field}
+            types={['(regions)']}
+            componentRestrictions={{country: "ru"}}
+            placeholder={'Поиск улицы'}
+            >
           </ Autocomplete>
         </div>
         <div className={style.form__group} field>
@@ -62,14 +60,16 @@ const Content = props => {
           Создать задание
         </button>
       </div>
-      <div className={style.imgContainer}></div>
+      <div className={style.imgContainer} />
     </div>
   );
 };
+
 const mapStateToProps = state => ({
   state,
   inputs: state.task.inputs
 });
+
 const mapDispatchToProps = dispatch => ({
   addTask: () => dispatch(addTask()),
   changeTask: text => dispatch(changeTask(text)),

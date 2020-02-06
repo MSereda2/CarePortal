@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./nav.module.css";
-import PopUp from '../popUp/PopUp';
+import AddTask from '../AddTask/AddTask';
 import UserIcons from '../user/UserIcons';
 
 const Nav = props => {
@@ -12,7 +12,7 @@ const Nav = props => {
           <h1 className={style.heading}>{props.nav.logoName}</h1>
         </div>
         <div className={style.navLinkContainer}>
-          <PopUp />
+          <AddTask />
           <UserIcons navNotice={props.nav.navNotice.icon} profileImg={props.profileImg} />
         </div>
       </div>

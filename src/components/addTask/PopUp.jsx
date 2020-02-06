@@ -1,6 +1,6 @@
 import React from 'react';
 import PopUp from "reactjs-popup";
-import Content from "./content/Content";
+import CreateTask from "./createTask/CreateTask";
 import style from "./popUp.module.css";
 
 const Popup = props => (
@@ -15,7 +15,7 @@ const Popup = props => (
     closeOnDocumentClick
     contentStyle={{ padding: 0, width: `70%` }}>
 
-    {close => <Content close={close} />}
+    {close => <CreateTask close={close} />}
     
   </PopUp>
 )
