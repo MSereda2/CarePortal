@@ -242,7 +242,7 @@ class Map extends Component {
                     <Autocomplete
 					style={{
                         position: 'fixed',
-                        left: '50%',
+                        left: '55%',
                         top: '9.7%',
                         border: 'none',
 						width: '35%',

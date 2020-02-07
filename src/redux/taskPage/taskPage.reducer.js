@@ -1,4 +1,5 @@
-// import TaskTypes from "./task.types";
+import TaskTypes from "./taskPage.types";
+
 const INITIAL_STATE = {
   // taskUserName: "Наруто узумаки",
    taskContainer: {
@@ -6,12 +7,11 @@ const INITIAL_STATE = {
       {
         img: "https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg",
         id: 1,
-        userName: "Тимур Саникидзе",
         title: "Как развить харизму.",
         description: "Подробней",
-        adress: '',
+        radius: '30м',
+        timer: '',
         cost: "500",
-        data: "25.01.2020",
       },
       {
         img: "https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg",
@@ -54,7 +54,29 @@ const INITIAL_STATE = {
 };
 
 const taskReducer = (state = INITIAL_STATE, action) => {
-  
+  let inputFields = state.popUp.inputFields;
+  switch(action.type) {
+
+    case TaskTypes.ADD_TASK:
+      if(inputFields.task,inputFields.description,inputFields.adress,inputFields.cost !== "") {
+        console.log('work')
+      } else {
+        console.log('field form')
+      }
+      return state;
+    case TaskTypes.CHANGE_TASK:
+      inputFields.task = action.text;
+      return {...state};
+    case TaskTypes.CHANGE_DESCRIPTION:
+      inputFields.description = action.text;
+      return {...state}
+    case TaskTypes.CHANGE_ADDRESS:
+      inputFields.adress = action.text;
+      return {...state}
+    case TaskTypes.cost = action.text:
+      inputFields.cost = action.text;
+      return {...state}
+  }
 
   return state;
 };

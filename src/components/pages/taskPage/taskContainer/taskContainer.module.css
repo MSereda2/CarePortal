@@ -1,5 +1,6 @@
 .task_container {
-    grid-area: taskPage;
+    display: flex;
+    flex-direction: column;
 }
 
 .filter_wrapper {

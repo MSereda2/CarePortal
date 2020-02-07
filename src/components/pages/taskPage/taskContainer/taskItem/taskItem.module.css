@@ -4,7 +4,7 @@
     background-color: rgb(255, 255, 255);
     cursor: pointer;
     transition: background-color .5s, border-left .1s, border-right .1s;
-    width: 93%;
+    width: 85%;
     margin: 15px auto;
     padding: 10px;
     box-shadow: 0px 0px 6px 2px rgba(218, 216, 216, 0.75);
@@ -31,60 +31,15 @@
     width: 80%;
 } */
 
-
-.userContainer {
-    display: flex;
-    align-items: center;
-}
-
-.task_userName {
-    color: rgb(102, 102, 102);
-    padding-right: 15px;
-}
-
-.newbie {
-    display: flex;
-    color: #623CEA;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    font-size: 14px;
-    margin-right: 15px;
-    height: 30px;
-    align-items: center;
-    border: 0;
-    background-color: #EFEBFD ;
-}
-
-.newbie i {
-    padding-right: 5px;
-}
-
-.taskRecomend {
-    display: flex;
-    color: #FF9C3C;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    font-size: 14px;
-    margin-right: 15px;
-    height: 30px;
-    align-items: center;
-    border: 0;
-    background-color:  #FFF2E5  ;
-}
-
-.taskRecomend i {
-    padding-right: 5px;
-}
-
 .task_title {
     margin-top: 1px;
-    font-weight: 500;
+    font-weight: 400;
     color: rgb(59, 59, 59);
-    font-size: 18px;
+    font-size: 19px;
     /* width: 80%; */
 }
 
-.taskLocation {
+.taskDescription {
     font-weight: 300;
     font-style: italic;
     color: black;
@@ -93,27 +48,37 @@
 .taskBody {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    flex-direction: row;
 }
 
 .taskItself {
-    width: 300px;
+    width: 320px;
+   
 }
 
 .costContainer {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .cost {
-    color: #992DF1;
-    font-size: 19px;
+    display: block;
+    color: rgb(175, 78, 255);
+    font-size: 21px;
     font-weight: bold;
-    margin-bottom: 20px;
-    text-align: right;
+    margin-bottom: 15px;
 }
 
-.data {
-    font-size: 14px;
-    color: rgb(128, 128, 128);
+.mapIcon {
+    padding-right: 25px;
+    font-size: 17px;
+}
+
+.mapIcon i {
+    padding-right: 6px;
+    color: rgb(175, 78, 255);
 }

@@ -7,13 +7,13 @@ import MapGetLocation from './mapContainer/MapGetLocation';
 
 const TaskPage = (props) => {
     return(
-        <div className={style.task_page}>
+        <div className={style.taskPage}>
+          <TaskContainer taskList={props.taskList} />
           <MapGetLocation 
              center={{lat: 18.5204, lng: 73.8567}}
-             height='92vh'
+             height='91vh'
              zoom={15}
              center={{lat: 15, lng: 45}} />
-          <TaskContainer taskList={props.taskList} />
         </div>
     )
 }
