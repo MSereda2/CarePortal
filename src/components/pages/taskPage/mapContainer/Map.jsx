@@ -1,28 +1,58 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React from 'react'
+import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
+import Autocomplete from 'react-google-autocomplete';
+import Geocode from "react-geocode";
 
-import { GoogleMap, withGoogleMap, withScriptjs, Marker } from "react-google-maps";
+class Map extends React.Component{
 
-import {getUserLocation} from '../../../../redux/taskPage/taskPage.actions'
+    constructor( props ){
+    super( props );
+    this.state = {
+        latitude: null,
+        longitude: null,
+        userAdress: null
+    }
+    this.getLocation = this.getLocation.bind(this);
+    this.getCoordinates = this.getCoordinates.bind(this)
+    }
 
-const MyMap = (props) => (
-    <GoogleMap
-        defaultZoom={10}
-        defaultCenter={{lat: 12, lng: 12}}>
-           <button onClick={props.getLocation}>click to get location</button>
-            <h1>{props.userLocation.latitude}</h1>
-            <h1>{props.userLocation.longitude}</h1>
-    </GoogleMap>
-)
+    map = () => (
+        <GoogleMap defaultZoom={10} defaultCenter={{lat: 12, lng: 13}}>
+          <button onClick={this.getLocation}>click</button> 
+          {console.log(this.latitude)}
+        </GoogleMap>)
 
-const WrapperMap = withScriptjs(withGoogleMap(MyMap));
+        getLocation() {
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(this.getCoordinates)
+            } else {
+                alert('woooo')
+            }
+        }
 
-let mapStateToProps = (state) => ({
-    userLocation: state.taskPage.map.userLocation,
-})
 
-let mapDispatchToProps = (dispatch) => ({
-    getLocation: () => dispatch(getUserLocation()),
-})
+        getCoordinates = (position) => {
+            this.setState({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+            })
+        }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WrapperMap) ;
+       
+   
+      
+    render() {
+        const WrappedMap = withScriptjs(withGoogleMap(this.map));
+
+        return(
+            <WrappedMap  
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `89vh` }} />}
+            mapElement={<div style={{ height: `100%` }} />}/>
+        )
+    }
+
+}
+
+export default Map;
