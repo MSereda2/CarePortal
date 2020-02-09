@@ -12,8 +12,8 @@ const TaskItem = (props) => {
             <div className={style.taskBody}>
                 <div className={style.taskItself}> 
                     <p className={style.task_title}>{props.title}</p>
-                    <span className={style.mapIcon}><i className="fa fa-map"></i>300м</span>
-                    <span className={style.mapIcon}><i className="fa fa-hourglass-start"></i>18: 09</span>
+                    <span className={style.mapIcon}><i className="fa fa-map"></i>{props.map}</span>
+                    <span className={style.mapIcon}><i className="fa fa-hourglass-start"></i>{props.timer}</span>
                 </div>
                 <div className={style.costContainer}>
                     <span className={style.cost}>{props.cost} &#8381;</span>

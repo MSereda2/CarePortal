@@ -2,6 +2,7 @@ import React from 'react';
 import PopUp from "reactjs-popup";
 import CreateTask from "./createTask/CreateTask";
 import style from "./popUp.module.css";
+import Button from '@material-ui/core/Button';
 
 const Popup = props => (
     <PopUp

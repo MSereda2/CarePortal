@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import style from "./content.module.css";
 import Autocomplete from 'react-google-autocomplete';
+import TextField from '@material-ui/core/TextField';
+
 
 // REDUX ACTIONS
 import {
@@ -36,13 +38,13 @@ const Content = props => {
           />
         </div>
         <div className={style.form__group} field>
-          <Autocomplete
-            className={style.input__field}
-            types={['(regions)']}
-            componentRestrictions={{country: "ru"}}
-            placeholder={'Поиск улицы'}
-            >
-          </ Autocomplete>
+            <Autocomplete
+              className={style.input__field}
+              types={['(regions)']}
+              componentRestrictions={{country: "ru"}}
+              placeholder={'Поиск улицы'}
+              >
+            </ Autocomplete>
         </div>
         <div className={style.form__group} field>
           <input

@@ -2,8 +2,7 @@
     grid-area: taskPage;
     display: grid;
     grid-template-areas: 'taskContainer map';
-    grid-template-columns: 1.1fr 2fr;
-    /* padding: 10px; */
+    grid-template-columns: 1.1fr 2fr;    /* padding: 10px; */
     /* border-right: 3px solid purple; */
     /* display: flex; */
 }

@@ -36,6 +36,8 @@ const TaskContainer = props => {
             img={task.img}
             userName={task.userName}
             description={task.description}
+            map={task.distance}
+            timer={task.timer}
             title={task.title}
             cost={task.cost}
             data={task.data}

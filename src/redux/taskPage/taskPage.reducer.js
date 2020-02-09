@@ -2,15 +2,16 @@ import TaskTypes from "./taskPage.types";
 
 const INITIAL_STATE = {
   // taskUserName: "Наруто узумаки",
-   taskContainer: {
+  taskContainer: {
     taskList: [
       {
         img: "https://sun1-22.userapi.com/xqewco6YwoG3uNTiAI9tux7_I1hfwdV3OEMHfg/0D7twNiDFVA.jpg",
         id: 1,
         title: "Как развить харизму.",
         description: "Подробней",
+        distance: "300м",
+        timer: '18:00',
         radius: '30м',
-        timer: '',
         cost: "500",
       },
       {
@@ -19,7 +20,8 @@ const INITIAL_STATE = {
         userName: "Тимур Саникидзе",
         title: "Как найти собаку.",
         description: "Подробней",
-        adress: '',
+        distance: "300м",
+        timer: '18:00',
         cost: "600",
         data: "25.01.2020",
       }
@@ -37,15 +39,32 @@ const INITIAL_STATE = {
       }
     ]
   },
+  map: {
+    mapPosition: {
+		  lat: null,
+		  lng: null
+    },
+    markerPosition: {
+		  lat: null,
+		  lng: null
+    },
+    userLocation: {
+      latitude: 2,
+      longitude: 2,
+      userAddress: null
+    }
+  },
   popUp: {
     inputFields: {
         task: "",
         description: "",
+        timer: "",
         adress: "",
         cost: ""
     },
     addTask: {
-      name: 'Create Task'
+      name: 'Create Task',
+      popUpOpen: true,
     },
     img: {
       img: '',
@@ -73,8 +92,21 @@ const taskReducer = (state = INITIAL_STATE, action) => {
     case TaskTypes.CHANGE_ADDRESS:
       inputFields.adress = action.text;
       return {...state}
-    case TaskTypes.cost = action.text:
+    case TaskTypes.CHANGE_COST:
       inputFields.cost = action.text;
+      return {...state}
+    case TaskTypes.GET_USER_LOCATION:
+
+        let getCoordinates = (position) => {
+          state.map.userLocation.latitude = position.coords.latitude;
+          state.map.userLocation.longitude = position.coords.longitude;
+          console.log(state.map.userLocation.latitude)
+        } 
+
+        if(navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(getCoordinates);
+        } else { alert('do')}
+
       return {...state}
   }
 

@@ -3,17 +3,17 @@ import {connect} from 'react-redux';
 import style from './taskPage.module.css';
 
 import TaskContainer from './taskContainer/TaskContainer.component';
-import MapGetLocation from './mapContainer/MapGetLocation';
+import WrapperMap from './mapContainer/Map';
 
 const TaskPage = (props) => {
     return(
         <div className={style.taskPage}>
           <TaskContainer taskList={props.taskList} />
-          <MapGetLocation 
-             center={{lat: 18.5204, lng: 73.8567}}
-             height='91vh'
-             zoom={15}
-             center={{lat: 15, lng: 45}} />
+          <WrapperMap
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `100%` }} />}
+            mapElement={<div style={{ height: `89vh` }} />}/>;
         </div>
     )
 }

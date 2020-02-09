@@ -12,3 +12,4 @@ export const changeAddress = text => ({
   text: text
 });
 export const changeCost = text => ({ type: TaskTypes.CHANGE_COST, text: text });
+export const getUserLocation = () => ({type: TaskTypes.GET_USER_LOCATION});
