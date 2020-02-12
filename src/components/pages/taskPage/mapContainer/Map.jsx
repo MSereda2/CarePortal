@@ -39,22 +39,21 @@ let Map = (props) => {
             lng: position.coords.longitude
     })}
 
-    let GoogleMap = () => ( <GoogleMap defaultZoom={10} defaultCenter={{lat: coordinates.lat, lng: coordinates.lng}}>
-        {userLocation()}
-
-        {props.taskOnMap.map(task => (  
-            <Marker key={task.id} position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} onClick={() => setTask(task)}/>
-        ))}
-
-        {selectedTask && (
-            <InfoWindow position={{lat: selectedTask.coordinates.lat, lng: selectedTask.coordinates.lng}}>
-                <div>{selectedTask.name}</div>
-            </InfoWindow>
-        )}
-    </GoogleMap>)
     
     return(
-       <GoogleMap></GoogleMap>
+        <GoogleMap defaultZoom={10} defaultCenter={{lat: coordinates.lat, lng: coordinates.lng}}>
+            {userLocation()}
+
+            {props.taskOnMap.map(task => (  
+                <Marker key={task.id} position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} onClick={() => setTask(task)}/>
+            ))}
+
+            {selectedTask && (
+                <InfoWindow position={{lat: selectedTask.coordinates.lat, lng: selectedTask.coordinates.lng}}>
+                    <div>{selectedTask.name}</div>
+                </InfoWindow>
+            )}
+        </GoogleMap>
     )
 }
 
