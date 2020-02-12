@@ -28,16 +28,70 @@ const INITIAL_STATE = {
     ],
     taskOnMap: [
       {
-        task: '',
-        cost: '',
-        popUp: {},
+        id: 1,
+        name:" Приготовить печенье",
         coordinates: {
-          lat: null,
-          lng: null,
+          lat: 45.039268,
+          lng: 38.987221,
         },
-        icon: ''
-      }
-    ]
+      },
+      {
+        id: 2,
+        name:"Найти жопу",
+        coordinates: {
+          lat: 45.039252,
+          lng: 38.977156,
+        },
+      },
+      {
+        id: 3,
+        name:"Выкопать кортошку",
+        coordinates: {
+          lat: 45.044589,
+          lng: 38.961031,
+        },
+      },
+      {
+        id: 4,
+        name:"найти ламу",
+        coordinates: {
+          lat: 45.039009,
+          lng: 38.961031,
+        },
+      },
+      {
+        id: 5,
+        name:"найти ламу",
+        coordinates: {
+          lat: 45.045316,
+          lng: 38.989507,
+        },
+      },
+      {
+        id: 6,
+        name:"найти ламу",
+        coordinates: {
+          lat: 45.006734,
+          lng: 39.028961,
+        },
+      },
+      {
+        id: 7,
+        name:"найти ламу",
+        coordinates: {
+          lat: 45.010618,
+          lng: 39.038911,
+        },
+      },
+      {
+        id: 8,
+        name:"найти ламу",
+        coordinates: {
+          lat: 45.005035,
+          lng: 39.033764,
+        },
+      },
+    ],
   },
   map: {
     mapPosition: {
@@ -49,8 +103,8 @@ const INITIAL_STATE = {
 		  lng: null
     },
     userLocation: {
-      latitude: 2,
-      longitude: 2,
+      latitude: 45.039268,
+      longitude: 38.987221,
       userAddress: null
     }
   },
