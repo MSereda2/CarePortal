@@ -13,8 +13,7 @@
 
 .task_item:hover {
     background-color: rgb(243, 242, 242);
-    border-left: 4px solid #992DF1;
-    border-right: 4px solid #992DF1;
+    border: 2px solid #992DF1;
 }
 
 .icon_task {
@@ -80,5 +79,5 @@
 
 .mapIcon i {
     padding-right: 6px;
-    color: rgb(175, 78, 255);
+    color: rgb(95, 40, 146);
 }
