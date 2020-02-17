@@ -13,13 +13,13 @@ import Grid from '@material-ui/core/Grid';
 const TaskPage = (props) => {
     return(
         <Grid container>
-          <Grid item xs={12} sm={3}>
+          {/* <Grid item xs={12} sm={3}>
               <SideBar />
-          </Grid>
+          </Grid> */}
           <Grid item xs={12} sm={4}>
             <TaskContainer taskList={props.taskList} />
           </Grid>
-          <Grid item xs={12} sm={5}>
+          <Grid item xs={12} sm={8}>
             <WrapperMap  />;
           </Grid>
         </Grid>

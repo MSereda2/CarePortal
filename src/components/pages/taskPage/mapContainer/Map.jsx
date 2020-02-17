@@ -5,30 +5,10 @@ import { ReactiveGoogleMap } from '@appbaseio/reactivemaps';
 
 let Map = () => (
   <ReactiveGoogleMap
-  dataField="location"
   componentId="maps"
   defaultZoom={10}
   defaultCenter={{ lat: 14.55436, lng: -85.76 }}
-  historicalData={true}
-  setMarkerCluster={true}
-  showMapStyles={true}
-  showSearchAsMove={true}
-  defaultMapStyle="Light Monochrome"
-  autoCenter={true}
-  size={100}
-  react={{
-    and: [
-      "currencyReactor",
-      "ratingsReactor",
-      "cuisineReactor",
-      "deliveringNowReactor",
-      "bookingReactor",
-      "deliveryReactor",
-      "tableBookinReactor",
-      "nameReactor",
-      "RangeSliderSensor"
-    ]
-  }}
+  defaultMapStyle="standard"
 />
 )
 
