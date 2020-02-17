@@ -7,7 +7,6 @@ import Map from '../mapContainer/Map';
 let mapStateToProps = (state) => ({
     userLocation: state.taskPage.map.userLocation,
     taskOnMap: state.taskPage.taskContainer.taskOnMap,
-    selectedTask: state.taskPage.taskContainer.selectedTask
 })
 
 let mapDispatchToProps = (dispatch) => ({

@@ -1,6 +1,7 @@
 .sidebar {
     grid-area: sidebar;
     border-right: 1px solid #ccc;
+    background-color: blueviolet;
 }
 
 .pageIcon_container {

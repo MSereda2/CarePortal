@@ -1,8 +1,8 @@
-.container {
+/* .container {
   display: grid;
   grid-template-areas: 'header header header'
                        'sidebar taskPage taskPage';
-  grid-template-columns: .15fr 1fr 2fr;
+  grid-template-columns: 1fr 1.5fr 2fr;
   grid-template-rows: 75px 1fr;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
@@ -10,7 +10,7 @@
   overflow-x: hidden;
   color: #303a52;
 }
-
+ */
 
 
 
