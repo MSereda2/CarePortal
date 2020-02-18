@@ -4,14 +4,22 @@ import { ReactiveGoogleMap } from '@appbaseio/reactivemaps';
 
 
 let Map = () => (
-  <ReactiveGoogleMap
-  componentId="maps"
-  defaultZoom={10}
-  defaultCenter={{ lat: 14.55436, lng: -85.76 }}
-  defaultMapStyle="standard"
-/>
-)
 
+<ReactiveGoogleMap
+	componentId="map"
+	dataField="location"
+	react={{
+		"and": "places"
+	}}
+	renderData={(result) => ({
+		label: result.mag
+	})}
+/>
+
+
+
+
+)
 export default Map;
 
 

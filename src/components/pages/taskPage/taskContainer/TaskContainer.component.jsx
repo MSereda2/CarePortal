@@ -3,16 +3,17 @@ import style from "./taskContainer.module.css";
 
 import TaskItem from "./taskItem/TaskItem.component";
 
-import { DataSearch, ReactiveList, ResultList } from '@appbaseio/reactivesearch';
+import { DataSearch, ReactiveList, ResultList, SingleList  } from '@appbaseio/reactivesearch';
 
 
 const TaskContainer = props => {
   return (
-    <div className={`${style.task_container}`}>
-      <div className={style.task_list}>
+    <div className={style.task_container}>
       
+      <div className={style.task_list}>
+     
       </div>
-    </div>
+      </div>
   );
 };
 

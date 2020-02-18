@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./App.css";
 
-import { ReactiveBase } from '@appbaseio/reactivesearch';
+import { ReactiveBase, SingleList } from '@appbaseio/reactivesearch';
 // COMPONENTS
 import Header from "./components/header/Header.component";
 import TaskPage from "./components/pages/taskPage/TaskPage";
@@ -12,11 +12,10 @@ function App(props) {
   return (
     <div className="container">
       <ReactiveBase
-          app="yelp-app"
-          credentials="hkXdk3vcA:a32683f3-c8ad-45db-8c86-2ac2c0f45e0c"
-          type="yelp-app"
+          app="earthquake"
+          credentials="dshr057Nz:e18bbbbe-5d55-4234-a17e-4d64fb2222c7"
           mapKey="AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY">
-            
+
         <Header headerState={props.header} />
         <TaskPage />
       </ReactiveBase>
