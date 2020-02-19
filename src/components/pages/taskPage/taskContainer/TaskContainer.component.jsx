@@ -3,7 +3,7 @@ import style from "./taskContainer.module.css";
 
 import TaskItem from "./taskItem/TaskItem.component";
 
-import { DataSearch, ReactiveList, ResultList, SingleList  } from '@appbaseio/reactivesearch';
+import { DataSearch, ReactiveList, ResultList,} from '@appbaseio/reactivesearch';
 
 
 const TaskContainer = props => {
@@ -11,7 +11,17 @@ const TaskContainer = props => {
     <div className={style.task_container}>
       
       <div className={style.task_list}>
-     
+        
+
+<DataSearch
+	title="Places"
+	componentId="places"
+	dataField="place.raw"
+	// size={50}
+	// showSearch={true}
+/>
+
+
       </div>
       </div>
   );

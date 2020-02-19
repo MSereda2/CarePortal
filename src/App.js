@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./App.css";
 
-import { ReactiveBase, SingleList } from '@appbaseio/reactivesearch';
+import { ReactiveBase } from '@appbaseio/reactivesearch';
 // COMPONENTS
 import Header from "./components/header/Header.component";
 import TaskPage from "./components/pages/taskPage/TaskPage";
@@ -14,7 +14,8 @@ function App(props) {
       <ReactiveBase
           app="earthquake"
           credentials="dshr057Nz:e18bbbbe-5d55-4234-a17e-4d64fb2222c7"
-          mapKey="AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY">
+          mapKey="AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY"
+          				type="places">
 
         <Header headerState={props.header} />
         <TaskPage />
