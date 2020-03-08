@@ -1,11 +1,31 @@
 import React, { Component } from "react";
-import "./App.css";
+import style from "./App.css";
+import Grid from '@material-ui/core/Grid';
+
+
+// Components
+import Nav from './components/Nav/Nav';
+import TaskContainer from './components/TaskContainer/TaskContainer';
+import MapContainer from './components/MapContainer/MapContainer';
 
 
 
 function App(props) {
+
   return (
-    <div>heloo</div>
+      <Grid container >
+        <Grid item xs={12}>
+          <Nav />
+        </Grid>
+        <Grid item xs={4}>
+          <TaskContainer />
+        </Grid>
+        <Grid item xs={8}>
+          <MapContainer />
+        </Grid>
+        
+      </Grid>
+    
   );
 }
 

@@ -1,0 +1,18 @@
+.taskFilter {
+    padding: 2.5rem 0;
+    background-color: #FAF4FF;
+    border-left: .5rem solid #6F4590;
+}
+
+.counter {
+    padding-left: 2rem;
+    font-weight: 400;
+    color: rgb(61, 60, 60);
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+}
+
+.counter span {
+    color: rgb(146, 17, 245);
+    font-style: italic;
+}
