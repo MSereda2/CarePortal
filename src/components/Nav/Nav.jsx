@@ -3,8 +3,7 @@ import style from './nav.module.css';
 import logo from '../../assets/logo.jpg';
 import profileImg from '../../assets/Profileimg.jpg';
 
-import Grid from '@material-ui/core/Grid';
-
+import CircleImg from '../common/circleImg/CircleImg';
 
 let Nav = () => {
 
@@ -28,9 +27,7 @@ let Nav = () => {
                             <a href="" className={style.nav__link}>Об компании</a>
                         </li>
                    </ul>
-                   <div className={style.profile}>
-                       <img src={profileImg} alt=""/>
-                   </div>
+                   <CircleImg img={profileImg} />
                </div>
     )
 }
