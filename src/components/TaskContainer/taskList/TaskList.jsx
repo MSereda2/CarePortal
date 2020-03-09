@@ -11,6 +11,7 @@ class TaskList extends React.Component {
         return(
            <div className={style.taskList}>
               <TaskItem />
+              
            </div>
         )
     }

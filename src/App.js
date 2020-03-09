@@ -13,19 +13,18 @@ import MapContainer from './components/MapContainer/MapContainer';
 function App(props) {
 
   return (
-      <Grid container >
-        <Grid item xs={12}>
-          <Nav />
-        </Grid>
-        <Grid item xs={4}>
-          <TaskContainer />
-        </Grid>
-        <Grid item xs={8}>
-          <MapContainer />
-        </Grid>
+          <Grid container>
+            <Grid item xs={12}>
+              <Nav />
+            </Grid>
+            <Grid item xs={4}>
+                <TaskContainer />
+            </Grid>
+            <Grid item xs={8}>
+                <MapContainer />
+            </Grid>
+          </Grid >
         
-      </Grid>
-    
   );
 }
 

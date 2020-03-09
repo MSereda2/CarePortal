@@ -31,3 +31,12 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40px auto;
+  grid-template-areas: 'nav nav'
+                       'task map';
+}

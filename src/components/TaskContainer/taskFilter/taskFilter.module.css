@@ -9,7 +9,7 @@
     font-weight: 400;
     color: rgb(61, 60, 60);
     font-size: 2.2rem;
-    line-height: 2.8rem;
+    /* line-height: 2.8rem; */
 }
 
 .counter span {

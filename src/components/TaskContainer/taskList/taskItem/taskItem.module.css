@@ -1,14 +1,21 @@
 .taskItem {
    display: flex;
-   padding: 2rem;
+   padding: 2.4rem;
    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.07);
    border-radius: 4px;
+   width: 100%;
+   backface-visibility: hidden;
+   transition: all .1s;
+}
+
+.taskItem:hover {
+    border: 1.5px solid #6F4590;
 }
 
 .taskInfo {
-    width: 36rem;
+    width: 38rem;
     line-height: 135%;
-    padding-left: 2.7rem;
+    padding-left: 2.6rem;
     color: #0D0A0B  ;
 }
 
@@ -41,6 +48,7 @@
     color: #0D0A0B;
     line-height: 135%;
     font-weight: bold;
+    padding-bottom: .4rem;
 }
 
 .taskTime {
@@ -49,10 +57,10 @@
     line-height: 135%;
 }
 
-.taskBtn {
-    display: block;
-    font-size: 1.9rem;
-    color: rgb(243, 35, 104);
-    line-height: 135%;
-    font-weight: bold;
+.btn {
+    font-size: 1.4rem;
+}
+
+.clock {
+    padding-left: .2rem;
 }

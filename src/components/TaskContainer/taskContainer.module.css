@@ -1,3 +1,4 @@
 .taskContainer {
-    height: 89vh;
+    /* height: 89vh; */
+    grid-area: task;
 }
