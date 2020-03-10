@@ -5,27 +5,21 @@ import profileImg from '../../assets/Profileimg.jpg';
 
 import CircleImg from '../common/circleImg/CircleImg';
 
-let Nav = () => {
+let Nav = (props) => {
 
     return (
        
                <div className={style.navbar}>
                    <div className={style.logo}>
-                      <img src={logo} alt=""/>
+                      <img src={props.nav.logoImg} alt=""/>
                    </div>
                    <ul className={style.nav}>
-                        <li className={style.nav__item}>
-                            <a href="" className={style.nav__link}>Главная</a>
-                        </li>
-                        <li className={style.nav__item}>
-                            <a href="" className={style.nav__link}>Продвинутый</a>
-                        </li>
-                        <li className={style.nav__item}>
-                            <a href="" className={style.nav__link}>Помощь</a>
-                        </li>
-                        <li className={style.nav__item}>
-                            <a href="" className={style.nav__link}>Об компании</a>
-                        </li>
+                       {props.nav.links.map(e => (
+                           <li className={style.nav__item}>
+                              <a href="" className={style.nav__link}>{e.name}</a>
+                           </li>
+                       ))}
+                        
                    </ul>
                    <CircleImg img={profileImg} />
                </div>
