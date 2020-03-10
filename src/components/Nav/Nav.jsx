@@ -21,7 +21,7 @@ let Nav = (props) => {
                        ))}
                         
                    </ul>
-                   <CircleImg img={profileImg} />
+                   <CircleImg img={props.profileImg} />
                </div>
     )
 }

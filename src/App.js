@@ -17,7 +17,7 @@ function App(props) {
   return (
           <Grid container>
             <Grid item xs={12}>
-              <Nav nav={props.nav} />
+              <Nav {...props} />
             </Grid>
             <Grid item xs={5}>
                 <TaskContainer />
@@ -31,7 +31,8 @@ function App(props) {
 }
 
 const mapStateToProps = (state) => ({
-  nav: state.nav
+  nav: state.nav,
+  profileImg: state.login.profileImg
 })
 
 export default connect(mapStateToProps, {})(App);
