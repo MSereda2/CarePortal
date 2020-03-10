@@ -17,10 +17,10 @@ function App(props) {
             <Grid item xs={12}>
               <Nav />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={5}>
                 <TaskContainer />
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={7}>
                 <MapContainer />
             </Grid>
           </Grid >

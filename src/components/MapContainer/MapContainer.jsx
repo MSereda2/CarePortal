@@ -11,13 +11,22 @@ class MapContainer extends React.Component {
             id="script-loader"
             googleMapsApiKey="AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY"
             >
-              <div className={style.map}>
+              
                 <GoogleMap
-                id='example-map'
+                  id='example-map'
+                  mapContainerStyle={{
+                    height: "89vh",
+                    width: "100%"
+                  }}
+                  zoom={7}
+                  center={{
+                    lat: -3.745,
+                    lng: -38.523
+                  }}
               >
                 
               </GoogleMap>
-              </div>
+              
            
           </LoadScript>
              

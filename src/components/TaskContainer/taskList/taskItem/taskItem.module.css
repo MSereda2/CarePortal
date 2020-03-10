@@ -6,6 +6,7 @@
    width: 100%;
    backface-visibility: hidden;
    transition: all .1s;
+   margin-bottom: 2rem;
 }
 
 .taskItem:hover {
@@ -16,6 +17,7 @@
     width: 38rem;
     line-height: 135%;
     padding-left: 2.6rem;
+    margin-right: 6.6rem;
     color: #0D0A0B  ;
 }
 
