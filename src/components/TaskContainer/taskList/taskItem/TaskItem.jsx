@@ -13,6 +13,8 @@ let TaskItem = (props) => (
              <div className={style.taskInfo}>
                  <h4 className={style.taskTitle}>{props.taskTitle}</h4>
                  <p className={style.taskDescription}>{props.taskDescription}</p>
+                 <p className={style.taskLocation}>Задание в 400м</p>
+
              </div>
              <div className={style.taskOrder}>
                  <div>
