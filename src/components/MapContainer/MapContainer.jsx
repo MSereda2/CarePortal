@@ -1,37 +1,38 @@
 import React from 'react';
-import style from './mapContainer.module.css';
+import Map from './Map/Map';
+import {connect} from 'react-redux';
 
-import { GoogleMap, LoadScript } from '@react-google-maps/api'
+// Actions
+import {getUser} from '../../redux/reducers/map/map_actions';
+
 
 class MapContainer extends React.Component {
 
+    getLocation = () => {
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.getCoordinates)
+        } else {
+            alert(`Geolocation isn't supported in your browser`)
+        }
+    }
+
+    getCoordinates = (position) => {
+        this.props.getUser(position.coords.latitude, position.coords.longitude)
+    }
+
+    componentDidMount = () => {
+        this.getLocation()
+    }
+
     render() {
         return (
-            <LoadScript
-            id="script-loader"
-            googleMapsApiKey="AIzaSyC-IiT7wOM_QB-4nOft1xvrtM6K39NLrWY"
-            >
-              
-                <GoogleMap
-                  id='example-map'
-                  mapContainerStyle={{
-                    height: "89vh",
-                    width: "100%"
-                  }}
-                  zoom={7}
-                  center={{
-                    lat: -3.745,
-                    lng: -38.523
-                  }}
-              >
-                
-              </GoogleMap>
-              
-           
-          </LoadScript>
-             
+            <Map userLocation={this.props.userLocation} />
         );
     }
 }
 
-export default MapContainer;
+const mapStateToProps = (state) => ({
+    userLocation: state.map.userLocation
+})
+
+export default connect(mapStateToProps, {getUser}) (MapContainer);
