@@ -11,23 +11,29 @@ import TaskContainer from './components/TaskContainer/TaskContainer';
 import MapContainer from './components/MapContainer/MapContainer';
 
 
+class App extends Component {
 
-function App(props) {
+  constructor(props) {
+    super(props);
+  
+  }
 
-  return (
-          <Grid container>
-            <Grid item xs={12}>
-              <Nav {...props} />
-            </Grid>
-            <Grid item xs={5}>
-                <TaskContainer />
-            </Grid>
-            <Grid item xs={7}>
-                <MapContainer />
-            </Grid>
-          </Grid >
-        
-  );
+  render() {
+    return (
+      <Grid container>
+        <Grid item xs={12}>
+          <Nav {...this.props} />
+        </Grid>
+        <Grid item xs={5}>
+            <TaskContainer />
+        </Grid>
+        <Grid item xs={7}>
+            <MapContainer />
+        </Grid>
+      </Grid >
+    )   
+  }
+  
 }
 
 const mapStateToProps = (state) => ({
