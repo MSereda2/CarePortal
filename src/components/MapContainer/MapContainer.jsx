@@ -26,13 +26,14 @@ class MapContainer extends React.Component {
 
     render() {
         return (
-            <Map userLocation={this.props.userLocation} />
+            <Map task={this.props.task} userLocation={this.props.userLocation} />
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    userLocation: state.map.userLocation
+    userLocation: state.map.userLocation,
+    task: state.task.task
 })
 
 export default connect(mapStateToProps, {getUser}) (MapContainer);

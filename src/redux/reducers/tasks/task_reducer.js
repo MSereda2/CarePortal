@@ -13,7 +13,7 @@ const initialState = {
             cost: 150,
             time: 4,
             btnStart: true,
-            coordinates: {lat: null, lng: null}
+            coordinates: {lat: 45.030268, lng: 38.980321}
         },
         {   
             img: user2,
@@ -22,7 +22,7 @@ const initialState = {
             cost: 450,
             time: 10,
             btnStart: true,
-            coordinates: {lat: null, lng: null}
+            coordinates: {lat: 45.032261, lng: 38.982119}
         },
         {   
             img: user3,
@@ -31,7 +31,7 @@ const initialState = {
             cost: 950,
             time: 20,
             btnStart: true,
-            coordinates: {lat: null, lng: null}
+            coordinates: {lat: 45.033259, lng: 38.983511}
         },
         {   
             img: user4,
@@ -40,9 +40,10 @@ const initialState = {
             cost: 1250,
             time: 1,
             btnStart: true,
-            coordinates: {lat: null, lng: null}
+            coordinates: {lat: 45.034249, lng: 38.985805}
         }
-    ]
+    ],
+    showModal: false
 }
 
 let task_reducer = (state = initialState, action) => {

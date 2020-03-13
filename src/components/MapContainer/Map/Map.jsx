@@ -8,6 +8,15 @@ import user_location from '../../../assets/user_location.png';
 
 
 let Map = (props) => {
+
+    let taskCoord = () => (
+        props.task.map(task => (
+            <Marker position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} />
+        ))
+    )
+
+    console.log(taskCoord())
+
     return(
         <LoadScript
         id="script-loader"
@@ -26,12 +35,9 @@ let Map = (props) => {
                 }}>
                     <Marker
                      icon={require('../../../assets/user_location.png')}
-                     position={{lat: props.userLocation.lat, lng: props.userLocation.lng}}
-                     onLoad={() => (
-                         <InfoWindow position={{lat: props.userLocation.lat, lng: props.userLocation.lng}}>
-                             <div style={{height: '100px', width: '100px'}}>your location</div>
-                         </InfoWindow>
-                     )}/>
+                     position={{lat: props.userLocation.lat, lng: props.userLocation.lng}}/>
+                     
+                    {taskCoord()}   
 
             </GoogleMap>
         </LoadScript>

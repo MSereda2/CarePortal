@@ -6,6 +6,8 @@ import clock from '../../../../assets/clock.png'
 
 // Components
 import CircleImg from '../../../common/circleImg/CircleImg';
+import Modal from '../../../common/modal/Modal';;
+
 
 let TaskItem = (props) => (
     <div className={style.taskItem}>
@@ -23,6 +25,7 @@ let TaskItem = (props) => (
                  </div>
                  <a className={style.btn}>Начать</a>
              </div>
+             {props.showModal ? <Modal /> : null}
      </div>
 )
 
