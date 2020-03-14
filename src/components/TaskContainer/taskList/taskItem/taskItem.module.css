@@ -11,6 +11,7 @@
 
 .taskItem:hover {
     border: 1.5px solid #6F4590;
+    cursor: pointer;
 }
 
 .taskInfo {
@@ -65,4 +66,9 @@
 
 .clock {
     padding-left: .2rem;
+}
+
+.overlay {
+    height: 300px;
+    width: 300px !important;
 }
