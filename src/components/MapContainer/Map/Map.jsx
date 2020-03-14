@@ -10,7 +10,7 @@ let Map = (props) => {
 
     let taskCoord = () => (
         props.task.map(task => (
-            <Marker onClick={() => {props.showModal(task.id)}} position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} />
+            <Marker key={task.id} onClick={() => {props.showModal(task.id)}} position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} />
         ))
     )
 

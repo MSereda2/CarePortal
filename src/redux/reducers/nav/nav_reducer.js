@@ -1,19 +1,24 @@
 const initialState = {
     logoImg: require('../../../assets/logo.jpg'),
     links: [
-        {
+        {   
+            to: '/main',
             name: 'Главная',
             id: 1,
         },
-        {
+        {   
+
+            to: '/advanced',
             name: 'Продвинутый',
             id: 2,
         }, 
-        {
+        {   
+            to: '/help',
             name: 'Помощь',
             id: 3,
         }, 
-        {
+        {   
+            to: '/aboutus',
             name: 'Об компании',
             id: 4,
         }

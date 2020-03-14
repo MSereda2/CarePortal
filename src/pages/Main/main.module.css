@@ -1,0 +1,6 @@
+.main {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'task map';
+}

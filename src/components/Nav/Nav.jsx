@@ -5,6 +5,9 @@ import profileImg from '../../assets/Profileimg.jpg';
 
 import CircleImg from '../common/circleImg/CircleImg';
 
+import {NavLink} from 'react-router-dom';
+
+
 let Nav = (props) => {
 
     return (
@@ -15,8 +18,8 @@ let Nav = (props) => {
                    </div>
                    <ul className={style.nav}>
                        {props.nav.links.map(e => (
-                           <li className={style.nav__item}>
-                              <a href="" className={style.nav__link}>{e.name}</a>
+                           <li key={e.id} className={style.nav__item}>
+                              <NavLink  to={e.to} className={style.nav__link}>{e.name}</NavLink>
                            </li>
                        ))}
                         

@@ -1,15 +1,16 @@
 // Packgages
 import React, { Component } from "react";
 import style from "./App.css";
-import Grid from '@material-ui/core/Grid';
 import {connect} from 'react-redux';
+import { Route, BrowserRouter } from "react-router-dom";
 
 
 // Components
 import Nav from './components/Nav/Nav';
-import TaskContainer from './components/TaskContainer/TaskContainer';
-import MapContainer from './components/MapContainer/MapContainer';
-
+import Main from './pages/Main/Main';
+import Advanced from './pages/Advanced/Advanced';
+import SignUp from './components/SignUp/SignUp';
+import { auth } from './firebase/firebase.utils'
 
 class App extends Component {
 
@@ -20,17 +21,17 @@ class App extends Component {
 
   render() {
     return (
-      <Grid container>
-        <Grid item xs={12}>
+      <BrowserRouter>
+        <div className={style.container}>
           <Nav {...this.props} />
-        </Grid>
-        <Grid item xs={5}>
-            <TaskContainer />
-        </Grid>
-        <Grid item xs={7}>
-            <MapContainer />
-        </Grid>
-      </Grid >
+          <div className={style.mainWindow}>
+              <Route path="/main" render={() => <Main />} />
+              <Route path="/advanced" render={() => <Advanced />} />
+              <Route path="/signup" render={() => <SignUp />} />
+          </div>
+        </div >
+      </BrowserRouter>
+      
     )   
   }
   

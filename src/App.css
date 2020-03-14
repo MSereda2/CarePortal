@@ -34,10 +34,17 @@ body {
 }
 
 
-/* .container {
+.container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 40px auto;
   grid-template-areas: 'nav nav'
-                       'task map';
-} */
+                       'main main';
+  min-height: 80vh;
+}
+
+.mainWindow {
+  color: red;
+  grid-area: main;
+  background-color: rgb(131, 105, 158);
+}

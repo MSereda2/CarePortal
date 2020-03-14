@@ -1,6 +1,7 @@
 import React from 'react';
 import Map from './Map/Map';
 import {connect} from 'react-redux';
+import style from './mapContainer.module.css';
 
 // Actions
 import {getUser} from '../../redux/reducers/map/map_actions';
@@ -27,7 +28,10 @@ class MapContainer extends React.Component {
 
     render() {
         return (
-            <Map showModal={this.props.showModal} task={this.props.task} userLocation={this.props.userLocation} />
+            <div className={style.map}>
+                  <Map showModal={this.props.showModal} task={this.props.task} userLocation={this.props.userLocation} />
+            </div>
+          
         );
     }
 }
