@@ -4,6 +4,9 @@ import CircleImg from '../circleImg/CircleImg';
 
 import ReactModal from 'react-modal';
 
+import clock from '../../../assets/clock.png';
+
+
 
 let Modal = (props) => (
     <ReactModal
@@ -22,7 +25,7 @@ let Modal = (props) => (
                     </div>
                 </div>
                 <div className={style.profile_close}>
-                    <p className={style.close_modal}>x</p>
+                    <p onClick={() => {props.closeModal(props.id)}} className={style.close_modal}>×</p>
                     <p className={style.showInformation}>Покозать информацию</p>
                 </div>
             </div>
@@ -32,8 +35,8 @@ let Modal = (props) => (
                     <p className={style.task_description}>{props.taskDescription}</p>
                 </div>
                 <div>
-                    <p className={style.task_cost}>150р</p>
-                    <p className={style.task_time}>3ч.</p>
+                    <p className={style.task_cost}>{props.taskCost}₽</p>
+                    <p className={style.task_time}>{props.taskTime}.ч<img src={clock} /></p>
                 </div>
                 <a className={style.task_start} href="">Начать</a>
             </div>

@@ -22,20 +22,13 @@ let TaskItem = (props) => (
                 </div>
                 <div className={style.taskOrder}>
                     <div>
-                        <p className={style.taskCost}>{props.taskCost}</p>
-                        <p className={style.taskTime}>{props.taskTime}<img src={clock} className={style.clock} /> </p>
+                        <p className={style.taskCost}>{props.taskCost}<span>₽</span></p>
+                        <p className={style.taskTime}>{props.taskTime}ч. <img src={clock} className={style.clock} /> </p>
                     </div>
                     <a className={style.btn}>Начать</a>
                 </div>
         </div>
-        <Modal 
-          taskDescription={props.taskDescription}
-          id={props.id}
-          closeModal={props.closeModal}
-          isShowModal={props.isShowModal}
-          taskTitle={props.taskTitle} 
-          img={props.img}
-          />
+        <Modal {...props}/>
    </>
 )
 

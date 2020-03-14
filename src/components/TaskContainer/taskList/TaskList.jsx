@@ -23,8 +23,8 @@ class TaskList extends React.Component {
                     id={task.id}
                     taskTitle={task.title}
                     taskDescription={task.description}
-                    taskCost={task.cost + 'р'}
-                    taskTime={task.time + 'ч'}
+                    taskCost={task.cost}
+                    taskTime={task.time}
                     img={task.img}
                     isShowModal={task.isShowModal}
                     closeModal={this.props.closeModal}

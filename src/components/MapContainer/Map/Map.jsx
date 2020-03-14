@@ -2,7 +2,6 @@ import React from 'react';
 import { GoogleMap, LoadScript} from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
 import { InfoWindow } from '@react-google-maps/api';
-import user_location from '../../../assets/user_location.png';
 
 
 
@@ -11,7 +10,7 @@ let Map = (props) => {
 
     let taskCoord = () => (
         props.task.map(task => (
-            <Marker position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} />
+            <Marker onClick={() => {props.showModal(task.id)}} position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} />
         ))
     )
 

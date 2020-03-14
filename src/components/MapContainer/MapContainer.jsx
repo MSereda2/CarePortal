@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 // Actions
 import {getUser} from '../../redux/reducers/map/map_actions';
+import {showModal, closeModal} from '../../redux/reducers/tasks/task_actions';
 
 
 class MapContainer extends React.Component {
@@ -26,7 +27,7 @@ class MapContainer extends React.Component {
 
     render() {
         return (
-            <Map task={this.props.task} userLocation={this.props.userLocation} />
+            <Map showModal={this.props.showModal} task={this.props.task} userLocation={this.props.userLocation} />
         );
     }
 }
@@ -36,4 +37,4 @@ const mapStateToProps = (state) => ({
     task: state.task.task
 })
 
-export default connect(mapStateToProps, {getUser}) (MapContainer);
+export default connect(mapStateToProps, {getUser,showModal}) (MapContainer);

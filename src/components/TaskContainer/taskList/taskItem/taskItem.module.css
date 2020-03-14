@@ -54,6 +54,10 @@
     padding-bottom: .4rem;
 }
 
+.taskCost span {
+padding-left: .1rem;
+}
+
 .taskTime {
     font-size: 1.4rem;
     color: #0D0A0B;
