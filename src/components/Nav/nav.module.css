@@ -1,13 +1,7 @@
-/* .nav {
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-} */
+
 .navbar {
-    grid-area: nav;
     padding: 0 3rem;
     margin: 0 auto;
-    /* width: 90%; */
     display: flex;
     justify-content: space-between;
     align-items: center;
