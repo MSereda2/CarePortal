@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './signIn.module.css';
+import {NavLink} from 'react-router-dom';
 
 
 import {signInWithGoogle} from '../../firebase/firebase.utils.js';
@@ -10,7 +11,7 @@ const SingIn = (props) => (
     <div className={style.singIn}>
         <div className={style.left_column}>
             <img src={props.formImg} alt=""/>
-            <p>{props.textForm}</p>
+            <NavLink className={style.nav_link} to={`${props.signUp ? '/signin' : '/signup'}`}>{props.textForm}</NavLink>
         </div>
         <div className={style.right_column}>
             <form action="">

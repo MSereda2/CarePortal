@@ -50,13 +50,15 @@ class App extends Component {
                                                      textAuth={'Войти'}
                                                      textForm={'Создать акаунт'}
                                                      formImg={singIn}
-                                                     showSocial={true} />} />
+                                                     showSocial={true} />}
+                                                      />
               <Route path="/signup" render={() => <SignIn
                                                      signUp={true}
                                                      textAuth={'Создать акаунт'}
                                                      textForm={'Уже есть акаунт?'}
                                                      formImg={signup}
-                                                     showSocial={false} />} />
+                                                     showSocial={false}
+                                                     />} />
           </div>
         </div >
       </BrowserRouter>
