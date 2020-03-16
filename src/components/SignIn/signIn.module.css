@@ -1,0 +1,29 @@
+.singIn {
+    display: flex;
+    background-color: #ccc;
+    height: 44.6rem;
+    width: 90rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 6.7rem;
+    padding-bottom: 8.7rem;
+}
+
+.left_column {
+    background-image: url('../../assets/user2.jpg');
+    background-size: cover;
+    width: 50%;
+}
+
+.right_column {
+    margin: 0 8rem;
+    width: 50%;
+}
+
+.singup_heading {
+    margin-bottom: 3.3rem;
+    color: #222;
+    font-size: 3.6rem;
+}

@@ -9,14 +9,29 @@ import { Route, BrowserRouter } from "react-router-dom";
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import Advanced from './pages/Advanced/Advanced';
-import SignUp from './components/SignUp/SignUp';
-import { auth } from './firebase/firebase.utils'
+import SignIn from './components/SignIn/SignIn';
+import { auth } from './firebase/firebase.utils';
+
+// Actions
+import {setUserAC} from './redux/reducers/login/login_actions';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
   
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount = () => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.props.setUserAC(user)
+    })
+  }
+
+  componentWillUnmount = () => {
+    this.unsubscribeFromAuth()
   }
 
   render() {
@@ -27,7 +42,7 @@ class App extends Component {
           <div className={style.mainWindow}>
               <Route path="/main" render={() => <Main />} />
               <Route path="/advanced" render={() => <Advanced />} />
-              <Route path="/signup" render={() => <SignUp />} />
+              <Route path="/signin" render={() => <SignIn />} />
           </div>
         </div >
       </BrowserRouter>
@@ -42,4 +57,4 @@ const mapStateToProps = (state) => ({
   profileImg: state.login.profileImg
 })
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps, {setUserAC})(App);
