@@ -3,8 +3,8 @@ import './formInput.modal.css';
 
 const FormInput = (props) => (
     <div class="form-group">
-        <label for="name"><i class="fa fa-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Your Name"/>
+        <label for="name"><i class={props.icon}></i></label>
+        <input type="text"  placeholder={props.placeholder}/>
     </div>
 )
 

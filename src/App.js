@@ -15,6 +15,10 @@ import { auth } from './firebase/firebase.utils';
 // Actions
 import {setUserAC} from './redux/reducers/login/login_actions';
 
+import singIn from './assets/signin-image.jpg';
+import signup from './assets/signup-image.jpg';
+
+
 class App extends Component {
 
   constructor(props) {
@@ -42,7 +46,17 @@ class App extends Component {
           <div className={style.mainWindow}>
               <Route path="/main" render={() => <Main />} />
               <Route path="/advanced" render={() => <Advanced />} />
-              <Route path="/signin" render={() => <SignIn />} />
+              <Route path="/signin" render={() => <SignIn
+                                                     textAuth={'Войти'}
+                                                     textForm={'Создать акаунт'}
+                                                     formImg={singIn}
+                                                     showSocial={true} />} />
+              <Route path="/signup" render={() => <SignIn
+                                                     signUp={true}
+                                                     textAuth={'Создать акаунт'}
+                                                     textForm={'Уже есть акаунт?'}
+                                                     formImg={signup}
+                                                     showSocial={false} />} />
           </div>
         </div >
       </BrowserRouter>
