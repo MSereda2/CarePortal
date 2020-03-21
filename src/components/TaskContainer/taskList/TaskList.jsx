@@ -8,8 +8,6 @@ import {connect} from 'react-redux';
 import TaskItem from './taskItem/TaskItem';
 
 
-
-
 class TaskList extends React.Component {
 
     render() {

@@ -1,11 +1,15 @@
+// Packages
 import React from 'react';
 import style from './nav.module.css';
-import logo from '../../assets/logo.jpg';
-import profileImg from '../../assets/Profileimg.jpg';
+import {NavLink} from 'react-router-dom';
+
+
+// Firebase
+import { auth } from '../../firebase/firebase.utils';
+
 
 import CircleImg from '../common/circleImg/CircleImg';
 
-import {NavLink} from 'react-router-dom';
 
 
 let Nav = (props) => {
@@ -22,7 +26,8 @@ let Nav = (props) => {
                               <NavLink  to={e.to} className={style.nav__link}>{e.name}</NavLink>
                            </li>
                        ))}
-                        <button>cancel</button>
+                       {props.isAuth ? <button onClick={() => auth.signOut()}>signOut</button> : <NavLink to='/signin'>signIn</NavLink>}
+                        
                    </ul>
                    <CircleImg img={props.profileImg} />
                </div>

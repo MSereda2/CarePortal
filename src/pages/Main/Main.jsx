@@ -20,7 +20,7 @@ class Main extends React.Component {
     render() {
         return(
             <div className={style.main}>
-                <TaskContainer task={this.props.task} />
+                <TaskContainer {...this.props} />
                 <MapContainer />
             </div>
         )
@@ -34,5 +34,5 @@ const mapStatetoProps = (state) => ({
 })
 
 export default compose(
-    withAuthRedirect,
-    connect(mapStatetoProps, {showModal, closeModal}))(Main) ;
+    connect(mapStatetoProps, {showModal, closeModal}),
+    )(Main) ;
