@@ -12,8 +12,14 @@ import {signInWithGoogle} from '../../firebase/firebase.utils.js';
 import FormInput from '../common/formInput/FormInput';
 import BtnForm from '../common/btnForm/btnForm';
 
-const AuthForm = (props) => (
-    <div className={style.authContainer}>
+const AuthForm = (props) => {
+
+    let handleSubmit = (event) => {
+        event.preventDefault()
+    }
+
+    return(
+        <div className={style.authContainer}>
         <div className={style.left_column}>
             <img src={props.formImg} alt=""/>
             <NavLink className={style.nav_link} to={`${props.signUp ? '/signin' : '/signup'}`}>{props.textForm}</NavLink>
@@ -26,6 +32,7 @@ const AuthForm = (props) => (
                     <>
                         <FormInput icon={'fa fa-user'} placeholder='Твой имя' />
                         <FormInput icon={'fa fa-envelope'} placeholder='Твой почта' />
+                        <FormInput icon={'fa fa-phone'} placeholder='Номер телефона' />
                         <FormInput icon={'fa fa-key'} placeholder='Пароль'/>
                         <FormInput icon={'fa fa-key'} placeholder='Потверждения пароля'/>
                         <BtnForm btnText='Зарегистривоться' />
@@ -47,6 +54,8 @@ const AuthForm = (props) => (
         </div>
 
     </div>
-)
+    )
+    
+}
 
 export default AuthForm;

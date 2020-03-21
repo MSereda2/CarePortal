@@ -60,19 +60,21 @@ class App extends Component {
           <div className={style.mainWindow}>
               <Route path="/main" render={() => <Main />} />
               <Route path="/advanced" render={() => <Advanced />} />
-              <Route path="/signin" render={() => <AuthForm
-                                                     textAuth={'Войти'}
-                                                     textForm={'Создать акаунт'}
-                                                     formImg={singIn}
-                                                     showSocial={true} />}
-                                                      />
-              <Route path="/signup" render={() => <AuthForm
+              <Route path="/signin" render={() => { return !this.props.isAuth ? <AuthForm
+                                                   textAuth={'Войти'}
+                                                   textForm={'Создать акаунт'}
+                                                   formImg={singIn}
+                                                   showSocial={true}
+                                                   />
+                                                      : <Redirect to='/main' />}} />
+              <Route path="/signup" render={() => { return !this.props.isAuth ? <AuthForm
                                                      signUp={true}
                                                      textAuth={'Создать акаунт'}
                                                      textForm={'Уже есть акаунт?'}
                                                      formImg={signup}
                                                      showSocial={false}
-                                                     />} />
+                                                     signUpD={this.props.signUp}
+                                                     /> : <Redirect to='/main' />}} />
           </div>
         </div >      
     )   
@@ -83,7 +85,13 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   nav: state.nav,
   profileImg: state.login.profileImg,
-  isAuth: state.login.userId
+  isAuth: state.login.userId,
+  signUp: state.signUp
 })
 
 export default connect(mapStateToProps, {setUserAC})(App);
+
+// textAuth={'Войти'}
+// textForm={'Создать акаунт'}
+// formImg={singIn}
+// showSocial={true} />
