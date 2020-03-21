@@ -8,17 +8,7 @@
     border-bottom: 1px solid black;
 }
 
-.logo {
-    width: 8rem;
-}
 
-.logo img {
-    width: 100%;
-}
-
-.nav {
-    display: flex;
-}
 
 .nav__item:not(:last-child) {
     padding-right: 6rem;
@@ -36,4 +26,30 @@
 
 .nav__link:hover {
     color: black;
+}
+
+.logo {
+    width: 8rem;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+}
+
+.signText {
+    display: flex;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.signText img {
+    padding-right: 1rem;
+}
+
+.signText:hover {
+    color: rgb(49, 48, 48);
 }

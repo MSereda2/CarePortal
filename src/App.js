@@ -13,7 +13,7 @@ import Advanced from './pages/Advanced/Advanced';
 import AuthForm from './components/AuthForm/AuthForm';
 
 // Firebase
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 // Actions
 import {setUserAC} from './redux/reducers/login/login_actions';
@@ -33,9 +33,17 @@ class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount = () => {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      if(user) { this.props.setUserAC(user)}
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
      
+      if(userAuth) {
+         const userRef = await createUserProfileDocument(userAuth);
+         userRef.onSnapshot(snapShot => {
+              this.props.setUserAC({id:snapShot.id, ...snapShot.data()})
+         })
+      } else {
+        this.props.setUserAC({userAuth})
+      }
+        
     })
   }
 
@@ -75,7 +83,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   nav: state.nav,
   profileImg: state.login.profileImg,
-  isAuth: state.login.isAuth
+  isAuth: state.login.currentUser
 })
 
 export default connect(mapStateToProps, {setUserAC})(App);

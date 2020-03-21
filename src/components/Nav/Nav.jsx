@@ -2,13 +2,14 @@
 import React from 'react';
 import style from './nav.module.css';
 import {NavLink} from 'react-router-dom';
+import UserIcon from '../../assets/Vector.png';
 
 
-// Firebase
-import { auth } from '../../firebase/firebase.utils';
 
 
-import CircleImg from '../common/circleImg/CircleImg';
+import ProfileBlock from './ProfileBlock/ProfileBlock';
+
+
 
 
 
@@ -26,12 +27,12 @@ let Nav = (props) => {
                               <NavLink  to={e.to} className={style.nav__link}>{e.name}</NavLink>
                            </li>
                        ))}
-                       {props.isAuth ? <button onClick={() => auth.signOut()}>signOut</button> : <NavLink to='/signin'>signIn</NavLink>}
-                        
                    </ul>
-                   <CircleImg img={props.profileImg} />
+                   {props.isAuth ? <ProfileBlock profileImg={props.profileImg} /> : <p className={style.signText}><img src={UserIcon}></img>Войти / Регестрация</p>}
+
                </div>
     )
 }
 
 export default Nav;
+
