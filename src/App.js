@@ -38,10 +38,10 @@ class App extends Component {
       if(userAuth) {
          const userRef = await createUserProfileDocument(userAuth);
          userRef.onSnapshot(snapShot => {
-              this.props.setUserAC({id:snapShot.id, ...snapShot.data()})
+              this.props.setUserAC(snapShot.id, snapShot.data())
          })
       } else {
-        this.props.setUserAC({userAuth})
+        this.props.setUserAC(userAuth)
       }
         
     })
@@ -83,7 +83,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   nav: state.nav,
   profileImg: state.login.profileImg,
-  isAuth: state.login.currentUser
+  isAuth: state.login.userId
 })
 
 export default connect(mapStateToProps, {setUserAC})(App);

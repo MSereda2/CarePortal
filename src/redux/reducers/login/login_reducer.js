@@ -3,6 +3,7 @@ import {login_types} from './login_types';
 const initialState = {
     profileImg: require('../../../assets/Profileimg.jpg'),
     currentUser: {},
+    userId: null,
 }
 
 let login_reducer = (state = initialState, action) => {
@@ -10,7 +11,8 @@ let login_reducer = (state = initialState, action) => {
         case login_types.SET_USER:
             return {
                 ...state,
-                currentUser: {...action.data},
+                currentUser: {...action.otherData},
+                userId: action.id
             }
 
         default: return state;

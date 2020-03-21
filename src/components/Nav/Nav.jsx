@@ -28,7 +28,7 @@ let Nav = (props) => {
                            </li>
                        ))}
                    </ul>
-                   {props.isAuth ? <ProfileBlock profileImg={props.profileImg} /> : <p className={style.signText}><img src={UserIcon}></img>Войти / Регестрация</p>}
+                   {props.isAuth ? <ProfileBlock profileImg={props.profileImg} /> : <NavLink className={style.signText} to="/signin"><img src={UserIcon}></img>Войти / Регестрация</NavLink>}
 
                </div>
     )

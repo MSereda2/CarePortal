@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import CircleImg from '../../common/circleImg/CircleImg';
 
 // Firebase
-import { auth } from '../../firebase/firebase.utils';
+import { auth } from '../../../firebase/firebase.utils';
 
 export default function SimpleMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -33,7 +33,7 @@ export default function SimpleMenu(props) {
       >
         <MenuItem onClick={handleClose}>Профиль</MenuItem>
         <MenuItem onClick={handleClose}>Мои сообщения</MenuItem>
-        <MenuItem onClick={handleClose}>Выйти</MenuItem>
+        <MenuItem onClick={() => auth.signOut()}>Выйти</MenuItem>
       </Menu>
     </div>
   );
