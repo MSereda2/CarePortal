@@ -11,7 +11,7 @@ class TaskContainer extends React.Component {
         return(
            <div className={style.taskContainer}>
               <TaskFilter />
-              <TaskList />
+              <TaskList {...this.props} />
             </div>
         )
     }

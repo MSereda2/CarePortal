@@ -5,13 +5,19 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
+import { BrowserRouter } from "react-router-dom";
+
 
 import store from "./redux/reduxStore";
 
   ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
+       <Provider store={store}>
+      <BrowserRouter >
+        <App />
+      </BrowserRouter>
+    </Provider>
+    ,
+   
     document.getElementById("root")
   );
 

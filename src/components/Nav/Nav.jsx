@@ -22,7 +22,7 @@ let Nav = (props) => {
                               <NavLink  to={e.to} className={style.nav__link}>{e.name}</NavLink>
                            </li>
                        ))}
-                        
+                        <button>cancel</button>
                    </ul>
                    <CircleImg img={props.profileImg} />
                </div>

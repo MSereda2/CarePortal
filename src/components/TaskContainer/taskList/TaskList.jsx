@@ -7,8 +7,7 @@ import {connect} from 'react-redux';
 // Components
 import TaskItem from './taskItem/TaskItem';
 
-// Actions
-import {showModal, closeModal} from '../../../redux/reducers/tasks/task_actions';
+
 
 
 class TaskList extends React.Component {
@@ -17,7 +16,7 @@ class TaskList extends React.Component {
 
         return(
            <div className={style.taskList}>
-              {this.props.tasks.map(task => (
+              {this.props.task.map(task => (
                   <TaskItem
                     key={task.id}
                     id={task.id}
@@ -37,8 +36,6 @@ class TaskList extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => ({
-    tasks: state.task.task,
-})
 
-export default connect(mapStateToProps, {showModal, closeModal})(TaskList);
+
+export default TaskList;

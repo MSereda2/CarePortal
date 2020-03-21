@@ -1,20 +1,24 @@
 // Packgages
 import React, { Component } from "react";
-import style from "./App.css";
 import {connect} from 'react-redux';
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Redirect } from "react-router-dom";
 
+// Style
+import style from "./App.css";
 
 // Components
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import Advanced from './pages/Advanced/Advanced';
-import SignIn from './components/SignIn/SignIn';
+import AuthForm from './components/AuthForm/AuthForm';
+
+// Firebase
 import { auth } from './firebase/firebase.utils';
 
 // Actions
 import {setUserAC} from './redux/reducers/login/login_actions';
 
+// Assets
 import singIn from './assets/signin-image.jpg';
 import signup from './assets/signup-image.jpg';
 
@@ -30,7 +34,8 @@ class App extends Component {
 
   componentDidMount = () => {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.props.setUserAC(user)
+      if(user) { this.props.setUserAC(user)}
+     
     })
   }
 
@@ -39,20 +44,21 @@ class App extends Component {
   }
 
   render() {
+   
+
     return (
-      <BrowserRouter>
         <div className={style.container}>
           <Nav {...this.props} />
           <div className={style.mainWindow}>
               <Route path="/main" render={() => <Main />} />
               <Route path="/advanced" render={() => <Advanced />} />
-              <Route path="/signin" render={() => <SignIn
+              <Route path="/signin" render={() => <AuthForm
                                                      textAuth={'Войти'}
                                                      textForm={'Создать акаунт'}
                                                      formImg={singIn}
                                                      showSocial={true} />}
                                                       />
-              <Route path="/signup" render={() => <SignIn
+              <Route path="/signup" render={() => <AuthForm
                                                      signUp={true}
                                                      textAuth={'Создать акаунт'}
                                                      textForm={'Уже есть акаунт?'}
@@ -60,9 +66,7 @@ class App extends Component {
                                                      showSocial={false}
                                                      />} />
           </div>
-        </div >
-      </BrowserRouter>
-      
+        </div >      
     )   
   }
   
@@ -70,7 +74,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   nav: state.nav,
-  profileImg: state.login.profileImg
+  profileImg: state.login.profileImg,
+  isAuth: state.login.isAuth
 })
 
 export default connect(mapStateToProps, {setUserAC})(App);
