@@ -43,12 +43,6 @@
     margin: 0 8rem;
 }
 
-.auth_heading {
-    margin-bottom: 3.3rem;
-    color: #222;
-    font-size: 3.6rem;
-}
-
 .socialLogin {
     display: flex;
     align-items: center;

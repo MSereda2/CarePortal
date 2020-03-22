@@ -6,6 +6,7 @@ import login_reducer from './reducers/login/login_reducer';
 import task_reducer from './reducers/tasks/task_reducer';
 import map_reducer from './reducers/map/map_reducer';
 import signUp_reducer from './reducers/signUp/signUp_reducer';
+import {reducer as formReducer} from 'redux-form';
 
 
 const rootReducer = combineReducers({
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   login: login_reducer,
   signUp: signUp_reducer,
   task: task_reducer,
-  map: map_reducer
+  map: map_reducer,
+  form: formReducer,
 });
 
 export default rootReducer;

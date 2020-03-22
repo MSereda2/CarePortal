@@ -1,3 +1,3 @@
 export const signUp_types = {
-    SET_USER: 'SET_USER'
+    SET_SIGNUPUSER: 'SET_SIGNUPUSER'
 }

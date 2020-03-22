@@ -37,7 +37,10 @@ class App extends Component {
      
       if(userAuth) {
          const userRef = await createUserProfileDocument(userAuth);
+        
+
          userRef.onSnapshot(snapShot => {
+          console.log(snapShot)
               this.props.setUserAC(snapShot.id, snapShot.data())
          })
       } else {
@@ -58,7 +61,7 @@ class App extends Component {
         <div className={style.container}>
           <Nav {...this.props} />
           <div className={style.mainWindow}>
-              <Route path="/main" render={() => <Main />} />
+              <Route exact path="/" render={() => <Main />} />
               <Route path="/advanced" render={() => <Advanced />} />
               <Route path="/signin" render={() => { return !this.props.isAuth ? <AuthForm
                                                    textAuth={'Войти'}
@@ -66,7 +69,7 @@ class App extends Component {
                                                    formImg={singIn}
                                                    showSocial={true}
                                                    />
-                                                      : <Redirect to='/main' />}} />
+                                                      : <Redirect to='/' />}} />
               <Route path="/signup" render={() => { return !this.props.isAuth ? <AuthForm
                                                      signUp={true}
                                                      textAuth={'Создать акаунт'}
@@ -74,7 +77,7 @@ class App extends Component {
                                                      formImg={signup}
                                                      showSocial={false}
                                                      signUpD={this.props.signUp}
-                                                     /> : <Redirect to='/main' />}} />
+                                                     /> : <Redirect to='/' />}} />
           </div>
         </div >      
     )   

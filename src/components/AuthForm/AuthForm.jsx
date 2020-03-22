@@ -6,17 +6,32 @@ import React from 'react';
 import style from './authForm.module.css';
 
 // Firebase
-import {signInWithGoogle} from '../../firebase/firebase.utils.js';
+import {createUserProfileDocument,signInWithGoogle, auth} from '../../firebase/firebase.utils.js';
 
-// Components 
-import FormInput from '../common/formInput/FormInput';
-import BtnForm from '../common/btnForm/btnForm';
 
+// Component
+import Form from './Form';
 const AuthForm = (props) => {
 
-    let handleSubmit = (event) => {
-        event.preventDefault()
+    const onSubmit = async (formData) => {
+
+        const {name, email, password, passwordConfirm,} = formData;
+
+        if(password !== passwordConfirm) {
+            alert('password does not match')
+            return
+        }
+
+       try {
+            const {user} = await auth.createUserWithEmailAndPassword(email,password)
+
+            createUserProfileDocument(user, {name})
+       } catch(error) {
+            console.error(error)
+       }
+
     }
+
 
     return(
         <div className={style.authContainer}>
@@ -25,26 +40,8 @@ const AuthForm = (props) => {
             <NavLink className={style.nav_link} to={`${props.signUp ? '/signin' : '/signup'}`}>{props.textForm}</NavLink>
         </div>
         <div className={style.right_column}>
-            <form>
-                <h2 className={style.auth_heading}>{props.textAuth}</h2>
-                {props.signUp
-                 ?
-                    <>
-                        <FormInput icon={'fa fa-user'} placeholder='Твой имя' />
-                        <FormInput icon={'fa fa-envelope'} placeholder='Твой почта' />
-                        <FormInput icon={'fa fa-phone'} placeholder='Номер телефона' />
-                        <FormInput icon={'fa fa-key'} placeholder='Пароль'/>
-                        <FormInput icon={'fa fa-key'} placeholder='Потверждения пароля'/>
-                        <BtnForm btnText='Зарегистривоться' />
-                    </>
-                :   <>
-                        <FormInput icon={'fa fa-user'} placeholder='твой имя' />
-                        <FormInput icon={'fa fa-key'} placeholder='твой пароль'/>
-                        <BtnForm btnText='Войти' />
-
-                    </>
-                }        
-            </form>
+            <Form onSubmit={onSubmit} textAuth={props.textAuth} signUp={props.signUp} />
+            
             {props.showSocial && <div className={style.socialLogin}>
                 <span>Войти с помощью</span>
                 <button onClick={signInWithGoogle}><i className='fa fa-google'></i></button>
@@ -55,6 +52,7 @@ const AuthForm = (props) => {
 
     </div>
     )
+                                                                                                                                                                        
     
 }
 
