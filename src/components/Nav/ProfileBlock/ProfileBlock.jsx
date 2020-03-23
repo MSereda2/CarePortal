@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import {userImg} from '../../../assets/userEmpty.png';
 
 import CircleImg from '../../common/circleImg/CircleImg';
 
@@ -22,7 +23,7 @@ export default function SimpleMenu(props) {
   return (
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        <CircleImg img={props.profileImg} />
+        <CircleImg  img={props.profileImg ? props.profileImg : require('../../../assets/userEmpty.png')} />
       </Button>
       <Menu
         id="simple-menu"

@@ -10,12 +10,14 @@ import {createUserProfileDocument,signInWithGoogle, auth} from '../../firebase/f
 
 
 // Component
-import Form from './Form';
+import SignUpForm from './SignUpForm';
+import SignInForm from './SignInForm';
+
 const AuthForm = (props) => {
 
     const onSubmit = async (formData) => {
 
-        const {name, email, password, passwordConfirm,} = formData;
+        const {name, email, password, passwordConfirm, number} = formData;
 
         if(password !== passwordConfirm) {
             alert('password does not match')
@@ -25,13 +27,23 @@ const AuthForm = (props) => {
        try {
             const {user} = await auth.createUserWithEmailAndPassword(email,password)
 
-            createUserProfileDocument(user, {name})
+            createUserProfileDocument(user, {name, number})
        } catch(error) {
             console.error(error)
        }
 
     }
 
+    const onSignIn = async (formData) => {
+        const {email, password} = formData;
+        console.log(formData)
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password)
+        } catch(error) {
+            alert(error)
+        }
+    }
 
     return(
         <div className={style.authContainer}>
@@ -40,7 +52,12 @@ const AuthForm = (props) => {
             <NavLink className={style.nav_link} to={`${props.signUp ? '/signin' : '/signup'}`}>{props.textForm}</NavLink>
         </div>
         <div className={style.right_column}>
-            <Form onSubmit={onSubmit} textAuth={props.textAuth} signUp={props.signUp} />
+            {props.signUp
+             ? <SignUpForm onSubmit={onSubmit} textAuth={props.textAuth} />
+
+             : <SignInForm onSubmit={onSignIn} textAuth={props.textAuth} />
+}
+            
             
             {props.showSocial && <div className={style.socialLogin}>
                 <span>Войти с помощью</span>
