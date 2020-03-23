@@ -14,8 +14,6 @@ let Map = (props) => {
         ))
     )
 
-    console.log(taskCoord())
-
     return(
         <LoadScript
         id="script-loader"
@@ -34,7 +32,13 @@ let Map = (props) => {
                 }}>
                     <Marker
                      icon={require('../../../assets/user_location.png')}
-                     position={{lat: props.userLocation.lat, lng: props.userLocation.lng}}/>
+                     position={{lat: props.userLocation.lat, lng: props.userLocation.lng}}>
+                         <InfoWindow position={{lat: props.userLocation.lat, lng: props.userLocation.lng}}>
+                            <h2>Hello</h2>
+                         </InfoWindow>
+                         
+                    </Marker>
+                    44.991782199999996
                      
                     {taskCoord()}   
 

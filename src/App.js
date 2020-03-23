@@ -1,7 +1,7 @@
 // Packgages
 import React, { Component } from "react";
 import {connect} from 'react-redux';
-import { Route, BrowserRouter, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 // Style
 import style from "./App.css";
@@ -92,8 +92,3 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, {setUserAC})(App);
-
-// textAuth={'Войти'}
-// textForm={'Создать акаунт'}
-// formImg={singIn}
-// showSocial={true} />

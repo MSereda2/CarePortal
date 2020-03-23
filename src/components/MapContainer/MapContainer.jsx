@@ -7,6 +7,9 @@ import style from './mapContainer.module.css';
 import {getUser} from '../../redux/reducers/map/map_actions';
 import {showModal, closeModal} from '../../redux/reducers/tasks/task_actions';
 
+// API functions
+import {reverseGeocode} from '../../api/api';
+
 
 class MapContainer extends React.Component {
 
@@ -18,9 +21,10 @@ class MapContainer extends React.Component {
         }
     }
 
-    getCoordinates = (position) => {
-        this.props.getUser(position.coords.latitude, position.coords.longitude)
-    }
+    getCoordinates = (position) => (
+        this.props.getUser(position.coords.latitude, position.coords.longitude),
+        reverseGeocode(this.props.userLocation).then(response => console.log(response.results))
+    )
 
     componentDidMount = () => {
         this.getLocation()
