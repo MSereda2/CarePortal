@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -9,7 +10,11 @@ import CircleImg from '../../common/circleImg/CircleImg';
 // Firebase
 import { auth } from '../../../firebase/firebase.utils';
 
+// Components
+import BtnMain from '../../common/btnMain/BtnMain'
+
 export default function SimpleMenu(props) {
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
@@ -22,6 +27,7 @@ export default function SimpleMenu(props) {
 
   return (
     <div>
+      <BtnMain />
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         <CircleImg  img={props.profileImg ? props.profileImg : require('../../../assets/userEmpty.png')} />
       </Button>

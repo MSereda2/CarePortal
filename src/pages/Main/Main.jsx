@@ -12,7 +12,7 @@ import MapContainer from '../../components/MapContainer/MapContainer';
 import {showModal, closeModal} from '../../redux/reducers/tasks/task_actions';
 
 // HOC
-import {withAuthRedirect} from '../../HOC/withAuthRedirect';
+import {withAuthRedirect} from '../../components/HOC/withAuthRedirect';
 
 class Main extends React.Component {
 
