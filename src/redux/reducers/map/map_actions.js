@@ -5,3 +5,8 @@ export let getUser = (lat,lng) => ({
     lat,
     lng
 })
+
+export let getLocationName = (name) => ({
+    type: map_types.GET_LOCATION_NAME,
+    name
+})

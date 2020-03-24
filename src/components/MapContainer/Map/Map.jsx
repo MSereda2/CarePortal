@@ -32,13 +32,11 @@ let Map = (props) => {
                 }}>
                     <Marker
                      icon={require('../../../assets/user_location.png')}
-                     position={{lat: props.userLocation.lat, lng: props.userLocation.lng}}>
-                         <InfoWindow position={{lat: props.userLocation.lat, lng: props.userLocation.lng}}>
-                            <h2>Hello</h2>
-                         </InfoWindow>
-                         
-                    </Marker>
-                    44.991782199999996
+                     position={{lat: props.userLocation.lat, lng: props.userLocation.lng}} >
+                     <InfoWindow  position={{lat: props.userLocation.lat + 0.0005, lng: props.userLocation.lng}}>
+                            <h2>{props.streetName}</h2>
+                     </InfoWindow>
+                     </Marker>
                      
                     {taskCoord()}   
 

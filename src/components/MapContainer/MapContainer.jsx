@@ -4,36 +4,28 @@ import {connect} from 'react-redux';
 import style from './mapContainer.module.css';
 
 // Actions
-import {getUser} from '../../redux/reducers/map/map_actions';
 import {showModal, closeModal} from '../../redux/reducers/tasks/task_actions';
 
-// API functions
-import {reverseGeocode} from '../../api/api';
+// Thunk Creator 
+import {SetUserLocationCreator} from '../../redux/reducers/map/map_thunk';
+
+
 
 
 class MapContainer extends React.Component {
 
-    getLocation = () => {
-        if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.getCoordinates)
-        } else {
-            alert(`Geolocation isn't supported in your browser`)
-        }
-    }
+   
 
-    getCoordinates = (position) => (
-        this.props.getUser(position.coords.latitude, position.coords.longitude),
-        reverseGeocode(this.props.userLocation).then(response => console.log(response.results))
-    )
+   
 
     componentDidMount = () => {
-        this.getLocation()
+        this.props.SetUserLocationCreator(this.props.userLocation)
     }
 
     render() {
         return (
             <div className={style.map}>
-                  <Map showModal={this.props.showModal} task={this.props.task} userLocation={this.props.userLocation} />
+                  <Map {...this.props} />
             </div>
           
         );
@@ -41,8 +33,9 @@ class MapContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+    streetName: state.map.streetName,
     userLocation: state.map.userLocation,
     task: state.task.task
 })
 
-export default connect(mapStateToProps, {getUser,showModal}) (MapContainer);
+export default connect(mapStateToProps, {showModal, SetUserLocationCreator}) (MapContainer);

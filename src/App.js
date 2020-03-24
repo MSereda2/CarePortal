@@ -12,11 +12,8 @@ import Main from './pages/Main/Main';
 import Advanced from './pages/Advanced/Advanced';
 import AuthForm from './components/AuthForm/AuthForm';
 
-// Firebase
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-
-// Actions
-import {setUserAC} from './redux/reducers/login/login_actions';
+// Login Thunk
+import {subscribeFromAuth, unsubscribeFromAuth} from './redux/reducers/login/login_thunk';
 
 // Assets
 import singIn from './assets/signin-image.jpg';
@@ -30,23 +27,9 @@ class App extends Component {
   
   }
 
-  unsubscribeFromAuth = null;
 
   componentDidMount = () => {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-     
-      if(userAuth) {
-         const userRef = await createUserProfileDocument(userAuth);
-          console.log(userAuth)
-
-         userRef.onSnapshot(snapShot => {
-              this.props.setUserAC(snapShot.id, snapShot.data())
-         })
-      } else {
-        this.props.setUserAC(userAuth)
-      }
-        
-    })
+    this.props.subscribeFromAuth()
   }
 
   componentWillUnmount = () => {
@@ -91,4 +74,4 @@ const mapStateToProps = (state) => ({
   signUp: state.signUp
 })
 
-export default connect(mapStateToProps, {setUserAC})(App);
+export default connect(mapStateToProps, {subscribeFromAuth, unsubscribeFromAuth})(App);
