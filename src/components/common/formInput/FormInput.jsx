@@ -3,9 +3,9 @@ import './formInput.modal.css';
 import {Field} from 'redux-form';
 
 const FormInput = (props) => (
-    <div className="form-group">
+    <div className={` ${props.style} form-group`}>
         <label ><i className={props.icon}></i></label>
-        <Field component={"input"} name={props.name} type="text"  placeholder={props.placeholder}/>
+        <Field type={props.type} component={props.component} name={props.name} placeholder={props.placeholder}/>
     </div>
 )
 

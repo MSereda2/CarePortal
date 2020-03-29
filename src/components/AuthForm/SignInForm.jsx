@@ -14,8 +14,8 @@ let SignInForm = (props) => {
         <>
         <h2 className={style.auth_heading}>{props.textAuth}</h2>
         <form onSubmit={props.handleSubmit}>
-            <FormInput name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
-            <FormInput name='password' icon={'fa fa-key'} placeholder='Пароль'/>
+            <FormInput component={'input'} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
+            <FormInput type={'password'} component={'input'} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
             <BtnForm btnText='Войти' />
         </form>
         </>

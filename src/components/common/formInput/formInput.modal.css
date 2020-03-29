@@ -45,3 +45,14 @@
     -ms-transform: translateY(-50%);
     color: #222; }
 
+    textarea {
+      width: 450px;
+      height: 80px;
+      border: 1px solid #cccccc;
+      padding: 5px;
+    }
+
+
+.createTaskInput {
+      margin-bottom: 6rem ;
+  }

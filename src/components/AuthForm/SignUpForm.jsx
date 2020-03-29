@@ -14,11 +14,11 @@ let SignUpForm = (props) => {
         <>
         <h2 className={style.auth_heading}>{props.textAuth}</h2>
         <form onSubmit={props.handleSubmit}>
-            <FormInput name='name' icon={'fa fa-user'} placeholder='Твой имя' />
-            <FormInput name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
-            <FormInput name='number' icon={'fa fa-phone'} placeholder='Номер телефона' />
-            <FormInput name='password' icon={'fa fa-key'} placeholder='Пароль'/>
-            <FormInput name= 'passwordConfirm'icon={'fa fa-key'} placeholder='Потверждения пароля'/>
+            <FormInput component={'input'} name='name' icon={'fa fa-user'} placeholder='Твой имя' />
+            <FormInput component={'input'} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
+            <FormInput component={'input'} name='number' icon={'fa fa-phone'} placeholder='Номер телефона' />
+            <FormInput component={'input'} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
+            <FormInput component={'input'} name= 'passwordConfirm'icon={'fa fa-key'} placeholder='Потверждения пароля'/>
             <BtnForm btnText='Зарегистривоться' />
         </form>
         </>

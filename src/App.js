@@ -33,12 +33,11 @@ class App extends Component {
   }
 
   componentWillUnmount = () => {
-    this.unsubscribeFromAuth()
+    this.props.unsubscribeFromAuth()
   }
 
   render() {
-   
-
+  
     return (
         <div className={style.container}>
           <Nav {...this.props} />

@@ -11,7 +11,7 @@ import CircleImg from '../../common/circleImg/CircleImg';
 import { auth } from '../../../firebase/firebase.utils';
 
 // Components
-import BtnMain from '../../common/btnMain/BtnMain'
+import CreateTask from '../../CreateTask/CreateTask';
 
 export default function SimpleMenu(props) {
   
@@ -27,7 +27,8 @@ export default function SimpleMenu(props) {
 
   return (
     <div>
-      <BtnMain />
+      <CreateTask/>
+      
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         <CircleImg  img={props.profileImg ? props.profileImg : require('../../../assets/userEmpty.png')} />
       </Button>

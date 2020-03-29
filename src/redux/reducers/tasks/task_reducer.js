@@ -51,6 +51,7 @@ const initialState = {
             isShowModal: false
         }
     ],
+    isShowModal: false,
 }
 
 let task_reducer = (state = initialState, action) => {
@@ -64,7 +65,6 @@ let task_reducer = (state = initialState, action) => {
                     } else {
                         return {...el, isShowModal: false}
                     }
-                    return el;
                 })
             }
         case task_types.CLOSE_MODAL:
@@ -77,6 +77,16 @@ let task_reducer = (state = initialState, action) => {
                     return el;
                 })
             }   
+        case task_types.CREATE_TASK_SHOWMODAL:
+            return {
+                ...state,
+                isShowModal: true
+            }
+        case task_types.CREATE_TASK_CLOSEMODAL:
+            return {
+                ...state,
+                isShowModal: false
+            }
 
         default: return state
     }

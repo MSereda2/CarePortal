@@ -30,7 +30,7 @@ let TaskItem = (props) => (
         </div>
 
 
-        <Modal {...props}>
+        <Modal taskModal {...props}>
         <div className={style.modal}>
             <div className={style.modal_profile}>
                 <div className={style.profile_block}>
