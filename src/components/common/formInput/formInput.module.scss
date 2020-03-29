@@ -1,0 +1,59 @@
+@import '../../../style/abstracts/variables';
+@import '../../../style//base/utilities';
+
+.form_group {
+    position: relative;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    input {
+      font-size: 1.5rem;
+      outline: none;
+      width: 100%;
+      display: block;
+      border: none;
+      border-bottom: 1px solid $COLOR-MAIN-GRAY;
+      padding: .6rem 3rem;
+
+      &::-webkit-input-placeholder {
+        color: $COLOR-MAIN-GRAY;
+      }
+
+      &:focus {
+        border-bottom: 1px solid $COLOR-PRIMARY;
+
+        &::-webkit-input-placeholder {
+          color: $COLOR-MAIN-GRAY;
+        }
+      }
+    }
+
+    label {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $COLOR-MAIN-GRAY;
+    
+    }
+
+    textarea {
+      width: 450px;
+      height: 80px;
+      border: 1px solid #cccccc;
+      padding: 5px;
+
+      &:focus {
+        border: 1px solid #6F4590;
+      }
+    }
+  
+}
+
+.margin_bottom_small {
+      margin-bottom: 6rem ;
+  }

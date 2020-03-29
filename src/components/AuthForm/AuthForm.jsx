@@ -3,10 +3,10 @@ import {NavLink} from 'react-router-dom';
 import React from 'react';
 
 // Style
-import style from './authForm.module.css';
+import style from './authForm.module.scss';
 
 // Firebase
-import {createUserProfileDocument,signInWithGoogle, auth} from '../../firebase/firebase.utils.js';
+import {createUserProfileDocument,signInWithGoogle, auth} from '../../api/firebase/firebase.utils.js';
 
 
 // Component

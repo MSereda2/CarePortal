@@ -1,12 +1,17 @@
 import React from 'react';
-import './formInput.modal.css';
+import style from './formInput.module.scss';
+
 import {Field} from 'redux-form';
 
-const FormInput = (props) => (
-    <div className={` ${props.style} form-group`}>
+const FormInput = (props) => {
+
+    return(
+        <div className={` ${props.style ? style.margin_bottom_small : null} ${style.form_group}`}>
         <label ><i className={props.icon}></i></label>
         <Field type={props.type} component={props.component} name={props.name} placeholder={props.placeholder}/>
-    </div>
-)
+        </div>
+    )
+    
+}
 
 export default FormInput;

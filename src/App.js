@@ -4,13 +4,13 @@ import {connect} from 'react-redux';
 import { Route, Redirect } from "react-router-dom";
 
 // Style
-import style from "./App.css";
+import style from "./App.scss";
 
 // Components
 import Nav from './components/Nav/Nav';
-import Main from './pages/Main/Main';
-import Advanced from './pages/Advanced/Advanced';
 import AuthForm from './components/AuthForm/AuthForm';
+import Main from './components/pages/Main/Main';
+import Advanced from './components/pages/Advanced/Advanced';
 
 // Login Thunk
 import {subscribeFromAuth, unsubscribeFromAuth} from './redux/reducers/login/login_thunk';

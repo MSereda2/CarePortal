@@ -5,14 +5,14 @@ import {compose} from 'redux';
 import {connect} from 'react-redux'
 
 // Components
-import TaskContainer from '../../components/TaskContainer/TaskContainer';
-import MapContainer from '../../components/MapContainer/MapContainer';
+import TaskContainer from '../../TaskContainer/TaskContainer';
+import MapContainer from '../../MapContainer/MapContainer';
 
 // Actions
-import {showModal, closeModal} from '../../redux/reducers/tasks/task_actions';
+import {showModal, closeModal} from '../../../redux/reducers/tasks/task_actions';
 
 // HOC
-import {withAuthRedirect} from '../../components/HOC/withAuthRedirect';
+import {withAuthRedirect} from '../../HOC/withAuthRedirect';
 
 class Main extends React.Component {
 

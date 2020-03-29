@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './circleImg.module.css';
+import style from './circleImg.module.scss';
 
 let CircleImg = (props) => (
     <div className={style.profile}>

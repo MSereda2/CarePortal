@@ -1,5 +1,5 @@
 // Firebase
-import { auth, createUserProfileDocument } from '../../../firebase/firebase.utils';
+import { auth, createUserProfileDocument } from '../../../api/firebase/firebase.utils';
 
 // Actions
 import {setUserAC} from '../login/login_actions';

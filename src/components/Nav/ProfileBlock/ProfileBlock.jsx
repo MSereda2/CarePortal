@@ -8,7 +8,7 @@ import {userImg} from '../../../assets/userEmpty.png';
 import CircleImg from '../../common/circleImg/CircleImg';
 
 // Firebase
-import { auth } from '../../../firebase/firebase.utils';
+import { auth } from '../../../api/firebase/firebase.utils';
 
 // Components
 import CreateTask from '../../CreateTask/CreateTask';

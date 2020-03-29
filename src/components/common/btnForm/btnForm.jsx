@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './btnForm.module.css';
+import style from './btnForm.module.scss';
 
 const BtnForm = (props) => (
     <div className={style.btnFormContainer}>

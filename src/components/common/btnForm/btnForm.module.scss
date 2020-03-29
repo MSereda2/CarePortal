@@ -1,11 +1,13 @@
+@import '../../../style//abstracts/_variables.scss';
+
 .btnFormContainer {
     margin-top: 3.6rem;
 }
 
 .btnForm {
     display: inline-block;
-    background: #6dabe4;
-    color: #fff;
+    background: $COLOR-PRIMARY;
+    color: $COLOR-WHITE;
     border-bottom: none;
     width: auto;
     padding: 15px 39px;
@@ -13,8 +15,8 @@
     border-radius: .5rem;
     cursor: pointer;
     transition: all .2s;
-}
 
-.btnForm:hover {
-    background-color: #1286f3;
+    &:hover {
+        background-color: $COLOR-PRIMARY-LIGHT;
+    }
 }

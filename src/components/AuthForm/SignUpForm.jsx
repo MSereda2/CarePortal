@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './form.module.css'
+import style from './form.module.scss'
 import {reduxForm} from "redux-form";
 
 
