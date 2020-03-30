@@ -8,11 +8,11 @@ import { InfoWindow } from '@react-google-maps/api';
 
 let Map = (props) => {
 
-    let taskCoord = () => (
-        props.task.map(task => (
-            <Marker key={task.id} onClick={() => {props.showModal(task.id)}} position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} />
-        ))
-    )
+    // let taskCoord = () => (
+    //     props.task.map(task => (
+    //         <Marker key={task.id} onClick={() => {props.showModal(task.id)}} position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} />
+    //     ))
+    // )
 
     return(
         <LoadScript
@@ -38,7 +38,7 @@ let Map = (props) => {
                      </InfoWindow>
                      </Marker>
                      
-                    {taskCoord()}   
+                    {/* {taskCoord()}    */}
 
             </GoogleMap>
         </LoadScript>

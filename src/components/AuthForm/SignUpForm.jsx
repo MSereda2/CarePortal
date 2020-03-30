@@ -14,11 +14,12 @@ let SignUpForm = (props) => {
         <>
         <h2 className={style.auth_heading}>{props.textAuth}</h2>
         <form onSubmit={props.handleSubmit}>
-            <FormInput component={'input'} name='name' icon={'fa fa-user'} placeholder='Твой имя' />
-            <FormInput component={'input'} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
-            <FormInput component={'input'} name='number' icon={'fa fa-phone'} placeholder='Номер телефона' />
-            <FormInput component={'input'} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
-            <FormInput component={'input'} name= 'passwordConfirm'icon={'fa fa-key'} placeholder='Потверждения пароля'/>
+            <FormInput type={'text'} component={'input'} name='name' icon={'fa fa-user'} placeholder='Твой имя' />
+            <FormInput type={'text'} component={'input'} name='secondName' icon={'fa fa-user'} placeholder='Твой фамилия' />
+            <FormInput type={'email'} component={'input'} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
+            <FormInput type={'text'} component={'input'} name='number' icon={'fa fa-phone'} placeholder='Номер телефона' />
+            <FormInput type={'text'} component={'input'} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
+            <FormInput type={'password'} component={'input'} name= 'passwordConfirm'icon={'fa fa-key'} placeholder='Потверждения пароля'/>
             <BtnForm btnText='Зарегистривоться' />
         </form>
         </>

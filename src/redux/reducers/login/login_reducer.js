@@ -1,7 +1,6 @@
 import {login_types} from './login_types';
 
 const initialState = {
-    profileImg: require('../../../assets/Profileimg.jpg'),
     currentUser: {},
     userId: null,
 }

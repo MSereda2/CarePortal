@@ -5,7 +5,7 @@ import style from './btnMain.module.scss';
 const BtnMain = (props) => {
 
     return(
-        <button onClick={() => {props.createTaskShowModal()}} className={`${style.btnMain}`}>
+        <button onClick={() => {return props.createTaskShowModal ? props.createTaskShowModal() : null}} className={`${style.btnMain}`}>
             <span>Создать Пост</span>
         </button>
     )

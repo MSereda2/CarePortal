@@ -17,7 +17,7 @@ const AuthForm = (props) => {
 
     const onSubmit = async (formData) => {
 
-        const {name, email, password, passwordConfirm, number} = formData;
+        const {name, secondName, email, password, passwordConfirm, number} = formData;
 
         if(password !== passwordConfirm) {
             alert('password does not match')
@@ -27,7 +27,7 @@ const AuthForm = (props) => {
        try {
             const {user} = await auth.createUserWithEmailAndPassword(email,password)
 
-            createUserProfileDocument(user, {name, number})
+            createUserProfileDocument(user, {name, secondName, number})
        } catch(error) {
             console.error(error)
        }

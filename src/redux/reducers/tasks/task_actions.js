@@ -19,3 +19,9 @@ export let createTaskCloseModal = (data) => ({
     type: task_types.CREATE_TASK_CLOSEMODAL,
     data,
 })
+
+export let addTask = (task, userData) => ({
+    type: task_types.ADD_TASK,
+    payload: task,
+    userData: userData
+})
