@@ -8,16 +8,14 @@ import style from "./App.scss";
 
 // Components
 import Nav from './components/Nav/Nav';
-import AuthForm from './components/AuthForm/AuthForm';
+import AuthContainer from './components/AuthForm/AuthContainer/AuthContainer';
 import Main from './components/pages/Main/Main';
 import Advanced from './components/pages/Advanced/Advanced';
 
 // Login Thunk
 import {subscribeFromAuth, unsubscribeFromAuth} from './redux/reducers/login/login_thunk';
 
-// Assets
-import singIn from './assets/signin-image.jpg';
-import signup from './assets/signup-image.jpg';
+
 
 
 class App extends Component {
@@ -26,7 +24,6 @@ class App extends Component {
     super(props);
   
   }
-
 
   componentDidMount = () => {
     this.props.subscribeFromAuth()
@@ -44,21 +41,11 @@ class App extends Component {
           <div className={style.mainWindow}>
               <Route exact path="/" render={() => <Main />} />
               <Route path="/advanced" render={() => <Advanced />} />
-              <Route path="/signin" render={() => { return !this.props.isAuth ? <AuthForm
-                                                   textAuth={'Войти'}
-                                                   textForm={'Создать акаунт'}
-                                                   formImg={singIn}
-                                                   showSocial={true}
-                                                   />
-                                                      : <Redirect to='/' />}} />
-              <Route path="/signup" render={() => { return !this.props.isAuth ? <AuthForm
-                                                     signUp={true}
-                                                     textAuth={'Создать акаунт'}
-                                                     textForm={'Уже есть акаунт?'}
-                                                     formImg={signup}
-                                                     showSocial={false}
-                                                     signUpD={this.props.signUp}
-                                                     /> : <Redirect to='/' />}} />
+              <Route path="/signin" render={() => (!this.props.isAuth
+                 ? <AuthContainer signInForm/> : <Redirect to='/' />)} />
+              <Route path="/signup" render={() => (!this.props.isAuth 
+                 ? <AuthContainer signUpForm/> : <Redirect to='/' />)} />
+
           </div>
         </div >      
     )   
@@ -69,8 +56,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   nav: state.nav,
   profileImg: state.login.currentUser.photoURL,
-  isAuth: state.login.userId,
-  signUp: state.signUp
+  isAuth: state.login.currentUser.id,
 })
 
 export default connect(mapStateToProps, {subscribeFromAuth, unsubscribeFromAuth})(App);

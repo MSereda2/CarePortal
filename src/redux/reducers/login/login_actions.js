@@ -1,7 +1,6 @@
 import {login_types} from './login_types';
 
-export const setUserAC = (id, otherData) => ({
+export const setUserAC = (user) => ({
     type: login_types.SET_USER,
-    id,
-    otherData
+    payload: user
 })

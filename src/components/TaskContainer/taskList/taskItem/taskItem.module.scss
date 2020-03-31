@@ -1,3 +1,5 @@
+@import '../../../../style/abstracts/variables';
+
 .taskItem {
    display: flex;
    padding: 2.4rem;
@@ -7,11 +9,11 @@
    backface-visibility: hidden;
    transition: all .1s;
    margin-bottom: 2rem;
-}
 
-.taskItem:hover {
-    border: 1.5px solid #6F4590;
-    cursor: pointer;
+   &:hover {
+        border: 1.5px solid #6F4590;
+        cursor: pointer;
+   }
 }
 
 .taskInfo {
@@ -36,7 +38,7 @@
 .taskLocation {
     padding-top: 2.1rem;
     font-size: 1.2rem;
-    color: #6F4590;
+    color: $COLOR-PRIMARY;
 }
 
 .taskOrder {
@@ -52,19 +54,17 @@
     line-height: 135%;
     font-weight: bold;
     padding-bottom: .4rem;
-}
 
-.taskCost span {
-padding-left: .1rem;
+    span {
+        padding-left: .1rem;
+    }
 }
 
 .taskTime {
     font-size: 1.4rem;
-    color: #0D0A0B;
+    color: $COLOR-MAIN-BLACK;
     line-height: 135%;
 }
-
-
 
 .modal {
     padding: 2.8rem;
@@ -74,7 +74,7 @@ padding-left: .1rem;
     display: flex;
     justify-content: space-between;
     padding-bottom: 1.4rem;
-    border-bottom: 2px solid #F2F2F2;
+    border-bottom: 2px solid $COLOR-LIGHT-GRAY;
     margin-bottom: 4.4rem;
 }
 
@@ -90,7 +90,7 @@ padding-left: .1rem;
 
 .profile_name {
     font-weight: 400;
-    color: #0D0A0B;
+    color: $COLOR-MAIN-BLACK;
     font-size: 1.8rem;
     margin-bottom: .4rem;
 }
@@ -98,12 +98,12 @@ padding-left: .1rem;
 .profile_number {
     font-weight: 300;
     font-size: 1.7rem;
-    color: #828282;
+    color: $COLOR-MAIN-GRAY;
     margin-bottom: .4rem;
 }
 
 .profile_sendMessage {
-    color: #6F4590;
+    color: $COLOR-PRIMARY;
     font-size: 1.4rem;
 }
 
@@ -121,13 +121,12 @@ padding-left: .1rem;
 }
 
 .showInformation {
-    color: #6F4590;
+    color: $COLOR-PRIMARY;
     font-size: 1.2rem;
     margin-right: 4rem;
 }
 
 .task_info {
-    
     display: flex;
     justify-content: space-between;
     margin-left: 4rem;
@@ -136,7 +135,7 @@ padding-left: .1rem;
 }
 
 .task_title {
-    color: #0D0A0B;
+    color: $COLOR-MAIN-BLACK;
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 135%;
@@ -144,14 +143,14 @@ padding-left: .1rem;
 }
 
 .task_description {
-    color: #0D0A0B;
+    color: $COLOR-MAIN-BLACK;
     line-height: 135%;
     font-size: 1.6rem;
     width: 37.0rem;
 }
 
 .task_cost {
-    color: #0D0A0B;
+    color: $COLOR-MAIN-BLACK;
     font-size: 1.4rem;
     font-weight: bold;
     padding-bottom: .5rem;
@@ -159,10 +158,10 @@ padding-left: .1rem;
 
 .task_time {
     font-size: 1.4rem;
-}
 
-.task_time img {
-    padding-left: .5rem;
+    img {
+        padding-left: .5rem;
+    }
 }
 
 .task_start {
@@ -171,10 +170,19 @@ padding-left: .1rem;
     right: 10%;
     text-decoration: none;
     font-size: 1.4rem;
+
+    i {
+        padding-left: .3rem;
+
+    }
 }
 
 .btn {
     font-size: 1.4rem;
+
+    i {
+        padding-left: .3rem;
+    }
 }
 
 .clock {

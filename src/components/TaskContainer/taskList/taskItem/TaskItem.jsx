@@ -1,6 +1,6 @@
 
 import React from 'react';
-import style from './taskItem.module.css';
+import style from './taskItem.module.scss';
 
 
 import clock from '../../../../assets/clock.png'
@@ -25,7 +25,7 @@ let TaskItem = (props) => (
                         <p className={style.taskCost}>{props.taskCost}<span>₽</span></p>
                         <p className={style.taskTime}>{props.taskTime}ч. <img src={clock} className={style.clock} /> </p>
                     </div>
-                    <a className={style.btn}>Начать</a>
+                    <a className={style.btn}>Начать <i className='fa fa-play'></i></a>
                 </div>
         </div>
 
@@ -55,7 +55,7 @@ let TaskItem = (props) => (
                     <p className={style.task_cost}>{props.taskCost}₽</p>
                     <p className={style.task_time}>{props.taskTime}.ч<img src={clock} /></p>
                 </div>
-                <a className={style.task_start} href="">Начать</a>
+                <a className={style.task_start} href="">Начать <i className='fa fa-play'></i> </a>
             </div>
         </div>
         </Modal>
