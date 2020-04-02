@@ -37,7 +37,9 @@ export const unsubscribeFromAuth = () => {
 export const signUpThunk = (formData) => {
 
     return async (dispatch) => {
-        const {name, secondName, email, password, passwordConfirm, number} = formData;
+        let {name, secondName, email, password, passwordConfirm, phoneNumber} = formData;
+        let displayName = `${name}  ${secondName}`;
+        let photoURL = require('../../../assets/userEmpty.png');
 
         if(password !== passwordConfirm) {
             alert('password does not match')
@@ -46,7 +48,7 @@ export const signUpThunk = (formData) => {
 
         try {
             const {user} = await auth.createUserWithEmailAndPassword(email,password);
-            createUserProfileDocument(user, {name, secondName, number});
+            createUserProfileDocument(user, {displayName, phoneNumber, photoURL});
 
         } catch(error) {
             console.error(error)

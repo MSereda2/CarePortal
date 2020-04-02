@@ -17,6 +17,8 @@ class TaskList extends React.Component {
               {this.props.task.map(task => (
                   <TaskItem
                     key={task.id}
+                    displayName={task.displayName}
+                    phoneNumber={task.phoneNumber}
                     id={task.id}
                     taskTitle={task.title}
                     taskDescription={task.description}

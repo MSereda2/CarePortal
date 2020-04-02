@@ -11,6 +11,7 @@ import Nav from './components/Nav/Nav';
 import AuthContainer from './components/AuthForm/AuthContainer/AuthContainer';
 import Main from './components/pages/Main/Main';
 import Advanced from './components/pages/Advanced/Advanced';
+import CreateTask from './components/CreateTask/CreateTask';
 
 // Login Thunk
 import {subscribeFromAuth, unsubscribeFromAuth} from './redux/reducers/login/login_thunk';
@@ -45,6 +46,7 @@ class App extends Component {
                  ? <AuthContainer signInForm/> : <Redirect to='/' />)} />
               <Route path="/signup" render={() => (!this.props.isAuth 
                  ? <AuthContainer signUpForm/> : <Redirect to='/' />)} />
+              <Route path="createTask" render={() => <CreateTask />} />
 
           </div>
         </div >      

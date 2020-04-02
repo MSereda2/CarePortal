@@ -1,10 +1,7 @@
 import React from 'react';
 import style from './modal.module.css';
-import CircleImg from '../circleImg/CircleImg';
 
 import ReactModal from 'react-modal';
-
-import clock from '../../../assets/clock.png';
 
 
 

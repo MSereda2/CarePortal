@@ -31,7 +31,8 @@ class Main extends React.Component {
 }
 
 const mapStatetoProps = (state) => ({
-    task: state.task.task
+    task: state.task.task,
+    taskCounter: state
 })
 
 export default compose(

@@ -4,9 +4,8 @@ export let AddTask = (task, newTask, userData) => {
     const taskItem = {
         id: taskId++,
         img: userData.currentUser.photoURL,
-        nameUser: userData.currentUser.name,
-        secondName: userData.currentUser.secondName,
-        number: userData.currentUser.number,
+        displayName: userData.currentUser.displayName,
+        phoneNumber: userData.currentUser.phoneNumber,
         title: newTask.title,
         description: newTask.description,
         cost: newTask.cost,

@@ -5,7 +5,6 @@ import {task_types} from './task_types';
 import {AddTask} from './task_utils';
 
 const initialState = {
-    taskCounter: null,
     task: [
         {   
             id: 3,
@@ -19,6 +18,7 @@ const initialState = {
             isShowModal: false
         }
     ],
+    taskCounter: null,
     isShowModal: false,
 }
 

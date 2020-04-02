@@ -19,8 +19,10 @@
       border-bottom: 1px solid $COLOR-MAIN-GRAY;
       padding: .6rem 3rem;
 
+
+
       &::-webkit-input-placeholder {
-        color: $COLOR-MAIN-GRAY;
+        color: $COLOR-MAIN-GRAY;  
       }
 
       &:focus {
@@ -38,6 +40,11 @@
       top: 50%;
       transform: translateY(-50%);
       color: $COLOR-MAIN-GRAY;
+
+      i {
+        padding-left: 1rem;
+        color: $COLOR-MAIN-BLACK;
+      }
     
     }
 
@@ -51,9 +58,22 @@
         border: 1px solid #6F4590;
       }
     }
+
+    &.error {
+
+      input {
+        border-bottom: 1px solid red;
+      }
+
+      span {
+        color: red;
+        font-size: 1.3rem;
+      }
+
+    }
   
 }
 
 .margin_bottom_small {
-      margin-bottom: 6rem ;
-  }
+    margin-bottom: 6rem ;
+}

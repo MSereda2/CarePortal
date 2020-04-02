@@ -2,9 +2,10 @@
 import React from 'react';
 import { connect} from 'react-redux';
 import {compose} from 'redux';
+import {NavLink, Route} from 'react-router-dom'
 
 // Style
-import style from './CreateTask.module.css';
+import style from './CreateTask.module.scss';
 
 // Components
 import BtnMain from '../common/btnMain/BtnMain';
@@ -23,8 +24,7 @@ let CreateTask = (props) => {
 
     return(
         <>
-            <BtnMain {...props} />
-            <Modal {...props}>
+
                 <div className={style.createTaskModal}>
                     <div className={style.leftColumn}>
                         <CreateTaskForm onSubmit={onSubmit} />   
@@ -33,7 +33,6 @@ let CreateTask = (props) => {
                         
                     </div>
                 </div>
-            </Modal>
         </>
     )
 }

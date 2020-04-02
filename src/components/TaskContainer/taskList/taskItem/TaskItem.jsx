@@ -36,8 +36,8 @@ let TaskItem = (props) => (
                 <div className={style.profile_block}>
                     <CircleImg img={props.img} />
                     <div className={style.profile_info}>
-                        <p className={style.profile_name}>Тимур Саникидзе</p>
-                        <p className={style.profile_number}>+7(953) 088-55-33</p>
+                        <p className={style.profile_name}>{props.displayName}</p>
+                        <p className={style.profile_number}>{props.phoneNumber}</p>
                         <p className={style.profile_sendMessage}>Написать сообщение</p>
                     </div>
                 </div>

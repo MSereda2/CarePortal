@@ -1,11 +1,15 @@
 import React from 'react';
 import style from './form.module.scss'
-import {reduxForm} from "redux-form";
+import {reduxForm, Field} from "redux-form";
 
 
 // Components 
-import FormInput from '../common/formInput/FormInput';
+import {FormsControl} from '../common/formInput/FormInput';
 import BtnForm from '../common/btnForm/btnForm';
+
+// Validators
+import {requiredField} from '../../helpers/validators/validator';
+
 
 
 let SignInForm = (props) => {
@@ -14,8 +18,8 @@ let SignInForm = (props) => {
         <>
         <h2 className={style.auth_heading}>{props.textAuth}</h2>
         <form onSubmit={props.handleSubmit}>
-            <FormInput component={'input'} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
-            <FormInput type={'password'} component={'input'} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
+            <Field element='input' autoComplete='off' validate={[requiredField]} component={FormsControl} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
+            <Field element='input' autoComplete='off' validate={[requiredField]} type={'password'} component={FormsControl} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
             <BtnForm btnText='Войти' />
         </form>
         </>

@@ -1,8 +1,9 @@
-
+// Packages
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import {NavLink} from 'react-router-dom';
 
 import CircleImg from '../../common/circleImg/CircleImg';
 
@@ -10,7 +11,7 @@ import CircleImg from '../../common/circleImg/CircleImg';
 import { auth } from '../../../api/firebase/firebase.utils';
 
 // Components
-import CreateTask from '../../CreateTask/CreateTask';
+import BtnMain from '../../common/btnMain/BtnMain';
 
 export default function SimpleMenu(props) {
   
@@ -26,10 +27,12 @@ export default function SimpleMenu(props) {
 
   return (
     <div>
-      <CreateTask/>
+      <NavLink to='/createTask'>
+        <BtnMain />
+      </NavLink >
       
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        <CircleImg  img={props.profileImg ? props.profileImg : require('../../../assets/userEmpty.png')} />
+        <CircleImg  img={props.profileImg} />
       </Button>
       <Menu
         id="simple-menu"
