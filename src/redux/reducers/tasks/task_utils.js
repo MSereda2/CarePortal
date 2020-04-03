@@ -1,4 +1,7 @@
-export let AddTask = (task, newTask, userData) => {
+import PlacesAutocomplete, {  geocodeByAddress,  getLatLng, } from 'react-places-autocomplete';
+
+
+export let AddTask = (task, newTask, coordinates, userData) => {
     // 1. add tasks to existing task array
     let taskId = 0;
     const taskItem = {
@@ -9,9 +12,9 @@ export let AddTask = (task, newTask, userData) => {
         title: newTask.title,
         description: newTask.description,
         cost: newTask.cost,
-        time: 1,
+        time: newTask.time,
         btnStart: true,
-        coordinates: {lat: 45.034249, lng: 38.985805},
+        coordinates: coordinates,
         isShowModal: false
     }
 

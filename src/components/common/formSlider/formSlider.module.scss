@@ -1,0 +1,41 @@
+@import '../../../style/abstracts/variables';
+
+.slideContainer {
+    margin-bottom: 3rem;
+
+}
+
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px;
+    border-radius: 5px;
+    background: rgb(223, 222, 222); /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    margin-bottom: 1rem;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px;
+        border-radius: 50%; 
+        background: $COLOR-PRIMARY; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    &::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+  }
+
+.timeRange {
+    font-size: 1.9rem;
+}

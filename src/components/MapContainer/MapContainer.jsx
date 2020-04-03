@@ -1,3 +1,4 @@
+// Packages
 import React from 'react';
 import Map from './Map/Map';
 import {connect} from 'react-redux';
@@ -13,9 +14,6 @@ import {SetUserLocationCreator} from '../../redux/reducers/map/map_thunk';
 
 
 class MapContainer extends React.Component {
-
-   
-
    
 
     componentDidMount = () => {

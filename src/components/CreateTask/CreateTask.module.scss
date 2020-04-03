@@ -1,10 +1,10 @@
-.createTaskModal {
+.createTask {
     display: flex;
-    
+    height: 89vh;
 }
 
 .leftColumn {
-    width: 50%;
+    width: 45%;
     overflow-y: scroll;
 }
 
@@ -12,6 +12,7 @@
 
 .rightColumn {
     background-image: url('../../assets/createTaskImg.jpg');
-    width: 50%;
+    width: 55%;
     background-size: cover;
+    background-position: center;
 }
