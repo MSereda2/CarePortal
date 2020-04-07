@@ -13,18 +13,16 @@ const AutoCompletePlaces = ({input, meta, ...props}) => {
 
     const renderFunc = ({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <>
-        <input {...input} {...getInputProps({placeholder: 'type adrfess'})} {...props} />
+        <input {...input} {...getInputProps({placeholder: 'Введите адрес',})} {...props} />
 
-        <div>
+        <div className={style.container}>
             {loading ? <div>...loading</div> : null}
 
             {suggestions.map((suggestion,index) => {
              
-             const style = {
-                  backgroundColor: suggestion.active ? '#d7385e' : '#fff'
-              }
 
-              return  <div key={index} {...getSuggestionItemProps(suggestions, {style} )}>{suggestion.description}</div>
+              return  <div className={style.item} key={index} {...getSuggestionItemProps(suggestions,
+                 {className: style.item} )}>{suggestion.description}</div>
             })}
         </div>
         </>

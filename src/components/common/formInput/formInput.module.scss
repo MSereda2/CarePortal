@@ -11,18 +11,18 @@
     }
 
     input {
-      font-size: 1.5rem;
+      font-size: $FONT-SIZE-FORM;
       outline: none;
       width: 100%;
       display: block;
       border: none;
       border-bottom: 1px solid $COLOR-MAIN-GRAY;
-      padding: .6rem 3rem;
-
+      padding: .6rem 4rem;
 
 
       &::-webkit-input-placeholder {
-        color: $COLOR-MAIN-GRAY;  
+        color: $COLOR-MAIN-GRAY; 
+        
       }
 
       &:focus {
@@ -36,9 +36,9 @@
 
     label {
       position: absolute;
+      padding-top: .6rem;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 0;
       color: $COLOR-MAIN-GRAY;
 
       i {
@@ -46,6 +46,7 @@
         color: $COLOR-MAIN-BLACK;
         opacity: 12;
         z-index: 1000;
+        font-size: 1.5rem;
       }
     
     }
@@ -54,7 +55,8 @@
       width: 55rem;
       height: 8rem;
       border: 1px solid #cccccc;
-      // padding: 5px;
+      padding: 1rem;
+      font-size: 1.9rem;
 
       &:focus {
         border: 1px solid #6F4590;

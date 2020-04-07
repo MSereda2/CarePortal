@@ -4,11 +4,11 @@ import style from './form.module.scss'
 import {reduxForm, Field} from "redux-form";
 
 // Components 
-import {FormsControl} from '../common/formInput/FormInput';
-import BtnForm from '../common/btnForm/btnForm';
+import {FormsControl} from '../../../common/formInput/FormInput';
+import BtnForm from '../../../common/btnForm/btnForm';
 
 // Input Validators
-import {requiredField, setMaxLength, firstCapitalLatter} from '../../helpers/validators/validator';
+import {requiredField, setMaxLength, firstCapitalLatter} from '../../../../helpers/validators/validator';
 
 
 let SignUpForm = (props) => {

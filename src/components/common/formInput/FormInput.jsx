@@ -11,10 +11,10 @@ export const FormsControl = ({input, meta, element, ...props}) => {
     return(
         <div className={` ${props.styleTask ? style.margin_bottom_small : 'null'} ${style.form_group}
          ${hasError && style.error} `}>
-            {/* <label ><i className={props.icon}></i></label> */}
+            <label ><i className={props.icon}></i></label>
             
             {element === 'input' ? <input  {...input} {...props} />
-            : element === 'textarea' ? <textarea {...input} {...props} />
+            : element === 'textarea' ? <textarea  {...input} {...props} />
             : element === 'autocomplete' ? <AutoCompletePlaces input={input} meta={meta} {...props} /> : null }
 
             {hasError && <span >{meta.error}</span>}

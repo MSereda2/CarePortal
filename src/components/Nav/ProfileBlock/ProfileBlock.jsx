@@ -16,11 +16,11 @@ export default function SimpleMenu(props) {
 
   return (
     <div className={style.profileBlock}>
-      <NavLink to='/createTask'>
-        <BtnMain />
-      </NavLink >
-      
-     
+      <div className={style.createTask}>
+        <NavLink to='/createTask'>
+          <BtnMain />
+        </NavLink >
+      </div>
        <CircleImg img={props.profileImg} />
 
     </div>

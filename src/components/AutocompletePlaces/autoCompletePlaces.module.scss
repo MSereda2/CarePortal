@@ -1,0 +1,21 @@
+@import '../../style/abstracts/variables';
+.container {
+    margin-top: 1rem;
+
+
+    .item {
+       font-size: 1.6rem;
+       padding-bottom: .8rem;
+       
+       &::before {
+          content: '😁';
+          padding-right: 2rem;
+       }
+
+       &:hover {
+           cursor: pointer;
+           background-color: $COLOR-LIGHT-GRAY;
+       }
+    }
+}
+

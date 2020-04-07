@@ -22,15 +22,11 @@ body {
 }
 
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 40px auto;
-  grid-template-areas: 'nav nav'
-                       'main main';
-  min-height: 80vh;
-}
-
-.mainWindow {
-  grid-area: main;
-}
+// .container {
+//   display: grid;
+//   // grid-template-columns: 1fr 1fr 1fr;
+//   // grid-template-rows: 4rem auto;
+//   // grid-template-areas: 'nav nav'
+//   //                      'main main';
+//   min-height: 80vh;
+// }

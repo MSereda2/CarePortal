@@ -1,6 +1,6 @@
 // Packages
 import React from 'react';
-import style from './main.module.css';
+import style from './main.module.scss';
 import {compose} from 'redux';
 import {connect} from 'react-redux'
 

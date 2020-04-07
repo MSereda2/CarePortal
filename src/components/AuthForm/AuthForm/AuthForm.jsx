@@ -6,12 +6,12 @@ import React from 'react';
 import style from './authForm.module.scss';
 
 // Firebase
-import {signInWithGoogle} from '../../api/firebase/firebase.utils';
+import {signInWithGoogle} from '../../../api/firebase/firebase.utils';
 
 
 // Component
-import SignUpForm from './SignUpForm';
-import SignInForm from './SignInForm';
+import SignUpForm from './SignForm/SignUpForm';
+import SignInForm from './SignForm/SignInForm';
 
 const AuthForm = (props) => {
 

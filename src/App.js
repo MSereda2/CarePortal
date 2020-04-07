@@ -47,7 +47,6 @@ class App extends Component {
               <Route path="/signup" render={() => (!this.props.isAuth 
                  ? <AuthContainer signUpForm/> : <Redirect to='/' />)} />
               <Route path="/createTask" render={() => <CreateTask />} />
-
           </div>
         </div >      
     )   
