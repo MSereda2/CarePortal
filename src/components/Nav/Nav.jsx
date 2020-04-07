@@ -13,7 +13,7 @@ let Nav = (props) => {
     return (
         <div className={style.navbar}>
             <div className={style.logo}>
-                 <img src={props.nav.logoImg} alt=""/>
+                 <img src={props.nav.logoImg} alt="logo"/>
             </div>
             <ul className={style.nav}>
                 {props.nav.links.map(e => (
@@ -26,7 +26,7 @@ let Nav = (props) => {
                 ? 
                 <ProfileBlock profileImg={props.profileImg} />
                 :
-                <NavLink className={style.signText} to="/signin"><img src={UserIcon}></img>Войти / Регестрация</NavLink>
+                <NavLink className={style.signText} to="/signin"><img src={UserIcon} alt='userIcon' />Войти / Регестрация</NavLink>
             }
 
         </div>

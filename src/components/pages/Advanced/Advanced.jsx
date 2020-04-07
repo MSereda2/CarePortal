@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './advanced.module.css';
+// import style from './advanced.module.css';
 
 const Advanced = (props) => (
     <div>ADVANCED</div>

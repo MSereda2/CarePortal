@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './taskContainer.module.css';
+import style from './taskContainer.module.scss';
 
 // Components
 import TaskFilter from './taskFilter/TaskFilter';

@@ -9,7 +9,7 @@ export const FormsControl = ({input, meta, element, ...props}) => {
 
 
     return(
-        <div className={` ${props.styleTask ? style.margin_bottom_small : 'null'} ${style.form_group}
+    <div className={` ${props.styleform ? style.margin_bottom_small : 'null'} ${style.form_group}
          ${hasError && style.error} `}>
             <label ><i className={props.icon}></i></label>
             

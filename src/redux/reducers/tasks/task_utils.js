@@ -1,5 +1,3 @@
-import PlacesAutocomplete, {  geocodeByAddress,  getLatLng, } from 'react-places-autocomplete';
-
 
 export let AddTask = (task, newTask, coordinates, userData) => {
     // 1. add tasks to existing task array

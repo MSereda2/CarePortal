@@ -21,11 +21,6 @@ import {subscribeFromAuth, unsubscribeFromAuth} from './redux/reducers/login/log
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-  
-  }
-
   componentDidMount = () => {
     this.props.subscribeFromAuth()
   }

@@ -5,7 +5,7 @@ import {reduxForm, Field} from "redux-form";
 
 // Components 
 import {FormsControl} from '../../../common/formInput/FormInput';
-import BtnForm from '../../../common/btnForm/btnForm';
+import BtnFormSign from '../../../common/BtnFormSign/BtnFormSign';
 
 // Input Validators
 import {requiredField, setMaxLength, firstCapitalLatter} from '../../../../helpers/validators/validator';
@@ -21,17 +21,17 @@ let SignUpForm = (props) => {
         <form onSubmit={props.handleSubmit}>
             <Field element={'input'} validate={[requiredField,firstCapitalLatter, maxLength15]} autoComplete="off" type='text' component={FormsControl} name='name' placeholder='Имя твоё' icon={'fa fa-user'} />
 
-            <Field element={'input'} validate={[requiredField]} autoComplete="off" type='text' component={FormsControl} name='secondName' icon='fa fa-user' placeholder='Твой фамилия' />
+            <Field element={'input'} validate={[requiredField]} type='text' component={FormsControl} name='secondName' icon='fa fa-user' placeholder='Твой фамилия' />
 
-            <Field element={'input'} validate={[requiredField]} type={'email'} autoComplete="off" component={FormsControl} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
+            <Field element={'input'} validate={[requiredField]} type={'email'} component={FormsControl} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
 
-            <Field element={'input'} validate={[requiredField]} type={'text'} autoComplete="off" component={FormsControl} name='phoneNumber' icon={'fa fa-phone'} placeholder='Номер телефона' />
+            <Field element={'input'} validate={[requiredField]} type={'text'} component={FormsControl} name='phoneNumber' icon={'fa fa-phone'} placeholder='Номер телефона' />
 
-            <Field element={'input'} validate={[requiredField]} type={'text'} autoComplete="off" component={FormsControl} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
+            <Field element={'input'} validate={[requiredField]} type={'text'} component={FormsControl} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
             
-            <Field element={'input'} validate={[requiredField]} type={'password'} autoComplete="off" component={FormsControl} name= 'passwordConfirm'icon={'fa fa-key'} placeholder='Потверждения пароля'/>
+            <Field element={'input'} validate={[requiredField]} type={'password'} component={FormsControl} name= 'passwordConfirm'icon={'fa fa-key'} placeholder='Потверждения пароля'/>
             
-            <BtnForm btnText='Зарегистривоться' />
+            <BtnFormSign btnText='Зарегистривоться' />
         </form>
         </>
     )

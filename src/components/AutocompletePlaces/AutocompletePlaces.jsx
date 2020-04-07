@@ -1,15 +1,15 @@
 import React from 'react';
-import PlacesAutocomplete, {  geocodeByAddress,  getLatLng, } from 'react-places-autocomplete';
+import PlacesAutocomplete from 'react-places-autocomplete';
 import style from './autoCompletePlaces.module.scss';
 
 
 
 const AutoCompletePlaces = ({input, meta, ...props}) => {
     
-    const handleSelect = async (value) => {
-        const results = await geocodeByAddress(value);
-        const coordinates = await getLatLng(results[0]);
-    }
+    // const handleSelect = async (value) => {
+    //     const results = await geocodeByAddress(value);
+    //     const coordinates = await getLatLng(results[0]);
+    // }
 
     const renderFunc = ({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <>
@@ -31,7 +31,7 @@ const AutoCompletePlaces = ({input, meta, ...props}) => {
 
     return(
         <div>
-            <PlacesAutocomplete {...input} onSelect={handleSelect}>
+            <PlacesAutocomplete {...input}>
                 { renderFunc}
             </PlacesAutocomplete>
         </div>

@@ -3,13 +3,13 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import style from './profileBlock.module.scss'
 
-import CircleImg from '../../common/circleImg/CircleImg';
+import CircleImg from '../../common/CircleImg/CircleImg';
 
 // Firebase
 import { auth } from '../../../api/firebase/firebase.utils';
 
 // Components
-import BtnMain from '../../common/btnMain/BtnMain';
+import BtnMain from '../../common/BtnMain/BtnMain';
 
 export default function SimpleMenu(props) {
   

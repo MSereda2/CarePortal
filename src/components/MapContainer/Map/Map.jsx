@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, LoadScript, InfoWindow, Marker} from '@react-google-maps/api';
+import { GoogleMap, Marker} from '@react-google-maps/api';
 
 
 let Map = (props) => {

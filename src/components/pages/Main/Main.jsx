@@ -15,11 +15,7 @@ import {showModal, closeModal} from '../../../redux/reducers/tasks/task_actions'
 import {withAuthRedirect} from '../../HOC/withAuthRedirect';
 
 class Main extends React.Component {
-
-    
-
     render() {
-        
         return(
             <div className={style.main}>
                 <TaskContainer {...this.props} />
@@ -27,7 +23,6 @@ class Main extends React.Component {
             </div>
         )
     }
-    
 }
 
 const mapStatetoProps = (state) => ({

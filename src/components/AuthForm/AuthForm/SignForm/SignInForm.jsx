@@ -5,7 +5,7 @@ import {reduxForm, Field} from "redux-form";
 
 // Components 
 import {FormsControl} from '../../../common/formInput/FormInput';
-import BtnForm from '../../../common/btnForm/btnForm';
+import BtnFormSign from '../../../common/BtnFormSign/BtnFormSign';
 
 // Validators
 import {requiredField} from '../../../../helpers/validators/validator';
@@ -20,7 +20,7 @@ let SignInForm = (props) => {
         <form onSubmit={props.handleSubmit}>
             <Field element='input' autoComplete='off' validate={[requiredField]} component={FormsControl} name='email' icon={'fa fa-envelope'} placeholder='Твой почта' />
             <Field element='input' autoComplete='off' validate={[requiredField]} type={'password'} component={FormsControl} name='password' icon={'fa fa-key'} placeholder='Пароль'/>
-            <BtnForm btnText='Войти' />
+            <BtnFormSign btnText='Войти' />
         </form>
         </>
     )

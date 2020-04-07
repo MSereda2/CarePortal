@@ -1,14 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import style from './formSlider.module.scss';
 
 const FormSlider = ({input, meta, element, ...props}) => {
-
-    // const [time, setTime] = useState(null)
-
-    // let changeTime = function() {
-    //     setTime(this.value)
-    // }
-
 
     return(
         <div className={style.slideContainer}>

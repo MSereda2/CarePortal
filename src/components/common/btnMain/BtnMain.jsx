@@ -1,13 +1,16 @@
-import React from 'react';
 import style from './btnMain.module.scss';
+import React from 'react';
 
 
-const BtnMain = ({reset,pristine,submitting}) => {
+const BtnMain = (props) => {
 
     return(
-        <button  disabled={pristine || submitting} className={`${style.btnMain}`}>
+        <>
+        <button className={`${style.btnMain}`}>
             <span>Создать Пост</span>
         </button>
+        </> 
+
     )
 }
 
