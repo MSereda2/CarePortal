@@ -23,7 +23,7 @@ export const subscribeFromAuth = () => {
            dispatch(setUserAC(userAuth))
         }
               
-          })
+        })
     }
 }
 

@@ -12,7 +12,7 @@ import TaskModal from '../../TaskModal/TaskModal';
 let TaskItem = (props) => (
     <>
         <div className={style.taskItem} onClick={() => {props.showModal(props.id)}}>
-                <CircleImg img={props.img} />
+                <CircleImg img={props.photoURL} />
                 <div className={style.taskInfo}>
                     <h4 className={style.taskTitle}>{props.title}</h4>
                     <p className={style.taskDescription}>{props.description}</p>

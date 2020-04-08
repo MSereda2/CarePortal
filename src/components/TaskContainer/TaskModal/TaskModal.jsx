@@ -10,7 +10,7 @@ const TaskModal = (props) => (
         <div className={style.modal}>
             <div className={style.modal_profile}>
                 <div className={style.profile_block}>
-                    <CircleImg img={props.img} />
+                    <CircleImg img={props.photoURL} />
                     <div className={style.profile_info}>
                         <p className={style.profile_name}>{props.displayName}</p>
                         <p className={style.profile_number}>{props.phoneNumber}</p>

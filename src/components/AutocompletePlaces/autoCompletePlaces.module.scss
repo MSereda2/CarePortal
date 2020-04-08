@@ -1,21 +1,35 @@
 @import '../../style/abstracts/variables';
+%basic_item {
+    font-size: 1.6rem;
+    padding-bottom: .8rem;
+
+
+    &::before {
+        content: '😁';
+        padding-right: 2rem;
+     }
+}
+
 .container {
     margin-top: 1rem;
 
+    .activeitem {
+        background-color: $COLOR-LIGHT-GRAY;
+        @extend %basic_item;
+    }
 
     .item {
-       font-size: 1.6rem;
-       padding-bottom: .8rem;
+       @extend %basic_item;
        
-       &::before {
-          content: '😁';
-          padding-right: 2rem;
-       }
-
        &:hover {
            cursor: pointer;
            background-color: $COLOR-LIGHT-GRAY;
+
        }
     }
+}
+
+.test {
+    background-color: $COLOR-PRIMARY;
 }
 

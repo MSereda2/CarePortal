@@ -1,12 +1,12 @@
 
-export let AddTask = (task, newTask, coordinates, userData) => {
+export let AddTask = (task, newTask, coordinates, userData, id) => {
     // 1. add tasks to existing task array
     let taskId = 0;
     const taskItem = {
-        id: taskId++,
-        img: userData.currentUser.photoURL,
-        displayName: userData.currentUser.displayName,
-        phoneNumber: userData.currentUser.phoneNumber,
+        id: id,
+        img: userData.photoURL,
+        displayName: userData.displayName,
+        phoneNumber: userData.phoneNumber,
         title: newTask.title,
         description: newTask.description,
         cost: newTask.cost,

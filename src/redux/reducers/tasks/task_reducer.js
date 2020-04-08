@@ -58,7 +58,12 @@ let task_reducer = (state = initialState, action) => {
         case task_types.ADD_TASK:
             return {
                 ...state,
-                task: AddTask(state.task, action.payload, action.coordinates, action.userData)
+                task: [...state.task, action.payload]
+            }
+        case task_types.GET_TASK:
+            return {
+                ...state,
+                task: [...action.payload]
             }
         default: return state
     }

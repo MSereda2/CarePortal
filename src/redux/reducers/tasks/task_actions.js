@@ -20,9 +20,13 @@ export let createTaskCloseModal = (data) => ({
     data,
 })
 
-export let addTask = (task, coordinates, userData) => ({
+export let addTask = (data) => ({
     type: task_types.ADD_TASK,
-    payload: task,
-    userData: userData,
-    coordinates
+    payload: data,
+    
+})
+
+export let getTask = (data) => ({
+    type: task_types.GET_TASK,
+    payload: data
 })

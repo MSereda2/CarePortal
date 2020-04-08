@@ -18,7 +18,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     if(!userAuth) return;
 
     const userRef  = firestore.doc(`users/${userAuth.uid}`);
-    const snapShot = await userRef.get()
+    const snapShot = await userRef.get();
 
     if(!snapShot.exists) {
         const {displayName, email, photoURL, phoneNumber } = userAuth;
@@ -39,6 +39,46 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     return userRef;
 }
+
+export const createTaskDocument = async (taskData, coordinates, userData, id) => {
+    const taskRef = firestore.doc(`tasks/${id}`);
+    const snapShot = await taskRef.get();
+
+    if(!snapShot.exists) {
+        const {title, description, cost, time} = taskData;
+        const {photoURL, displayName, phoneNumber} = userData.currentUser;
+        const createAt = new Date();
+        try {
+            await taskRef.set({
+                id,
+                title,
+                description,
+                cost,
+                time,
+                photoURL,
+                coordinates,
+                displayName,
+                phoneNumber,
+                createAt
+            })
+        } catch(error) {
+            console.log(`erro ${error}`)
+        }
+    }
+
+    return taskRef;
+}
+
+export const convertCollectionSnapShottoMap = async (collections) => {
+    const transformedColection = collections.docs.map(doc => {
+        const data = doc.data()
+        return {
+            ...data
+        }
+    })
+    return transformedColection
+}
+
 
 firebase.initializeApp(config);
 

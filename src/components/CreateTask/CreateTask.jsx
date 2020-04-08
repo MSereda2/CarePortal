@@ -3,7 +3,7 @@ import React from 'react';
 import { connect} from 'react-redux';
 import {compose} from 'redux';
 import {  geocodeByAddress,  getLatLng, } from 'react-places-autocomplete';
-import {Redirect} from 'react-router-dom';
+import uniqId from 'uniqid';
 
 // Style
 import style from './CreateTask.module.scss';
@@ -14,6 +14,12 @@ import CreateTaskForm from './CreateTaskForm/CreateTaskForm';
 // Actions
 import {addTask} from '../../redux/reducers/tasks/task_actions';
 
+// // Thunk
+// import {addTaskThunk} from '../../redux/reducers/tasks/task_thunk';
+
+// Firebase
+import {createTaskDocument} from '../../api/firebase/firebase.utils';
+
 
 
 let CreateTask = (props) => {
@@ -21,7 +27,8 @@ let CreateTask = (props) => {
     const onSubmit = async (FormData) => {
         let results = await geocodeByAddress(FormData.coordinates);
         let coordinates = await getLatLng(results[0]);
-        props.addTask(FormData, coordinates, props.UserData);
+        createTaskDocument(FormData, coordinates, props.UserData, uniqId())
+        // props.addTask(FormData, coordinates, props.UserData, uniqId());
     }
 
     return(

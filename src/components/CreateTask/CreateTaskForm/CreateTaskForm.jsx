@@ -34,7 +34,7 @@ const CreateTaskForm = (props) => {
 
             <Field validate={[requiredField]} element={'input'} icon={'fa fa-dollar'} type={'text'} component={FormsControl} name={'cost'} placeholder={'Цена задания'} styleform={'true'} />
 
-            <Field min="0" max="100" value="50" icon={'fa fa-map'} name="time" component={FormSlider} type='range' styleform={'true'} />
+            <Field min="-10" max="10"  icon={'fa fa-map'} name="time" component={FormSlider} type='range' styleform={'true'} />
             <BtnMain {...props} />
         </form>
     )
