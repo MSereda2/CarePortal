@@ -29,7 +29,7 @@ const TaskModal = (props) => (
                 </div>
                 <div>
                     <p className={style.task_cost}>{props.cost}₽</p>
-                    <p className={style.task_time}>{props.time}.ч<img src={clock} /></p>
+                    <p className={style.task_time}>{props.time}.ч<img src={clock} alt="time" /></p>
                 </div>
                 <a className={style.task_start} href="">Начать <i className='fa fa-play'></i> </a>
             </div>

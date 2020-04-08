@@ -6,7 +6,7 @@ import style from './profileBlock.module.scss'
 import CircleImg from '../../common/CircleImg/CircleImg';
 
 // Firebase
-import { auth } from '../../../api/firebase/firebase.utils';
+// import { auth } from '../../../api/firebase/firebase.utils';
 
 // Components
 import BtnMain from '../../common/BtnMain/BtnMain';

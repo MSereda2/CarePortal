@@ -2,7 +2,6 @@
 import user4 from '../../../assets/use4.jpg';
 
 import {task_types} from './task_types';
-import {AddTask} from './task_utils';
 
 const initialState = {
     task: [

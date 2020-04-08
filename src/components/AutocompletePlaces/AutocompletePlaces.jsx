@@ -1,5 +1,5 @@
 import React from 'react';
-import PlacesAutocomplete , {geocodeByAddress} from 'react-places-autocomplete';
+import PlacesAutocomplete from 'react-places-autocomplete';
 import style from './autoCompletePlaces.module.scss';
 
 
@@ -9,11 +9,6 @@ const AutoCompletePlaces = ({input, meta, ...props}) => {
     const handleSelect =  (address) => {
         console.log(input.value)
     }
-
-    // const renderFunc = ({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-        
-    // )
-
 
     return(
         <div>

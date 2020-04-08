@@ -16,9 +16,6 @@ import CreateTask from './components/CreateTask/CreateTask';
 // Login Thunk
 import {subscribeFromAuth, unsubscribeFromAuth} from './redux/reducers/login/login_thunk';
 
-
-
-
 class App extends Component {
 
   componentDidMount = () => {
