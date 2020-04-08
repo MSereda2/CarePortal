@@ -4,19 +4,7 @@ import user4 from '../../../assets/use4.jpg';
 import {task_types} from './task_types';
 
 const initialState = {
-    task: [
-        {   
-            id: 3,
-            img: user4,
-            title: 'Написать текст по тз',
-            description: 'Есть уже четкое и конкретное тз, все остальные нюансы расскажу лично.',
-            cost: 1250,
-            time: 1,
-            btnStart: true,
-            coordinates: {lat: 45.034249, lng: 38.985805},
-            isShowModal: false
-        }
-    ],
+    task: [],
     taskCounter: null,
     isShowModal: false,
 }
@@ -63,6 +51,11 @@ let task_reducer = (state = initialState, action) => {
             return {
                 ...state,
                 task: [...action.payload]
+            }
+        case task_types.SET_TASK_COUNTER:
+            return {
+                ...state,
+                taskCounter: state.task.length
             }
         default: return state
     }

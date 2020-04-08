@@ -23,7 +23,7 @@ class MapContainer extends React.Component {
     render() {
         return (
             <div className={style.map}>
-                  <Map {...this.props} />
+                <Map {...this.props} />                  
             </div>
           
         );

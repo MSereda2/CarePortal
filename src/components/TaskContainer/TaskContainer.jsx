@@ -10,7 +10,7 @@ class TaskContainer extends React.Component {
     render() {
         return(
            <div className={style.taskContainer}>
-              <TaskFilter />
+              <TaskFilter {...this.props} />
               <TaskList {...this.props} />
             </div>
         )

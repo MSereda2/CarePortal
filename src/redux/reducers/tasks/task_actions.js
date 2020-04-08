@@ -30,3 +30,7 @@ export let getTask = (data) => ({
     type: task_types.GET_TASK,
     payload: data
 })
+
+export let setTaskCounter = () => ({
+    type: task_types.SET_TASK_COUNTER,
+})
