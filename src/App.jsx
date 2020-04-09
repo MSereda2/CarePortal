@@ -19,6 +19,12 @@ import {
   unsubscribeFromAuth,
 } from "./redux/reducers/login/login_thunk";
 
+import { getNav } from "./redux/reducers/nav/nav_selectors";
+import {
+  getProfileImg,
+  getIsAuth,
+} from "./redux/reducers/login/login_selectors";
+
 class App extends Component {
   componentDidMount = () => {
     this.props.subscribeFromAuth();
@@ -63,9 +69,9 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  nav: state.nav,
-  profileImg: state.login.currentUser.photoURL,
-  isAuth: state.login.currentUser.id,
+  nav: getNav(state),
+  profileImg: getProfileImg(state),
+  isAuth: getIsAuth(state),
 });
 
 export default connect(mapStateToProps, {
