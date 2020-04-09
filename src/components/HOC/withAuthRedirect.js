@@ -15,4 +15,4 @@ export const withAuthRedirect = (Component) => {
 
 const mapStateToPropsForRedirect = (state) => ({
     isAuth: state.login.currentUser.id
-})
+})   
