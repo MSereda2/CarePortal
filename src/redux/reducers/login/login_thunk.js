@@ -2,7 +2,7 @@
 import { auth, createUserProfileDocument } from '../../../api/firebase/firebase.utils';
 
 // Actions
-import {setUserAC} from '../login/login_actions';
+import {setUserAC} from './login_actions';
 
 
 let unSubscribeFromAuth = null;

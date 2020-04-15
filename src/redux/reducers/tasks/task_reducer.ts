@@ -1,15 +1,17 @@
-
-import user4 from '../../../assets/use4.jpg';
-
 import {task_types} from './task_types';
+import { InitialStateType } from '../tasks/task_typesTS';
 
-const initialState = {
+// Reducer Type
+
+
+
+const initialState: InitialStateType = {
     task: [],
     taskCounter: null,
     isShowModal: false,
 }
 
-let task_reducer = (state = initialState, action) => {
+let task_reducer = (state = initialState, action: any): InitialStateType => {
     switch(action.type) {
         case task_types.SHOW_MODAL:
             return {
@@ -32,16 +34,6 @@ let task_reducer = (state = initialState, action) => {
                     return el;
                 })
             }   
-        case task_types.CREATE_TASK_SHOWMODAL:
-            return {
-                ...state,
-                isShowModal: true
-            }
-        case task_types.CREATE_TASK_CLOSEMODAL:
-            return {
-                ...state,
-                isShowModal: false
-            }
         case task_types.ADD_TASK:
             return {
                 ...state,
@@ -62,3 +54,15 @@ let task_reducer = (state = initialState, action) => {
 }
 
 export default task_reducer;
+
+
+// case task_types.CREATE_TASK_SHOWMODAL:
+//             return {
+//                 ...state,
+//                 isShowModal: true
+//             }
+//         case task_types.CREATE_TASK_CLOSEMODAL:
+//             return {
+//                 ...state,
+//                 isShowModal: false
+//             }

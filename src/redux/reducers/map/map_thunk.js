@@ -2,7 +2,7 @@
 import {reverseGeocode} from '../../../api/api';
 
 // Actions
-import {getUser,getLocationName} from '../map/map_actions';
+import {getUserLocation , getLocationName} from './map_actions';
 
 
 export const SetUserLocationCreator = (userlocation) => {
@@ -11,7 +11,7 @@ export const SetUserLocationCreator = (userlocation) => {
 
         let getCoordinates = async (position) => {
             const {latitude, longitude} = position.coords;
-            dispatch(getUser(latitude, longitude));
+            dispatch(getUserLocation(latitude, longitude));
 
             const response = await reverseGeocode(latitude, longitude);
             dispatch(getLocationName(response.data.results[0].address_components[1].long_name + ' '+ response.data.results[0].address_components[0].long_name))

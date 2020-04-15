@@ -1,0 +1,1 @@
+export const getTaskSelect = (state: any) => state.task.task;

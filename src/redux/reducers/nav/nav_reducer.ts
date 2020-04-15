@@ -25,7 +25,7 @@ const initialState = {
     ],
 }
 
-let nav_reducer = (state = initialState, action) => {
+let nav_reducer = (state = initialState, action: any) => {
     switch(action.type) {
 
         default: return state

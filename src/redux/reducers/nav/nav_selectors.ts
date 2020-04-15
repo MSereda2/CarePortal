@@ -1,0 +1,1 @@
+export const getNav = (state: any) => state.nav;

@@ -1,16 +1,23 @@
 import {map_types} from './map_types';
+// Types
 
-const initialState = {
+type InitialStateType = {
+    userLocation: {lat: number | null, lng: number | null}
+    streetName: string
+}
+
+
+const initialState: InitialStateType = {
     userLocation: {lat: null, lng: null},
     streetName: ''
 }
 
-let map_reducer = (state = initialState, action) => {
+let map_reducer = (state = initialState, action: any): InitialStateType => {
     switch(action.type) {
         case map_types.GET_USER_LOCATION:
             return {
                 ...state,
-                userLocation: {lat:action.lat, lng: action.lng }
+                userLocation: {lat:action.lat, lng: action.lng },
                
             }
         case map_types.GET_LOCATION_NAME:
