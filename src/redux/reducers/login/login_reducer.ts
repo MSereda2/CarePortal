@@ -5,7 +5,7 @@ const initialState = {
     // userId: null,
 }
 
-let login_reducer = (state = initialState, action) => {
+let login_reducer = (state = initialState, action: any) => {
     switch(action.type) {
         case login_types.SET_USER:
             return {

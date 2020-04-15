@@ -5,7 +5,7 @@ import {compose} from 'redux';
 import {reduxForm, Field} from 'redux-form';
 
 // Components
-import BtnMain from '../../common/BtnMain/BtnMain';
+import BtnMain from '../../common/btnMain/BtnMain';
 import {FormsControl} from '../../common/formInput/FormInput';
 import FormSlider from '../../common/formSlider/FormSlider';
 

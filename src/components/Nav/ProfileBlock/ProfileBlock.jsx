@@ -9,7 +9,7 @@ import CircleImg from '../../common/CircleImg/CircleImg';
 // import { auth } from '../../../api/firebase/firebase.utils';
 
 // Components
-import BtnMain from '../../common/BtnMain/BtnMain';
+import BtnMain from '../../common/btnMain/BtnMain';
 
 export default function SimpleMenu(props) {
   
