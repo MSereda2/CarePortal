@@ -12,7 +12,6 @@ import MapContainer from "../../MapContainer/MapContainer";
 import {
   showModal,
   closeModal,
-  getTask,
 } from "../../../redux/reducers/tasks/task_actions";
 
 // HOC
@@ -28,13 +27,6 @@ import {
 import { getTaskSelect } from "../../../redux/reducers/tasks/task_selectors";
 
 class Main extends React.Component {
-  componentDidMount() {
-    const collectionRef = firestore.collection("tasks");
-    collectionRef.onSnapshot(async (snapShot) => {
-      const dataTask = await convertCollectionSnapShottoMap(snapShot);
-      this.props.getTask(dataTask);
-    });
-  }
 
   render() {
     return (
@@ -51,6 +43,6 @@ const mapStatetoProps = (state) => ({
 });
 
 export default compose(
-  connect(mapStatetoProps, { showModal, closeModal, getTask }),
-  withAuthRedirect
+  connect(mapStatetoProps, { showModal, closeModal }),
+  // withAuthRedirect
 )(Main);

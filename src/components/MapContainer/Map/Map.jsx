@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleMap, Marker, Autocomplete} from '@react-google-maps/api';
+import style from './map.module.scss'
 
 // Components
 import MapInfoWindow from '../MapInfoWindow/MapInfoWindow';
@@ -12,7 +13,22 @@ let Map = (props) => {
 
     let taskCoord = () => (
         props.task.map(task => (
-            <Marker key={task.id} onClick={() => {props.showModal(task.id)}} position={{lat: task.coordinates.lat, lng: task.coordinates.lng}} />
+            <Marker
+              className={style.label}
+              key={task.id}
+              onClick={() => {props.showModal(task.id)}}
+              position={{lat: task.coordinates.lat, lng: task.coordinates.lng}}
+              icon={{
+                  url: require('../../../assets/map_icon_text_bordered.svg'),
+                  labelOrigin: {x: 30, y: 20},
+
+                }}
+              label={{
+                  text: task.cost, 
+                  fontSize: '14px', color: 'black',
+                  fontWeight: '700'
+                }}
+              />
         ))
     )
 

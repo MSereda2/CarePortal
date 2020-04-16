@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@appbaseio/reactivemaps": "^3.0.0-beta.4",
     "@appbaseio/reactivesearch": "^3.4.1",
     "@react-google-maps/api": "^1.8.5",
     "@testing-library/jest-dom": "^4.2.4",
@@ -35,6 +34,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
+    "styled-components": "^5.1.0",
     "typescript": "^3.8.3",
     "uniqid": "^5.2.0"
   },

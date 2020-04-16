@@ -18,9 +18,9 @@ import {
 } from "../../redux/reducers/map/map_selectors";
 
 class MapContainer extends React.Component {
-  componentDidMount = () => {
-    this.props.SetUserLocationCreator(this.props.userLocation);
-  };
+  // componentDidMount = () => {
+  //   this.props.SetUserLocationCreator(this.props.userLocation);
+  // };
 
   render() {
     return (
@@ -37,6 +37,6 @@ const mapStateToProps = (state) => ({
   task: getTaskSelect(state),
 });
 
-export default connect(mapStateToProps, { showModal, SetUserLocationCreator })(
+export default connect(mapStateToProps, { showModal,  })(
   MapContainer
 );

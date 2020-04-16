@@ -14,7 +14,17 @@ export type SetUserPayloadType = {
     photoURL: string,
 }
 
+export type ToggleFetchingType = {
+    type: typeof login_types.TOGGLE_FETCHING,
+    payload: boolean
+}
+
 export const setUserAC = (user: SetUserPayloadType): SetUserACType => ({
     type: login_types.SET_USER,
     payload: user
+})
+
+export const toggleFetching = (payload: boolean):ToggleFetchingType => ({
+    type: login_types.TOGGLE_FETCHING,
+    payload
 })

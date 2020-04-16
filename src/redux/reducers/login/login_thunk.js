@@ -2,29 +2,33 @@
 import { auth, createUserProfileDocument } from '../../../api/firebase/firebase.utils';
 
 // Actions
-import {setUserAC} from './login_actions';
+import {setUserAC, toggleFetching} from './login_actions';
+import {set_initialized} from '../app/app_actions';
+
 
 
 let unSubscribeFromAuth = null;
 
 export const subscribeFromAuth = () => {
-
+    
     return async (dispatch) => {
+
         unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-     
+
         if(userAuth) {
             const userRef = await createUserProfileDocument(userAuth);
-      
-            userRef.onSnapshot(snapShot => { dispatch(setUserAC({
-                id: snapShot.id,
-                ...snapShot.data()
-            }))  })
-        } else {
-           dispatch(setUserAC(userAuth))
+            userRef.onSnapshot(snapShot => { 
+                dispatch(setUserAC({ id: snapShot.id, ...snapShot.data()},
+            ))
+            dispatch(set_initialized()) // Исправить это диспатчт должен происходить в App.thunk (Отвечает за инстализацию приложения )
+        }) } else {
+             dispatch(setUserAC(userAuth)) 
         }
-              
+
         })
+
     }
+
 }
 
 export const unsubscribeFromAuth = () => {

@@ -4,7 +4,7 @@ import {  Marker} from '@react-google-maps/api';
 
 const MapMarkerLocation = (props) => (
     <Marker
-    icon={require('../../../assets/user_location.png')}
+    icon={{url: require('../../../assets/map.svg'), scaledSize: {width: 50, height: 50}}}
     position={{lat: props.userLocation.lat ? props.userLocation.lat : 45.039268,
      lng: props.userLocation.lng ? props.userLocation.lng : 38.987221}} />
 )

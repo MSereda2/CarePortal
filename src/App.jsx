@@ -1,7 +1,8 @@
 // Packgages
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, withRouter } from "react-router-dom";
+import {compose} from 'redux';
 
 // Style
 import style from "./App.scss";
@@ -13,9 +14,10 @@ import Main from "./components/pages/Main/Main";
 import Advanced from "./components/pages/Advanced/Advanced";
 import CreateTask from "./components/CreateTask/CreateTask";
 
+import {initializeThunk} from './redux/reducers/app/app_thunk';
+
 // Login Thunk
 import {
-  subscribeFromAuth,
   unsubscribeFromAuth,
 } from "./redux/reducers/login/login_thunk";
 
@@ -24,10 +26,14 @@ import {
   getProfileImg,
   getIsAuth,
 } from "./redux/reducers/login/login_selectors";
+import WithSpiner from './components/HOC/withSpiner/withSpiner'
+
+import { SpinnerContainer, SpinnerOverlay } from './components/HOC/withSpiner/with-spinner.styles';
+
 
 class App extends Component {
   componentDidMount = () => {
-    this.props.subscribeFromAuth();
+    this.props.initializeThunk()
   };
 
   componentWillUnmount = () => {
@@ -35,6 +41,13 @@ class App extends Component {
   };
 
   render() {
+    if(!this.props.isInitilized) {
+      return (
+        <SpinnerOverlay>
+          <SpinnerContainer />
+        </SpinnerOverlay>
+      )
+    }
     return (
       <div className={style.container}>
         <Nav {...this.props} />
@@ -69,12 +82,17 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  isInitilized: state.app.INITIALIZED,
   nav: getNav(state),
   profileImg: getProfileImg(state),
   isAuth: getIsAuth(state),
 });
 
-export default connect(mapStateToProps, {
-  subscribeFromAuth,
-  unsubscribeFromAuth,
-})(App);
+export default compose(
+  withRouter,
+  connect(mapStateToProps, {
+    initializeThunk,
+    unsubscribeFromAuth,
+  }),
+
+)(App)
