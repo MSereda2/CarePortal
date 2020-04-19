@@ -25,6 +25,10 @@ export type SetTaskCounterType = {
   type: typeof task_types.SET_TASK_COUNTER
 }
 
+export type ToggleFetchingType = {
+  type: typeof task_types.TOGGLE_FETCHING
+}
+
 // Action Reducer
 export type InitialStateTypeTask = {
   coordinates: {lat: number, lng: number},
@@ -42,5 +46,5 @@ export type InitialStateTypeTask = {
 export type InitialStateType = {
   task: Array<InitialStateTypeTask>,
   taskCounter: number | null,
-  isShowModal: boolean,
+  isFetching: boolean
 }

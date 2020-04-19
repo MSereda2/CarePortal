@@ -4,15 +4,18 @@ import uniqId from 'uniqid';
 import {createTaskDocument,firestore,
   convertCollectionSnapShottoMap,} from '../../../api/firebase/firebase.utils';
 
-import {getTask} from './task_actions';
+import {getTask, toggleFetching} from './task_actions';
 
 export const CreateTaskThunkCreator = (FormData, userData) => {
 
   return async (dispatch ) => {
     let results = await geocodeByAddress(FormData.coordinates);
     let coordinates = await getLatLng(results[0]);
-    createTaskDocument(FormData, coordinates, userData, uniqId());
-    return createTaskDocument;
+    dispatch(toggleFetching(true))
+    createTaskDocument(FormData, coordinates, userData, uniqId()).then(() => {
+      dispatch(toggleFetching(false))
+    })
+
   }
 }
 

@@ -1,4 +1,6 @@
 import {task_types} from './task_types';
+
+// TypesTS
 import { InitialStateType } from '../tasks/task_typesTS';
 
 // Reducer Type
@@ -6,9 +8,9 @@ import { InitialStateType } from '../tasks/task_typesTS';
 
 
 const initialState: InitialStateType = {
-    task: [],
+    task: [] ,
     taskCounter: null,
-    isShowModal: false,
+    isFetching: false
 }
 
 let task_reducer = (state = initialState, action: any): InitialStateType => {
@@ -49,20 +51,13 @@ let task_reducer = (state = initialState, action: any): InitialStateType => {
                 ...state,
                 taskCounter: state.task.length
             }
+        case task_types.TOGGLE_FETCHING:
+            return {
+                ...state,
+                isFetching: action.isFetch
+            }
         default: return state
     }
 }
 
 export default task_reducer;
-
-
-// case task_types.CREATE_TASK_SHOWMODAL:
-//             return {
-//                 ...state,
-//                 isShowModal: true
-//             }
-//         case task_types.CREATE_TASK_CLOSEMODAL:
-//             return {
-//                 ...state,
-//                 isShowModal: false
-//             }

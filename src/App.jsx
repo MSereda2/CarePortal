@@ -14,20 +14,16 @@ import Main from "./components/pages/Main/Main";
 import Advanced from "./components/pages/Advanced/Advanced";
 import CreateTask from "./components/CreateTask/CreateTask";
 
+
+// Thunk Creator
 import {initializeThunk} from './redux/reducers/app/app_thunk';
+import { unsubscribeFromAuth, } from "./redux/reducers/login/login_thunk";
 
-// Login Thunk
-import {
-  unsubscribeFromAuth,
-} from "./redux/reducers/login/login_thunk";
-
+// Selectors
 import { getNav } from "./redux/reducers/nav/nav_selectors";
-import {
-  getProfileImg,
-  getIsAuth,
-} from "./redux/reducers/login/login_selectors";
-import WithSpiner from './components/HOC/withSpiner/withSpiner'
+import {  getProfileImg, getIsAuth, } from "./redux/reducers/login/login_selectors";
 
+// Hoc
 import { SpinnerContainer, SpinnerOverlay } from './components/HOC/withSpiner/with-spinner.styles';
 
 

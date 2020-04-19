@@ -1,0 +1,40 @@
+.content {
+    border: 1px solid #6F4590;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60.7rem;
+    height: 40.7rem;
+    background-color: #fff;
+    outline: none;
+}
+
+.overlay {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(53, 52, 52, 0.466);
+  }
+  
+  .afterOpen {
+    opacity: 1;
+  }
+  
+  .beforeClose {
+    opacity: 0;
+  }
+// .createTaskModal {
+//     border: 1px solid #6F4590;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 110.7rem;
+//     height: min-content;
+//     background-color: #fff;
+// }

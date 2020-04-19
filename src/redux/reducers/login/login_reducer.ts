@@ -8,7 +8,6 @@ export type InitialStateType = typeof initialState;
 
 const initialState = {
     currentUser: {} as SetUserPayloadType,
-    isFetching: false as boolean
 }
 
 
@@ -18,11 +17,6 @@ let login_reducer = (state = initialState, action: any): InitialStateType => {
             return {
                 ...state,
                 currentUser: {...action.payload},  
-            }
-        case login_types.TOGGLE_FETCHING:
-            return {
-                ...state,
-                isFetching: action.payload
             }
 
         default: return state;

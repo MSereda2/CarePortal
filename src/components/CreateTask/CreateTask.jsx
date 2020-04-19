@@ -10,14 +10,11 @@ import style from './CreateTask.module.scss';
 // Components
 import CreateTaskForm from './CreateTaskForm/CreateTaskForm';
 
-// Actions
-import {addTask} from '../../redux/reducers/tasks/task_actions';
+// HOC
+import WithSpiner from '../HOC/withSpiner/withSpiner';
 
 // Thunk
 import {CreateTaskThunkCreator} from '../../redux/reducers/tasks/task_thunk';
-
-
-
 
 
 let CreateTask = (props) => {
@@ -30,7 +27,7 @@ let CreateTask = (props) => {
     return(
         <div className={style.createTask}>
             <div className={style.leftColumn}>
-                <CreateTaskForm onSubmit={onSubmit} />   
+                <CreateTaskForm isFetching={props.isFetching} onSubmit={onSubmit} />   
             </div>
             <div className={style.rightColumn}>
             </div>
@@ -39,9 +36,11 @@ let CreateTask = (props) => {
 }
 
 const MapStateToProps = (state) => ({
-    UserData: state.login
+    UserData: state.login,
+    isFetching: state.task.isFetching
 })
 
 export default compose(
     connect(MapStateToProps, {CreateTaskThunkCreator}),
+    WithSpiner
 )(CreateTask);

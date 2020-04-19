@@ -33,3 +33,8 @@ export let getTask = (data: InitialStateTypeTask):GetTaskType => ({
 export let setTaskCounter = (): SetTaskCounterType => ({
     type: task_types.SET_TASK_COUNTER,
 })
+
+export let toggleFetching = (isFetch: boolean) => ({
+    type: task_types.TOGGLE_FETCHING,
+    isFetch
+})
