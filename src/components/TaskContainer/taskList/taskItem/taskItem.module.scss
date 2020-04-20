@@ -9,6 +9,8 @@
    backface-visibility: hidden;
    transition: all .1s;
    margin-bottom: 2rem;
+   border: 1.5px solid rgba(112, 69, 144, 0);
+
 
    &:hover {
         border: 1.5px solid #6F4590;

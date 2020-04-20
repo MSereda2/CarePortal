@@ -25,7 +25,7 @@ import {  getProfileImg, getIsAuth, } from "./redux/reducers/login/login_selecto
 
 // Hoc
 import { SpinnerContainer, SpinnerOverlay } from './components/HOC/withSpiner/with-spinner.styles';
-
+import {withAuthRedirect} from './components/HOC/withAuthRedirect';
 
 class App extends Component {
   componentDidMount = () => {
@@ -85,7 +85,7 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(
-  withRouter,
+    withRouter,
   connect(mapStateToProps, {
     initializeThunk,
     unsubscribeFromAuth,

@@ -17,12 +17,6 @@ import {
 // HOC
 import { withAuthRedirect } from "../../HOC/withAuthRedirect";
 
-// Firebase
-import {
-  firestore,
-  convertCollectionSnapShottoMap,
-} from "../../../api/firebase/firebase.utils";
-
 // Selectors
 import { getTaskSelect } from "../../../redux/reducers/tasks/task_selectors";
 
@@ -44,5 +38,5 @@ const mapStatetoProps = (state) => ({
 
 export default compose(
   connect(mapStatetoProps, { showModal, closeModal }),
-  // withAuthRedirect
+  withAuthRedirect
 )(Main);

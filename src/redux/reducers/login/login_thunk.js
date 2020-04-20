@@ -14,7 +14,6 @@ export const subscribeFromAuth = () => {
     return async (dispatch) => {
 
         unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-
         if(userAuth) {
             const userRef = await createUserProfileDocument(userAuth);
             userRef.onSnapshot(snapShot => { 
@@ -22,7 +21,10 @@ export const subscribeFromAuth = () => {
             ))
             dispatch(set_initialized()) // Исправить это диспатчт должен происходить в App.thunk (Отвечает за инстализацию приложения )
         }) } else {
+            dispatch(set_initialized()) // Исправить это диспатчт должен происходить в App.thunk (Отвечает за инстализацию приложения )
+
              dispatch(setUserAC(userAuth)) 
+
         }
 
         })
@@ -34,7 +36,7 @@ export const subscribeFromAuth = () => {
 export const unsubscribeFromAuth = () => {
 
     return async (dispatch) => {
-        unSubscribeFromAuth()
+       return unSubscribeFromAuth()
     }
 }
 
