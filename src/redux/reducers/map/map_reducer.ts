@@ -3,13 +3,15 @@ import {map_types} from './map_types';
 
 type InitialStateType = {
     userLocation: {lat: number | null, lng: number | null}
-    streetName: string
+    streetName: string,
+    searchRuquest: string
 }
 
 
 const initialState: InitialStateType = {
     userLocation: {lat: null, lng: null},
-    streetName: ''
+    streetName: '',
+    searchRuquest: ''
 }
 
 let map_reducer = (state = initialState, action: any): InitialStateType => {
@@ -24,6 +26,11 @@ let map_reducer = (state = initialState, action: any): InitialStateType => {
             return {
                 ...state,
                 streetName: action.name
+            }
+        case map_types.GET_SEARCH_REQUEST:
+            return {
+                ...state,
+                searchRuquest: action.latLng
             }
 
         default: return state;

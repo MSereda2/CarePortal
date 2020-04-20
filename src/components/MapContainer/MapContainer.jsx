@@ -6,9 +6,7 @@ import style from "./mapContainer.module.css";
 
 // Actions
 import { showModal, closeModal } from "../../redux/reducers/tasks/task_actions";
-
-// Thunk Creator
-import { SetUserLocationCreator } from "../../redux/reducers/map/map_thunk";
+import {getSerchRequest} from '../../redux/reducers/map/map_actions';
 
 // Selectors
 import { getTaskSelect } from "../../redux/reducers/tasks/task_selectors";
@@ -18,9 +16,6 @@ import {
 } from "../../redux/reducers/map/map_selectors";
 
 class MapContainer extends React.Component {
-  // componentDidMount = () => {
-  //   this.props.SetUserLocationCreator(this.props.userLocation);
-  // };
 
   render() {
     return (
@@ -35,8 +30,9 @@ const mapStateToProps = (state) => ({
   streetName: getStreetName(state),
   userLocation: getUserLocation(state),
   task: getTaskSelect(state),
+  searchRuquest: state.map.searchRuquest
 });
 
-export default connect(mapStateToProps, { showModal,  })(
+export default connect(mapStateToProps, { showModal, getSerchRequest })(
   MapContainer
 );

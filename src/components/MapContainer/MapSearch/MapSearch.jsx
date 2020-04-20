@@ -1,55 +1,57 @@
 import React from 'react';
 import {Autocomplete} from '@react-google-maps/api';
+import style from './mapSearch.module.scss';
+
 
 class MapSearch extends React.Component {
 
     constructor (props) {
         super(props)
     
-        this.autocomplete = null;
-        this.onLoad = this.onLoad.bind(this)
-    this.onPlaceChanged = this.onPlaceChanged.bind(this)
+        this.state = {
+          autocomplete: null,
+          onLoad: this.onLoad,
+          onPlaceChanged: this.onPlaceChanged,
+          defaultBounds: {
+            east: 12,
+            north: 15,
+            south: 15,
+            west: 20
+          }
+        }
     }
-    onLoad (autocomplete) {
-        console.log('autocomplete: ', autocomplete)
-    
-        this.autocomplete = autocomplete
+
+
+    onLoad = (autocomplete) => {
+       this.state.autocomplete = autocomplete ;
       }
 
-      onPlaceChanged () {
-        if (this.autocomplete !== null) {
-          console.log(this.autocomplete.getPlace())
-        } else {
-          console.log('Autocomplete is not loaded yet!')
-        }
-      }
-   
+    onPlaceChanged = () => {
+        if (this.state.autocomplete !== null) {
+            let lat = this.state.autocomplete.getPlace().geometry.location.lat();
+            let lng = this.state.autocomplete.getPlace().geometry.location.lng();
+            console.log(this.state.autocomplete.getPlace())
+            this.props.getSerchRequest({lat,lng})
+         this.state.autocomplete.getPlace()
+        } 
+    }
 
     render() {
         return(
             <Autocomplete
-            onLoad={this.onLoad}
-            onPlaceChanged={this.onPlaceChanged}
-          >
-            <input
-              type="text"
-              placeholder="Customized your placeholder"
-              style={{
-                boxSizing: `border-box`,
-                border: `1px solid transparent`,
-                width: `240px`,
-                height: `32px`,
-                padding: `0 12px`,
-                borderRadius: `3px`,
-                boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-                fontSize: `14px`,
-                outline: `none`,
-                textOverflow: `ellipses`,
-                position: "absolute",
-                left: "50%",
-                marginLeft: "-120px"
-              }}
-            />
+              fields={['geometry.location']}
+              onLoad={this.onLoad}
+              onPlaceChanged={this.onPlaceChanged}
+          > 
+            <div className={style.wrap}>
+              <div className={style.search}>
+                  <input type="text" className={style.searchTerm} placeholder="What are you looking for?" />
+                  <button type="submit" className={style.searchButton}>
+                    <i className='fa fa-search'></i>
+                  </button>
+              </div>
+            </div>
+           
           </Autocomplete>
  
         )
@@ -59,3 +61,17 @@ class MapSearch extends React.Component {
 }
 
 export default MapSearch;
+
+
+
+// this.bounds = autocomplete.setBounds({
+//   east: 12,
+//   north: 15,
+//   south: 15,
+//   west: 20
+//  })
+
+// this.autocomplete = null
+        // this.onLoad = this.onLoad
+        // this.onPlaceChanged = this.onPlaceChanged  
+        // this.bounds = null
