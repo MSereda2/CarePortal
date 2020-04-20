@@ -23,8 +23,10 @@ let Map = (props) => {
     const center = () => {
       if(props.searchRuquest) {
         return {lat: props.searchRuquest.lat, lng: props.searchRuquest.lng}
-      } else {
+      } else if(props.userLocation) {
         return {lat: props.userLocation.lat, lng: props.userLocation.lng}
+      } else if(props.userLocation.lat === null && props.userLocation.lng === null) {
+        return {lat: 12, lng: 12}
       }
     }
 
