@@ -1,0 +1,61 @@
+@import '../../../../assets/styles/variables';
+
+.profileInfo {
+  height: 93vh;
+
+  &__top {
+    position: relative;
+    background-image: url('../../../../assets/img/brad-pearson-fxU22Sf2GzI-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    width: 100%;
+  }
+
+  
+  &__content {
+
+    &_img {
+      position: absolute;
+      bottom: -10%;
+      left: 5%;
+      width: 10.5rem;
+      height: 10.5rem;
+      overflow: hidden;
+      border-radius: 50%;
+
+      img {
+        display: inline;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    &_changeimg {
+      position: absolute;
+      bottom: 3%;
+      right: 10%;
+      font-size: 1.8rem;
+      color: $COLOR-WHITE;
+      cursor: pointer;
+    }
+
+    &_text {
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      color: $COLOR-WHITE;
+
+      h4 {
+        font-size: 3.3rem;
+        font-weight: 300;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+      
+  }
+
+}

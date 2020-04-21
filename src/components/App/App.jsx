@@ -2,31 +2,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, Redirect, withRouter } from "react-router-dom";
-import {compose} from 'redux';
+import { compose } from 'redux';
 
 // Style
 import style from "./App.scss";
 
 // Components
-import Nav from "./components/Nav/Nav";
-import AuthContainer from "./components/AuthForm/AuthContainer/AuthContainer";
-import Main from "./components/pages/Main/Main";
-import Advanced from "./components/pages/Advanced/Advanced";
-import CreateTask from "./components/CreateTask/CreateTask";
-import ProfilePage from "./components/pages/ProfilePage/ProfilePage";
+import Nav from "../Nav/Nav";
+import AuthContainer from "../AuthForm/AuthContainer/AuthContainer";
+import Main from "../pages/Main/Main";
+import Advanced from "../pages/Advanced/Advanced";
+import CreateTask from "../CreateTask/CreateTask";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 
 
 // Thunk Creator
-import {initializeThunk} from './redux/reducers/app/app_thunk';
-import { unsubscribeFromAuth, } from "./redux/reducers/login/login_thunk";
+import { initializeThunk } from '../../redux/reducers/app/app_thunk';
+import { unsubscribeFromAuth, } from "../../redux/reducers/login/login_thunk";
 
 // Selectors
-import { getNav } from "./redux/reducers/nav/nav_selectors";
-import {  getProfileImg, getIsAuth, } from "./redux/reducers/login/login_selectors";
+import { getNav } from "../../redux/reducers/nav/nav_selectors";
+import { getProfileImg, getIsAuth, } from "../../redux/reducers/login/login_selectors";
 
 // Hoc
-import { SpinnerContainer, SpinnerOverlay } from './components/HOC/withSpiner/with-spinner.styles';
+import { SpinnerContainer, SpinnerOverlay } from '../HOC/withSpiner/with-spinner.styles';
 
 class App extends Component {
   componentDidMount = () => {
@@ -38,7 +38,7 @@ class App extends Component {
   };
 
   render() {
-    if(!this.props.isInitilized) {
+    if (!this.props.isInitilized) {
       return (
         <SpinnerOverlay>
           <SpinnerContainer />
@@ -56,17 +56,17 @@ class App extends Component {
               !this.props.isAuth ? (
                 <AuthContainer signInForm />
               ) : (
-                <Redirect to="/" />
-              )
-            }/>
+                  <Redirect to="/" />
+                )
+            } />
           <Route path="/signup"
             render={() =>
               !this.props.isAuth ? (
                 <AuthContainer signUpForm />
               ) : (
-                <Redirect to="/" />
-              )
-            }/>
+                  <Redirect to="/" />
+                )
+            } />
           <Route path="/createTask" render={() => <CreateTask />} />
           <Route path="/profile" render={() => <ProfilePage />} />
         </div>
@@ -83,7 +83,7 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(
-    withRouter,
+  withRouter,
   connect(mapStateToProps, {
     initializeThunk,
     unsubscribeFromAuth,

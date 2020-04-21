@@ -1,4 +1,4 @@
-@import '../../../style/abstracts/variables';
+@import '../../../assets/styles/variables';
 
 .profile {
     position: relative;
@@ -11,8 +11,8 @@
         font-size: 1.5rem;
         top: 110%;
         z-index: 1;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0px 0px 3px 1px rgba(139, 139, 139, 0.75);
+        background-color: $COLOR-WHITE;
+        box-shadow: 0px 0px 3px 1px $COLOR-LIGHT-GRAY;
 
 
         ul {
@@ -20,22 +20,24 @@
             width: 13rem;
             text-align: center;
 
+            a {
+                display: block;
+                text-decoration: none;
+                color: $COLOR-MAIN-BLACK;
+                padding: 1rem 1rem;
+
+                &:hover {
+                    background-color: $COLOR-MAIN-GRAY;
+                    
+                }
+            }
+
             li {
                 list-style: none;
                 cursor: pointer;
                 padding: 1rem 1rem;
                 transition: all .1s;
-               
-                a {
-                    text-decoration: none;
-                    color: $COLOR-MAIN-BLACK;
-                }
-
-
-                &:hover {
-                    background-color: rgb(219, 219, 219);
-                    
-                }
+                &:hover {  background-color: $COLOR-MAIN-GRAY; }
             }
         }
     }

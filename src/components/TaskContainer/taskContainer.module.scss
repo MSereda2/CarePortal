@@ -1,3 +1,4 @@
+@import '../../assets/styles/variables';
 .taskContainer {
     height: 89vh;
     grid-area: task;
@@ -11,15 +12,15 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: $COLOR-WHITE;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: $COLOR-MAIN-GRAY;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: $COLOR-MAIN-GRAY;
 }

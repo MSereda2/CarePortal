@@ -17,7 +17,7 @@ let Map = (props) => {
               key={task.id}
               onClick={() => {props.showModal(task.id)}}
               position={{lat: task.coordinates.lat, lng: task.coordinates.lng}}
-              icon={{ url: require('../../../assets/map_icon_text_bordered.svg'), labelOrigin: {x: 30, y: 20}, }}
+              icon={{ url: require('../../../assets/img/map_icon_text_bordered.svg'), labelOrigin: {x: 30, y: 20}, }}
               label={{ text: task.cost, fontSize: '14px', color: 'black', ontWeight: '700'}} />)));
     
     const center = () => {
@@ -50,8 +50,3 @@ let Map = (props) => {
 }
 
 export default Map
-
-
-
-// lat:props.userLocation.lat ? props.userLocation.lat : 45.039268,
-// lng:props.userLocation.lng ? props.userLocation.lng : 38.987221

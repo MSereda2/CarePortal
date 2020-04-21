@@ -1,5 +1,5 @@
 const initialState = {
-    logoImg: require('../../../assets/logo.jpg'),
+    logoImg: require('../../../assets/img/logo.jpg'),
     links: [
         {   
             to: '/',

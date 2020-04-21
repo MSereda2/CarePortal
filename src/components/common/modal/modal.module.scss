@@ -1,12 +1,11 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
 .content {
-    border: 1px solid #6F4590;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border: 1px solid $COLOR-PRIMARY;
+    @include absCenter;
     width: 60.7rem;
     height: 40.7rem;
-    background-color: #fff;
+    background-color: $COLOR-WHITE;
     outline: none;
 }
 
@@ -18,7 +17,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(53, 52, 52, 0.466);
+    background-color: $COLOR-MAIN-GRAY;
   }
   
   .afterOpen {
@@ -28,13 +27,3 @@
   .beforeClose {
     opacity: 0;
   }
-// .createTaskModal {
-//     border: 1px solid #6F4590;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     width: 110.7rem;
-//     height: min-content;
-//     background-color: #fff;
-// }

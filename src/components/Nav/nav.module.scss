@@ -1,4 +1,4 @@
-@import '../../style/abstracts/variables';
+@import '../../assets/styles/variables';
 
 .navbar {
     padding: .5rem 3rem;
@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $COLOR-MAIN-BLACK;
 }
 
 .nav__item {
@@ -20,10 +20,10 @@
 
 .nav__link {
     text-decoration: none;
-    color: rgb(59, 58, 58);
+    color: $COLOR-LIGHT-GRAY;
 
     &:hover {
-        color: black;
+        color: $COLOR-MAIN-BLACK;
     }
 }
 
@@ -61,5 +61,5 @@
 }
 
 .signText:hover {
-    color: rgb(49, 48, 48);
+    color: $COLOR-MAIN-BLACK;
 }

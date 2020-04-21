@@ -2,7 +2,7 @@
 import React from "react";
 import style from "./nav.module.scss";
 import { NavLink } from "react-router-dom";
-import UserIcon from "../../assets/Vector.png";
+import UserIcon from "../../assets/img/Vector.png";
 
 // Components
 import ProfileBlock from "./ProfileBlock/ProfileBlock";
@@ -30,13 +30,3 @@ let Nav = (props) => {
 };
 
 export default Nav;
-
-
-
-// {props.nav.links.map((e) => (
-//   <li key={e.id} className={style.nav__item}>
-//     <NavLink to={e.to} className={style.nav__link}>
-//       {e.name}
-//     </NavLink>
-//   </li>
-// ))}

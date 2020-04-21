@@ -45,7 +45,7 @@ export const signUpThunk = (formData) => {
     return async (dispatch) => {
         let {name, secondName, email, password, passwordConfirm, phoneNumber} = formData;
         let displayName = `${name}  ${secondName}`;
-        let photoURL = require('../../../assets/userEmpty.png');
+        let photoURL = require('../../../assets/img/userEmpty.png');
 
         if(password !== passwordConfirm) {
             alert('password does not match')

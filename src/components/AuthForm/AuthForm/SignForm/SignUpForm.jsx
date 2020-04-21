@@ -4,7 +4,7 @@ import style from './form.module.scss'
 import {reduxForm, Field} from "redux-form";
 
 // Components 
-import {FormsControl} from '../../../common/formInput/FormInput';
+import {FormsControl} from '../../../common/FormInput/FormInput';
 import BtnFormSign from '../../../common/BtnFormSign/BtnFormSign';
 
 // Input Validators

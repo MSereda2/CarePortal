@@ -2,13 +2,11 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import style from './profileBlock.module.scss';
-import {connect} from 'react-redux';
 
 // Components
-import BtnMain from '../../common/btnMain/BtnMain';
+import BtnMain from '../../common/BtnMain/BtnMain';
 
 // // Firebase
-// import {unsubscribeFromAuth} from '../../../redux/reducers/login/login_thunk';
 import {auth} from '../../../api/firebase/firebase.utils'
 
 const ProfileBlock = (props) => {
@@ -18,7 +16,7 @@ const ProfileBlock = (props) => {
   const showDropdown = () => (
     dropdown && <div className={style.profile__dropdown}>
         <ul>
-          <li><NavLink to="/profile">Профиль</NavLink></li>
+          <NavLink to="/profile">Профиль</NavLink>
           <li>Сообщения</li>
           <li>Настройки</li>
           <li onClick={() => auth.signOut()}>Выйти</li>

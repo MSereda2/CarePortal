@@ -3,7 +3,7 @@ import React from 'react';
 import style from './taskItem.module.scss';
 
 
-import clock from '../../../../assets/clock.png'
+import clock from '../../../../assets/img/clock.png'
 
 // Components
 import CircleImg from '../../../common/CircleImg/CircleImg';

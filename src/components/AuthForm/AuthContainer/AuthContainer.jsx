@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 // Assets
-import signInImg from '../../../assets/signin-image.jpg';
-import signUpImg from '../../../assets/signup-image.jpg';
+import signInImg from '../../../assets/img/signin-image.jpg';
+import signUpImg from '../../../assets/img/signup-image.jpg';
 import AuthForm from '../AuthForm/AuthForm';
 
 // Thunk login
