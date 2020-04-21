@@ -1,0 +1,10 @@
+.profilePage {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: auto;
+  height: 93vh;
+
+  &__view {
+      background-color: blue;
+  }
+}

@@ -13,6 +13,8 @@ import AuthContainer from "./components/AuthForm/AuthContainer/AuthContainer";
 import Main from "./components/pages/Main/Main";
 import Advanced from "./components/pages/Advanced/Advanced";
 import CreateTask from "./components/CreateTask/CreateTask";
+import ProfilePage from "./components/pages/ProfilePage/ProfilePage";
+
 
 
 // Thunk Creator
@@ -25,7 +27,6 @@ import {  getProfileImg, getIsAuth, } from "./redux/reducers/login/login_selecto
 
 // Hoc
 import { SpinnerContainer, SpinnerOverlay } from './components/HOC/withSpiner/with-spinner.styles';
-import {withAuthRedirect} from './components/HOC/withAuthRedirect';
 
 class App extends Component {
   componentDidMount = () => {
@@ -50,27 +51,24 @@ class App extends Component {
         <div className={style.mainWindow}>
           <Route exact path="/" render={() => <Main />} />
           <Route path="/advanced" render={() => <Advanced />} />
-          <Route
-            path="/signin"
+          <Route path="/signin"
             render={() =>
               !this.props.isAuth ? (
                 <AuthContainer signInForm />
               ) : (
                 <Redirect to="/" />
               )
-            }
-          />
-          <Route
-            path="/signup"
+            }/>
+          <Route path="/signup"
             render={() =>
               !this.props.isAuth ? (
                 <AuthContainer signUpForm />
               ) : (
                 <Redirect to="/" />
               )
-            }
-          />
+            }/>
           <Route path="/createTask" render={() => <CreateTask />} />
+          <Route path="/profile" render={() => <ProfilePage />} />
         </div>
       </div>
     );

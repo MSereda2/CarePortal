@@ -16,9 +16,9 @@ const ProfileBlock = (props) => {
   const [dropdown, setDropdown] = React.useState(false)
 
   const showDropdown = () => (
-    dropdown && <div className={style.profileDropdown}>
+    dropdown && <div className={style.profile__dropdown}>
         <ul>
-          <li>Профиль</li>
+          <li><NavLink to="/profile">Профиль</NavLink></li>
           <li>Сообщения</li>
           <li>Настройки</li>
           <li onClick={() => auth.signOut()}>Выйти</li>
@@ -27,20 +27,21 @@ const ProfileBlock = (props) => {
   )
 
   return (
-    <div className={style.profileBlock}>
+    <div className={style.profile}>
       <div className={style.createTask}>
         <NavLink to='/createTask'>
           <BtnMain />
         </NavLink >
       </div>
-      <div className={style.profileImg}>
+      <div className={style.profile__img}>
         <div className={style.imgContainer}>
-            <img onClick={() => setDropdown(!dropdown)} src={props.profileImg} alt="circleImg"/>
+            <img src={props.profileImg} alt="circleImg"/>
         </div>
       </div>
+      <p onClick={() => setDropdown(!dropdown)} className={style.profile__name}>Misha sereda <i className="fa fa-angle-down"></i> </p>
       {showDropdown()}
     </div>
   );
 }
 
-export default connect(null, {})(ProfileBlock)
+export default ProfileBlock;

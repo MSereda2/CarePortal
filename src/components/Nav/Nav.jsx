@@ -11,16 +11,11 @@ let Nav = (props) => {
   return (
     <div className={style.navbar}>
       <div className={style.logo}>
-        <img src={props.nav.logoImg} alt="logo" />
+        {/* <img src={props.nav.logoImg} alt="logo" /> */}
+        <i className='fa fa-bars'></i>
       </div>
       <ul className={style.nav}>
-        {props.nav.links.map((e) => (
-          <li key={e.id} className={style.nav__item}>
-            <NavLink to={e.to} className={style.nav__link}>
-              {e.name}
-            </NavLink>
-          </li>
-        ))}
+       
       </ul>
       {props.isAuth ? (
         <ProfileBlock profileImg={props.profileImg} />
@@ -35,3 +30,13 @@ let Nav = (props) => {
 };
 
 export default Nav;
+
+
+
+// {props.nav.links.map((e) => (
+//   <li key={e.id} className={style.nav__item}>
+//     <NavLink to={e.to} className={style.nav__link}>
+//       {e.name}
+//     </NavLink>
+//   </li>
+// ))}

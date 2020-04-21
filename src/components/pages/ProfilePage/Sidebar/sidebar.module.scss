@@ -1,0 +1,72 @@
+@import '../../../../style/abstracts/variables';
+
+.sidebar {
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 1px solid $COLOR-MAIN-GRAY;
+
+  &__top {
+    width: 100%;
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    margin: 3rem 0 5rem 0;
+    text-align: center;
+  }
+
+  &__links {
+    list-style: none;
+  }
+
+  &__item {
+     margin-bottom: 2.1rem;
+     cursor: pointer;
+     padding-bottom: .9rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+
+     &:hover {
+       border-right: 3px solid $COLOR-PRIMARY;
+     }
+
+    i {
+      font-size: 1.6rem;
+      padding-right: .8rem;
+      color: $COLOR-MAIN-GRAY;
+    }
+
+    a {
+      text-decoration: none;
+      color: $COLOR-MAIN-GRAY;
+      font-size: 1.9rem;
+    }
+  }
+
+  &__bottom {
+    
+    button {
+      border: none;
+      outline: none;
+      background: none;
+      color: rgb(245, 86, 86);
+      font-size: 2rem;
+      vertical-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: darken(rgb(245, 86, 86), $amount: 5);
+      }
+
+      i {
+        font-size: 2.4rem;
+        padding-right: .8rem;
+      }
+    }
+  }
+}

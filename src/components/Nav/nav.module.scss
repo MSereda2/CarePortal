@@ -1,6 +1,7 @@
+@import '../../style/abstracts/variables';
 
 .navbar {
-    padding: 0 3rem;
+    padding: .5rem 3rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -8,33 +9,42 @@
     border-bottom: 1px solid black;
 }
 
-
-
-.nav__item:not(:last-child) {
-    padding-right: 6rem;
-}
-
 .nav__item {
     list-style: none;
     font-size: 1.8rem;
+
+    &:not(:last-child) {
+        padding-right: 6rem;
+    }
 }
 
 .nav__link {
     text-decoration: none;
     color: rgb(59, 58, 58);
+
+    &:hover {
+        color: black;
+    }
 }
 
-.nav__link:hover {
-    color: black;
-}
+
 
 .logo {
     width: 8rem;
+
+    i {
+        font-size: 2rem;
+        cursor: pointer;
+        color: $COLOR-MAIN-BLACK;
+        transition: all .2s ;
+
+
+        &:hover {
+            color: $COLOR-MAIN-GRAY;
+        }
+    }
 }
 
-.logo img {
-    width: 100%;
-}
 
 .nav {
     display: flex;
