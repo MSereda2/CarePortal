@@ -59,3 +59,28 @@
   }
 
 }
+
+
+.formContainer {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 4rem;
+  .form {
+
+    .flexContainer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+
+      .form__left div {
+        margin-right: 10rem;
+        padding-bottom: 3rem;
+      }
+
+      .form__right div {
+        padding-bottom: 3rem;
+      }
+    }
+  }
+}

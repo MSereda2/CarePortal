@@ -1,9 +1,11 @@
 import React from 'react';
 import style from './profileInfo.module.scss';
 
-import user from '../../../../assets/img/user2.jpg'
+// Components
+import ChangeAbleInput from '../../../common/ChangeAbleInput/ChangeAbleInput';
+import BtnMain from '../../../common/BtnMain/BtnMain';
 
-const ProfileInfo = (props) => {
+const ProfileInfo = ({isChangeAllowed,onChangeInfo,userData}) => {
 
   return (
     <div className={style.profileInfo}>
@@ -11,10 +13,10 @@ const ProfileInfo = (props) => {
         <div className={style.profileInfo__content}>
           <div>
             <div className={style.profileInfo__content_img}>
-              <img src={user} alt="" />
+              <img src={userData.photoURL} alt="" />
             </div>
             <div className={style.profileInfo__content_text}>
-              <h4>Misha Sereda</h4>
+              <h4>{userData.displayName}</h4>
               <p>Krasnodar, Russian</p>
             </div>
           </div>  
@@ -22,7 +24,23 @@ const ProfileInfo = (props) => {
         </div>
    
       </div>
-     
+      <div className={style.formContainer}>
+        <form className={style.form}>
+          <div className={style.flexContainer}>
+              <div className={style.form__left}>
+                <ChangeAbleInput isChangeAllowed={isChangeAllowed} labelName='Имя' inputName={userData.displayName} />
+                <ChangeAbleInput isChangeAllowed={isChangeAllowed} labelName='Почта' inputName={userData.email}/>
+                <ChangeAbleInput isChangeAllowed={isChangeAllowed} labelName='Город' inputName='Краснодар'/>
+              </div>
+              <div className={style.form__right}>
+                <ChangeAbleInput isChangeAllowed={isChangeAllowed} labelName='Фамилия' inputName={userData.displayName} />
+                <ChangeAbleInput isChangeAllowed={isChangeAllowed} labelName='Телефон' inputName={userData.phoneNumber}/>
+                <ChangeAbleInput isChangeAllowed={isChangeAllowed} labelName='Пол' inputName='Краснодар'/>
+              </div>
+          </div>
+          <BtnMain onChangeInfo={onChangeInfo}/>
+        </form>
+      </div>
     </div>
   )
 }

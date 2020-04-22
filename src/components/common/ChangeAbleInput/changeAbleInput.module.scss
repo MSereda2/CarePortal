@@ -1,0 +1,22 @@
+@import '../../../assets/styles/variables';
+.ChangeAbleInput {
+
+
+  label {
+    display: block;
+    text-align: start;
+    padding-bottom: 1rem;
+    font-size: 1.4rem;
+    color: $COLOR-MAIN-GRAY;
+  }
+
+  input {
+    padding: .8rem 1rem;
+    font-size: 1.7rem;
+    background-color: rgba(235, 235, 235, 0.397);
+    border: none;
+    box-shadow: 0px 0px 8px 0px rgba(187, 187, 187, 0.75);
+    outline: none;
+
+  }
+}
