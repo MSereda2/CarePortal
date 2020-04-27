@@ -6,7 +6,7 @@ import style from "./mapContainer.module.css";
 
 // Actions
 import { showModal, closeModal } from "../../redux/reducers/tasks/task_actions";
-import {getSerchRequest} from '../../redux/reducers/map/map_actions';
+import {getSerchRequest,isRemoved} from '../../redux/reducers/map/map_actions';
 
 // Selectors
 import { getTaskSelect } from "../../redux/reducers/tasks/task_selectors";
@@ -30,9 +30,10 @@ const mapStateToProps = (state) => ({
   streetName: getStreetName(state),
   userLocation: getUserLocation(state),
   task: getTaskSelect(state),
-  searchRuquest: state.map.searchRuquest
+  searchRuquest: state.map.searchRuquest,
+  isLocationRemoved: state.map.isLocationRemoved
 });
 
-export default connect(mapStateToProps, { showModal, getSerchRequest })(
+export default connect(mapStateToProps, { showModal, getSerchRequest, isRemoved })(
   MapContainer
 );

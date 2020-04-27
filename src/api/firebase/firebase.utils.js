@@ -40,13 +40,13 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     return userRef;
 }
 
-export const createTaskDocument = async (taskData, coordinates, userData, id) => {
+export const createTaskDocument = async (taskData, coordinates, currentUser, id) => {
     const taskRef = firestore.doc(`tasks/${id}`);
     const snapShot = await taskRef.get();
 
     if(!snapShot.exists) {
         const {title, description, cost, time} = taskData;
-        const {photoURL, displayName, phoneNumber} = userData.currentUser;
+        const {photoURL, displayName, phoneNumber} = currentUser;
         const createAt = new Date();
         try {
             await taskRef.set({

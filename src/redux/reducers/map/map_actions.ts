@@ -16,6 +16,10 @@ export type GetSearchRequest = {
     latLng: number
 }
 
+export type isRemoved = {
+    type: typeof map_types.IS_REMOVED
+}
+
 export let getUserLocation = (lat: number, lng: number):GetUserLocationType  => ({
     type: map_types.GET_USER_LOCATION,
     lat: lat,
@@ -30,4 +34,8 @@ export let getLocationName = (name: string):GetLocationName => ({
 export let getSerchRequest = (latLng: number):GetSearchRequest => ({
     type: map_types.GET_SEARCH_REQUEST,
     latLng
+})
+
+export const isRemoved = () => ({
+    type: map_types.IS_REMOVED
 })

@@ -16,6 +16,10 @@ import WithSpiner from '../HOC/withSpiner/withSpiner';
 // Thunk
 import {CreateTaskThunkCreator} from '../../redux/reducers/tasks/task_thunk';
 
+// Selectors
+import {getUserData} from '../../redux/reducers/login/login_selectors';
+import {getTaskIsFetching} from '../../redux/reducers/tasks/task_selectors';
+
 
 let CreateTask = (props) => {
 
@@ -36,8 +40,8 @@ let CreateTask = (props) => {
 }
 
 const MapStateToProps = (state) => ({
-    UserData: state.login,
-    isFetching: state.task.isFetching
+    UserData: getUserData(state),
+    isFetching: getTaskIsFetching(state)
 })
 
 export default compose(

@@ -1,65 +1,174 @@
 @import '../../assets/styles/variables';
 
-.navbar {
-    padding: .5rem 3rem;
-    margin: 0 auto;
+
+.navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    padding: 1rem 3rem;
     align-items: center;
     border-bottom: 1px solid $COLOR-MAIN-BLACK;
-}
 
-.nav__item {
-    list-style: none;
-    font-size: 1.8rem;
-
-    &:not(:last-child) {
-        padding-right: 6rem;
+    &__checkbox {
+        display: none;
     }
-}
 
-.nav__link {
-    text-decoration: none;
-    color: $COLOR-LIGHT-GRAY;
-
-    &:hover {
-        color: $COLOR-MAIN-BLACK;
-    }
-}
-
-
-
-.logo {
-    width: 8rem;
-
-    i {
-        font-size: 2rem;
+    &__button {
+        background-color: $COLOR-PRIMARY-LIGHT;
+        height: 5rem;
+        width: 5rem;
+        position: fixed;
+        top: 1rem;
+        left: 6rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($COLOR-MAIN-BLACK, .1);
+        text-align: center;
         cursor: pointer;
-        color: $COLOR-MAIN-BLACK;
-        transition: all .2s ;
 
+        // @include respond(tab-port) {
+        //     top: 4rem;
+        //     right: 4rem;
+        // }
 
-        &:hover {
-            color: $COLOR-MAIN-GRAY;
+        // @include respond(phone) {
+        //     top: 3rem;
+        //     right: 3rem;
+        // }
+    }
+
+    &__background {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 1rem;
+        left: 6rem;
+        background-image: radial-gradient($COLOR-PRIMARY, $COLOR-PRIMARY-LIGHT);
+        z-index: 1000;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+        // @include respond(tab-port) {
+        //     top: 4.5rem;
+        //     right: 4.5rem;
+        // }
+
+        // @include respond(phone) {
+        //     top: 3.5rem;
+        //     right: 3.5rem;
+        // }
+    }
+
+    &__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1500;
+
+        opacity: 0;
+        width: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        list-style: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__item {
+        margin: 1rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 300;
+            padding: 1rem 2rem;
+            color: $COLOR-WHITE;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $COLOR-WHITE 50%);
+            background-size: 220%;
+            transition: all .4s;
+
+            span {
+                margin-right: 1.5rem;
+                display: inline-block;
+            }
+        }
+        
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: $COLOR-PRIMARY;
+            transform: translateX(1rem);
         }
     }
-}
 
 
-.nav {
-    display: flex;
-}
+    //FUNCTIONALITY
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
 
-.signText {
-    display: flex;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
 
-.signText img {
-    padding-right: 1rem;
-}
 
-.signText:hover {
-    color: $COLOR-MAIN-BLACK;
+    //ICON
+    &__icon {
+        position: relative;
+        margin-top: 2.5rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $COLOR-WHITE;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -.8rem; }
+        &::after { top: .8rem; }
+    }
+
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
 }

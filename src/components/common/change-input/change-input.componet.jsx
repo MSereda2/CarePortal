@@ -1,10 +1,10 @@
 import React from 'react'
-import style from './changeAbleInput.module.scss';
+import style from './change-input.module.scss';
 
 const ChangeAbleInput = (props) => {
 
   const changeInfo = () => {
-    if(props.isChangeAllowed) {
+    if(props.isChangeWAllowed) {
       return <input placeholder={props.inputName} type="text" />
     } else {
       return <input disabled placeholder={props.inputName} type="text" />

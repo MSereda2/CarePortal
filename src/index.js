@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import "./components/App/App.scss";
-import App from "./components/App/App";
+import "./components/app/App.scss";
+import App from "./components/app/app";
 import * as serviceWorker from "./serviceWorker";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import { BrowserRouter } from "react-router-dom";
@@ -21,11 +21,7 @@ import store from "./redux/reduxStore";
     document.getElementById("root")
   );
 
-// renderEntireTree(store);
 
-// store.subscribe(() => {
-//   renderEntireTree(store)
-// })
 
 
 // If you want your app to work offline and load faster, you can change

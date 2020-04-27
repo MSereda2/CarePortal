@@ -1,9 +1,9 @@
 import React from 'react';
-import style from './btnFormSign.module.scss';
+import style from './btn-form-sign.module.scss';
 
 const BtnFormSign = (props) => (
     <div className={style.btnFormContainer}>
-        <button className={style.btnFormSign}>{props.btnText}</button>
+        <button className={style.btnForm}>{props.btnText}</button>
     </div>
 )
 

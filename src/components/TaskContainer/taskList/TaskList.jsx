@@ -2,7 +2,7 @@ import React from 'react';
 import style from './taskList.module.css';
 
 // Components
-import TaskItem from './taskItem/TaskItem';
+import TaskItem from './task-item/TaskItem';
 
 
 class TaskList extends React.Component {

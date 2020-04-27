@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './formInput.module.scss';
-import AutoCompletePlaces from '../../AutocompletePlaces/AutocompletePlaces';
+import AutoCompletePlaces from '../../auto-complete-places/auto-complete-places.component';
 
 export const FormsControl = ({input, meta, element, ...props}) => {
 

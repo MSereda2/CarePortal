@@ -7,6 +7,8 @@
   justify-content: space-between;
   align-items: center;
   border-right: 1px solid $COLOR-MAIN-GRAY;
+  color: $COLOR-MAIN-GRAY;
+
 
   &__top {
     width: 100%;
@@ -33,6 +35,7 @@
 
      &:hover {
        border-right: 3px solid $COLOR-PRIMARY;
+       color: $COLOR-MAIN-BLACK;
      }
 
     i {
@@ -42,9 +45,10 @@
     }
 
     a {
+      color: inherit;
       text-decoration: none;
-      color: $COLOR-MAIN-GRAY;
       font-size: 1.9rem;
+      text-decoration: none;
     }
   }
 
@@ -69,4 +73,16 @@
       }
     }
   }
+}
+
+
+.selected {
+  border-right: 3px solid $COLOR-PRIMARY;
+  color: $COLOR-MAIN-BLACK;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: $COLOR-MAIN-GRAY;
 }

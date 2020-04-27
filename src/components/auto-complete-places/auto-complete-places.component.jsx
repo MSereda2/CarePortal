@@ -1,6 +1,6 @@
 import React from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
-import style from "./autoCompletePlaces.module.scss";
+import style from "./auto-complete-places.module.scss";
 
 const AutoCompletePlaces = ({ input, meta, ...props }) => {
   const handleSelect = (address) => {

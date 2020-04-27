@@ -5,9 +5,9 @@ import {compose} from 'redux';
 import {reduxForm, Field} from 'redux-form';
 
 // Components
-import BtnMain from '../../common/BtnMain/BtnMain';
-import {FormsControl} from '../../common/FormInput/FormInput';
-import FormSlider from '../../common/FormSlider/FormSlider';
+import BtnMain from '../../common/btn-main/BtnMain';
+import {FormsControl} from '../../common/form-input/FormInput';
+import FormSlider from '../../common/form-slider/FormSlider';
 
 // Validators
 import {requiredField} from '../../../helpers/validators/validator';

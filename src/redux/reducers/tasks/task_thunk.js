@@ -7,7 +7,6 @@ import {createTaskDocument,firestore,
 import {getTask, toggleFetching} from './task_actions';
 
 export const CreateTaskThunkCreator = (FormData, userData) => {
-
   return async (dispatch ) => {
     let results = await geocodeByAddress(FormData.coordinates);
     let coordinates = await getLatLng(results[0]);

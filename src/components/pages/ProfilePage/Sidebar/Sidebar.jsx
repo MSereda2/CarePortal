@@ -1,16 +1,40 @@
 import React from 'react';
 import style from './sidebar.module.scss';
+import { NavLink } from 'react-router-dom'
 
-const Sidebar = (props) => {
+const Sidebar = ({url}) => {
 
-  return(
+  return (
     <div className={style.sidebar}>
       <div className={style.sidebar__top}>
         <h2 className={style.sidebar__heading}>Welcome 😍</h2>
         <ul className={style.sidebar__links}>
-          <li className={style.sidebar__item}><i className="fa fa-user"></i><a href="">Личные данные</a></li>
-          <li className={style.sidebar__item}><i className="fa fa-heart"></i><a href="">Задания</a></li>
-          <li className={style.sidebar__item}><i className="fa fa-envelope"></i><a href="">Сообщения</a></li>
+          <NavLink
+             activeClassName={style.selected}
+             exact
+             to={url}
+             className={style.sidebar__item}>
+             <i className="fa fa-user"></i>
+             <a href="">Личные данные</a>
+          </NavLink>
+
+          <NavLink
+              activeClassName={style.selected}
+              to={`${url}/tasks`}
+              className={style.sidebar__item}>
+              <i className="fa fa-heart"></i>
+              <a href="">Задания</a>
+          </NavLink>
+
+          <NavLink
+             className={style.sidebar__item}
+             to={`${url}/dialogs`}
+             activeClassName={style.selected}>
+            
+              <i className="fa fa-envelope"></i>
+              <a href="">Сообщения</a>
+          </NavLink>
+
           <li className={style.sidebar__item}><i className="fa fa-cog"></i><a href="">Настройки</a></li>
         </ul>
       </div>

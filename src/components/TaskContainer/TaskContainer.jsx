@@ -2,7 +2,7 @@ import React from 'react';
 import style from './taskContainer.module.scss';
 
 // Components
-import TaskFilter from './taskFilter/TaskFilter';
+import TaskFilter from './task-filter/TaskFilter';
 import TaskList from './taskList/TaskList';
 
 class TaskContainer extends React.Component {

@@ -6,8 +6,8 @@ import style from './taskItem.module.scss';
 import clock from '../../../../assets/img/clock.png'
 
 // Components
-import CircleImg from '../../../common/CircleImg/CircleImg';
-import TaskModal from '../../TaskModal/TaskModal';
+import CircleImg from '../../../common/circle-img/CircleImg';
+import TaskModal from '../../task-modal/TaskModal';
 
 let TaskItem = (props) => (
     <>

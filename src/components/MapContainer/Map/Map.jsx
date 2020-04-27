@@ -25,7 +25,7 @@ let Map = (props) => {
         return {lat: props.searchRuquest.lat, lng: props.searchRuquest.lng}
       } else if(props.userLocation) {
         return {lat: props.userLocation.lat, lng: props.userLocation.lng}
-      } else if(props.userLocation.lat === null && props.userLocation.lng === null) {
+      } else if(!props.userLocation) {
         return {lat: 12, lng: 12}
       }
     }
@@ -34,14 +34,19 @@ let Map = (props) => {
             <GoogleMap
                 options={{mapTypeControl: false, streetViewControl: false}}
                 id='example-map'
+                onDragStart={() => props.isRemoved()}
                 mapContainerStyle={{
                 height: "89vh",
                 width: "100%"
                 }}
                 zoom={16}
                 center={center()}>
-                    <MapInfoWindow userLocation={props.userLocation} streetName={props.streetName} />
-                    <MapMarkerLocation userLocation={props.userLocation} />
+                     {!props.isLocationRemoved && 
+                     <>
+                     <MapInfoWindow userLocation={props.userLocation} streetName={props.streetName} />
+                     <MapMarkerLocation userLocation={props.userLocation} />
+                     </>}
+                    
                     <MapSearch getSerchRequest={props.getSerchRequest} />
                     {taskCoord()}   
             </GoogleMap>

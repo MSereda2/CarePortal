@@ -4,14 +4,16 @@ import {map_types} from './map_types';
 type InitialStateType = {
     userLocation: {lat: number | null, lng: number | null}
     streetName: string,
-    searchRuquest: string
+    searchRuquest: string,
+    isLocationRemoved: boolean
 }
 
 
 const initialState: InitialStateType = {
     userLocation: {lat: null, lng: null},
     streetName: '',
-    searchRuquest: ''
+    searchRuquest: '',
+    isLocationRemoved: false
 }
 
 let map_reducer = (state = initialState, action: any): InitialStateType => {
@@ -31,6 +33,11 @@ let map_reducer = (state = initialState, action: any): InitialStateType => {
             return {
                 ...state,
                 searchRuquest: action.latLng
+            }
+        case map_types.IS_REMOVED:
+            return {
+                ...state,
+                isLocationRemoved: true
             }
 
         default: return state;

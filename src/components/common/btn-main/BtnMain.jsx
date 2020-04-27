@@ -7,7 +7,7 @@ const BtnMain = (props) => {
     return(
         <>
         <button onClick={props.onChangeInfo} className={`${style.btnMain}`}>
-            <span>Создать Пост</span>
+            <span>{props.text}</span>
         </button>
         </> 
 

@@ -4,8 +4,8 @@ import {reduxForm, Field} from "redux-form";
 
 
 // Components 
-import {FormsControl} from '../../../common/FormInput/FormInput';
-import BtnFormSign from '../../../common/BtnFormSign/BtnFormSign';
+import {FormsControl} from '../../../common/form-input/FormInput';
+import BtnFormSign from '../../../common/btn-form-sign/btn-form-sign.component';
 
 // Validators
 import {requiredField} from '../../../../helpers/validators/validator';

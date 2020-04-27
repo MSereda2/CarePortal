@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './taskModal.module.scss';
-import CircleImg from '../../common/CircleImg/CircleImg';
-import Modal from '../../common/Modal/Modal';
+import CircleImg from '../../common/circle-img/CircleImg';
+import Modal from '../../common/modal/Modal';
 import clock from '../../../assets/img/clock.png';
 
 

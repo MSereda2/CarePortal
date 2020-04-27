@@ -2,6 +2,8 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import {getIsAuth} from '../../redux/reducers/login/login_selectors'
+
 export const withAuthRedirect = (Component) => {
 
     let RedirectComponent = (props) => {
@@ -14,5 +16,5 @@ export const withAuthRedirect = (Component) => {
 }
 
 const mapStateToPropsForRedirect = (state) => ({
-    isAuth: state.login.currentUser.id
+    isAuth: getIsAuth(state)
 })   

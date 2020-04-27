@@ -13,7 +13,18 @@ Care Portal is an app that makes live people happier and easy, and also allows e
 7. allows to take this task and remove from map and task list
 8. user regestration
 9. login/logout
-10.Profile user
+10. Profile user
+
+### Style guide.
+1. Destructure your props
+2. One tag, one line
+3. The rule of 3’s
+4. Dynamic renders – Mapping out arrays
+5. Dynamic renders – React ternary operators
+6. Naming folder with lower case and with -
+7. Don't create nested components
+8. redux files with underscore
+
 
 ### Instalition
 This project was bootstrapped with Create React App.

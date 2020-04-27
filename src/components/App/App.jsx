@@ -8,14 +8,12 @@ import { compose } from 'redux';
 import style from "./App.scss";
 
 // Components
-import Nav from "../Nav/Nav";
+import Nav from "../Nav/nav.component";
 import AuthContainer from "../AuthForm/AuthContainer/AuthContainer";
 import Main from "../pages/Main/Main";
 import Advanced from "../pages/Advanced/Advanced";
 import CreateTask from "../CreateTask/CreateTask";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
-
-
 
 // Thunk Creator
 import { initializeThunk } from '../../redux/reducers/app/app_thunk';
@@ -24,6 +22,7 @@ import { unsubscribeFromAuth, } from "../../redux/reducers/login/login_thunk";
 // Selectors
 import { getNav } from "../../redux/reducers/nav/nav_selectors";
 import { getProfileImg, getIsAuth, } from "../../redux/reducers/login/login_selectors";
+import {getIsInitilized} from '../../redux/reducers/app/app_selectors';
 
 // Hoc
 import { SpinnerContainer, SpinnerOverlay } from '../HOC/withSpiner/with-spinner.styles';
@@ -47,7 +46,7 @@ class App extends Component {
     }
     return (
       <div className={style.container}>
-        <Nav {...this.props} />
+        <Nav isAuth={this.props.isAuth} />
         <div className={style.mainWindow}>
           <Route exact path="/" render={() => <Main />} />
           <Route path="/advanced" render={() => <Advanced />} />
@@ -76,9 +75,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  isInitilized: state.app.INITIALIZED,
-  nav: getNav(state),
-  profileImg: getProfileImg(state),
+  isInitilized: getIsInitilized(state),
   isAuth: getIsAuth(state),
 });
 

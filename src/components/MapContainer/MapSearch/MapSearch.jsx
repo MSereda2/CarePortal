@@ -61,17 +61,3 @@ class MapSearch extends React.Component {
 }
 
 export default MapSearch;
-
-
-
-// this.bounds = autocomplete.setBounds({
-//   east: 12,
-//   north: 15,
-//   south: 15,
-//   west: 20
-//  })
-
-// this.autocomplete = null
-        // this.onLoad = this.onLoad
-        // this.onPlaceChanged = this.onPlaceChanged  
-        // this.bounds = null
