@@ -1,6 +1,6 @@
 import React from 'react';
 import {InfoWindow} from '@react-google-maps/api';
-import style from './mapInfoWindow.module.scss';
+import style from './map-info-window.module.scss';
 
 
 const MapInfoWindow = (props) => (

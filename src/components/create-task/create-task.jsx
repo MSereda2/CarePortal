@@ -3,12 +3,11 @@ import React from 'react';
 import { connect} from 'react-redux';
 import {compose} from 'redux';
 
-
 // Style
-import style from './CreateTask.module.scss';
+import style from './create-task.module.scss';
 
 // Components
-import CreateTaskForm from './CreateTaskForm/CreateTaskForm';
+import CreateTaskForm from './create-task-form/create-task-form';
 
 // HOC
 import WithSpiner from '../hoc/withSpiner/withSpiner';

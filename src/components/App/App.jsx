@@ -9,10 +9,10 @@ import style from "./App.scss";
 
 // Components
 import Nav from "../nav/nav.component";
-import AuthContainer from "../auth-form/AuthContainer/AuthContainer";
+import AuthContainer from "../auth-form/auth-container/auth-container";
 import Main from "../pages/Main/Main";
 import Advanced from "../pages/Advanced/Advanced";
-import CreateTask from "../create-task/CreateTask";
+import CreateTask from "../create-task/create-task";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 // Thunk Creator

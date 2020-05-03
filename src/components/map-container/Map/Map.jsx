@@ -1,11 +1,11 @@
 import React from 'react';
-import { GoogleMap, Marker, Autocomplete} from '@react-google-maps/api';
+import { GoogleMap, Marker} from '@react-google-maps/api';
 import style from './map.module.scss'
 
 // Components
-import MapInfoWindow from '../MapInfoWindow/MapInfoWindow';
-import MapMarkerLocation from '../MapMarkerLocation/MapMarkerLocation';
-import MapSearch from '../MapSearch/MapSearch';
+import MapInfoWindow from '../map-info-window/map-info-window'
+import MapMarkerLocation from '../map-marker-location/map-marker-location';
+import MapSearch from '../map-search/map-search';
 
 
 

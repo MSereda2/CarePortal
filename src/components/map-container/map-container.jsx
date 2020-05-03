@@ -1,8 +1,8 @@
 // Packages
 import React from "react";
-import Map from "./Map/Map";
+import Map from "./map/map";
 import { connect } from "react-redux";
-import style from "./mapContainer.module.css";
+import style from "./map-container.module.scss";
 
 // Actions
 import { showModal, closeModal } from "../../redux/reducers/tasks/task_actions";

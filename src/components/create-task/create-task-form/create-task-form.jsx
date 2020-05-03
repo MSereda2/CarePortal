@@ -1,6 +1,6 @@
 // Packages
 import React from 'react';
-import style from './CreateTaskForm.module.scss';
+import style from './create-task-form.module.scss';
 import {compose} from 'redux';
 import {reduxForm, Field, FieldArray } from 'redux-form';
 
