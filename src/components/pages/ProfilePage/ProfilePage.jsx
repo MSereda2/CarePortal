@@ -15,7 +15,7 @@ import { getUserData } from '../../../redux/reducers/login/login_selectors';
 // Actions
 import { ChangeInfo } from '../../../redux/reducers/profile/profile_action';
 
-import { withAuthRedirect } from '../../HOC/withAuthRedirect';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 
 const ProfilePage = (props) => {
 

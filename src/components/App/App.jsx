@@ -8,11 +8,11 @@ import { compose } from 'redux';
 import style from "./App.scss";
 
 // Components
-import Nav from "../Nav/nav.component";
-import AuthContainer from "../AuthForm/AuthContainer/AuthContainer";
+import Nav from "../nav/nav.component";
+import AuthContainer from "../auth-form/AuthContainer/AuthContainer";
 import Main from "../pages/Main/Main";
 import Advanced from "../pages/Advanced/Advanced";
-import CreateTask from "../CreateTask/CreateTask";
+import CreateTask from "../create-task/CreateTask";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 // Thunk Creator
@@ -25,7 +25,7 @@ import { getProfileImg, getIsAuth, } from "../../redux/reducers/login/login_sele
 import {getIsInitilized} from '../../redux/reducers/app/app_selectors';
 
 // Hoc
-import { SpinnerContainer, SpinnerOverlay } from '../HOC/withSpiner/with-spinner.styles';
+import { SpinnerContainer, SpinnerOverlay } from '../hoc/withSpiner/with-spinner.styles';
 
 class App extends Component {
   componentDidMount = () => {

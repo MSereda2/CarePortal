@@ -5,8 +5,8 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 
 // Components
-import TaskContainer from "../../TaskContainer/TaskContainer";
-import MapContainer from "../../MapContainer/MapContainer";
+import TaskContainer from "../../task-container/task-container";
+import MapContainer from "../../map-container/map-container";
 
 // Actions
 import {
@@ -15,7 +15,7 @@ import {
 } from "../../../redux/reducers/tasks/task_actions";
 
 // HOC
-import { withAuthRedirect } from "../../HOC/withAuthRedirect";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
 // Selectors
 import { getTaskSelect } from "../../../redux/reducers/tasks/task_selectors";

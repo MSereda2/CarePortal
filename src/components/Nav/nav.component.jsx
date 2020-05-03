@@ -9,21 +9,21 @@ import { connect } from 'react-redux'
 import ProfileBlock from "./profile-block/profile-block.component";
 
 // Selectors
-import {getProfileImg,getUserData} from '../../redux/reducers/login/login_selectors';
- 
+import { getProfileImg, getUserData } from '../../redux/reducers/login/login_selectors';
+
 let Nav = (props) => {
- 
+
   return (
     <div className={style.navigation}>
-    <input type="checkbox" className={style.navigation__checkbox} id="navi-toggle" />
+      <input type="checkbox" className={style.navigation__checkbox} id="navi-toggle" />
 
-    <label for="navi-toggle" className={style.navigation__button}>
+      <label for="navi-toggle" className={style.navigation__button}>
         <span className={style.navigation__icon}>&nbsp;</span>
-    </label>
+      </label>
 
-    <div className={style.navigation__background}>&nbsp;</div>
+      <div className={style.navigation__background}>&nbsp;</div>
 
-    <nav className={style.navigation__nav}>
+      <nav className={style.navigation__nav}>
         <ul className={style.navigation__list}>
           <li className={style.navigation__item}>
             <NavLink to="/" href="#" className={style.navigation__link}>Главная</NavLink>
@@ -38,16 +38,16 @@ let Nav = (props) => {
             <NavLink to="/answers" href="#" className={style.navigation__link}>Ответы</NavLink>
           </li>
         </ul>
-        
-    </nav>
-    {props.isAuth ? (
+
+      </nav>
+      {props.isAuth ? (
         <ProfileBlock {...props} />
       ) : (
-        <NavLink className={style.signText} to="/signin">
-          <img src={UserIcon} alt="userIcon" />
+          <NavLink className={style.signText} to="/signin">
+            <img src={UserIcon} alt="userIcon" />
           Войти / Регестрация
-        </NavLink>
-      )}
+          </NavLink>
+        )}
     </div>
   )
 };
@@ -58,7 +58,7 @@ const mapStateToProps = (state) => ({
 
 })
 
-export default connect(mapStateToProps, {})( Nav);
+export default connect(mapStateToProps, {})(Nav);
 
 
 /*<div className={`${style.menu} ${addClass()}`}>

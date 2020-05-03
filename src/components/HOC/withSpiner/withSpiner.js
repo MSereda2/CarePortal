@@ -1,9 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
-
-
 import { SpinnerContainer, SpinnerOverlay } from './with-spinner.styles';
-
 
 const WithSpiner = (Component) => {
 

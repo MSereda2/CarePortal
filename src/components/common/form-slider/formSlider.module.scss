@@ -3,6 +3,11 @@
 .slideContainer {
     margin-bottom: 3rem;
 
+    .heading {
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
 }
 
 .slider {
@@ -21,8 +26,8 @@
     &::-webkit-slider-thumb {
         -webkit-appearance: none; /* Override default look */
         appearance: none;
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px;
+        width: 20px; /* Set a specific slider handle width */
+        height: 20px;
         border-radius: 50%; 
         background: $COLOR-PRIMARY; /* Green background */
         cursor: pointer; /* Cursor on hover */
@@ -38,4 +43,49 @@
 
 .timeRange {
     font-size: 1.9rem;
+}
+
+.inputsTime {
+    display: flex;
+
+    .timeInput {
+        margin-right: 1rem;
+        margin-bottom: 2rem;
+        width: 15rem;
+
+        &__label {
+            display: block;
+            font-size: 1.2rem;
+            z-index: 10;
+            margin-bottom: .5rem;
+        }
+
+        input {
+            width: 80%;
+            display: block;
+            padding: .5rem;
+            font-size: 1.5rem;
+            z-index: 1;
+            border: .1px solid $COLOR-LIGHT-GRAY;
+
+
+        }
+    }
+}
+
+.data {
+    display: block;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+
+    &Item {
+        list-style: none;
+        font-size: 1.4rem;
+        // width: 10%;
+        // // background-color: red;
+        // // border: 1px solid green;
+        // text-align: left;
+    }
 }

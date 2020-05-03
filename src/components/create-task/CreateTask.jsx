@@ -11,7 +11,7 @@ import style from './CreateTask.module.scss';
 import CreateTaskForm from './CreateTaskForm/CreateTaskForm';
 
 // HOC
-import WithSpiner from '../HOC/withSpiner/withSpiner';
+import WithSpiner from '../hoc/withSpiner/withSpiner';
 
 // Thunk
 import {CreateTaskThunkCreator} from '../../redux/reducers/tasks/task_thunk';

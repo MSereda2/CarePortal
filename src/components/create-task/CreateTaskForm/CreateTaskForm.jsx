@@ -2,7 +2,7 @@
 import React from 'react';
 import style from './CreateTaskForm.module.scss';
 import {compose} from 'redux';
-import {reduxForm, Field} from 'redux-form';
+import {reduxForm, Field, FieldArray } from 'redux-form';
 
 // Components
 import BtnMain from '../../common/btn-main/BtnMain';
@@ -13,7 +13,7 @@ import FormSlider from '../../common/form-slider/FormSlider';
 import {requiredField} from '../../../helpers/validators/validator';
 
 // HOC
-import {withSubmitForm} from '../../HOC/withSubmitForm';
+import {withSubmitForm} from '../../hoc/withSubmitForm';
 
 
 
@@ -34,8 +34,10 @@ const CreateTaskForm = (props) => {
 
             <Field validate={[requiredField]} element={'input'} icon={'fa fa-dollar'} type={'text'} component={FormsControl} name={'cost'} placeholder={'Цена задания'} styleform={'true'} />
 
-            <Field min="-10" max="10"  icon={'fa fa-map'} name="time" component={FormSlider} type='range' styleform={'true'} />
-            <BtnMain {...props} />
+
+
+            <Field icon={'fa fa-map'} name="time" component={FormSlider} styleform={'true'} />
+            <BtnMain text="Создать пост" {...props} />
         </form>
     )
 }
@@ -43,6 +45,9 @@ const CreateTaskForm = (props) => {
 export default  compose(
     reduxForm({
         form: 'createTask',
+        // initialValues: {
+        //     time: '15'
+        // }
     }),
     withSubmitForm
 )(CreateTaskForm);
