@@ -4,9 +4,6 @@ import {task_types} from './task_types';
 import { InitialStateType } from '../tasks/task_typesTS';
 
 // Reducer Type
-
-
-
 const initialState: InitialStateType = {
     task: [] ,
     taskCounter: null,

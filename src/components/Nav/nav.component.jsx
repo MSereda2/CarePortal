@@ -17,7 +17,7 @@ let Nav = (props) => {
     <div className={style.navigation}>
       <input type="checkbox" className={style.navigation__checkbox} id="navi-toggle" />
 
-      <label for="navi-toggle" className={style.navigation__button}>
+      <label htmlFor="navi-toggle" className={style.navigation__button}>
         <span className={style.navigation__icon}>&nbsp;</span>
       </label>
 

@@ -20,8 +20,7 @@ import { initializeThunk } from '../../redux/reducers/app/app_thunk';
 import { unsubscribeFromAuth, } from "../../redux/reducers/login/login_thunk";
 
 // Selectors
-import { getNav } from "../../redux/reducers/nav/nav_selectors";
-import { getProfileImg, getIsAuth, } from "../../redux/reducers/login/login_selectors";
+import {getIsAuth} from "../../redux/reducers/login/login_selectors";
 import {getIsInitilized} from '../../redux/reducers/app/app_selectors';
 
 // Hoc

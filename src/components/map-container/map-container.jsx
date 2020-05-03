@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import style from "./map-container.module.scss";
 
 // Actions
-import { showModal, closeModal } from "../../redux/reducers/tasks/task_actions";
+import { showModal } from "../../redux/reducers/tasks/task_actions";
 import {getSerchRequest,isRemoved} from '../../redux/reducers/map/map_actions';
 
 // Selectors

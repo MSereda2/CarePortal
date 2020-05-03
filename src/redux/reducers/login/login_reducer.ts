@@ -1,7 +1,7 @@
 import {login_types} from './login_types';
 
-// Types
-import {SetUserACType, SetUserPayloadType} from './login_actions';
+// Types TS
+import {SetUserPayloadType} from './login_actions';
 
 export type InitialStateType = typeof initialState;
 

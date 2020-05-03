@@ -2,7 +2,7 @@
 import React from 'react';
 import style from './create-task-form.module.scss';
 import {compose} from 'redux';
-import {reduxForm, Field, FieldArray } from 'redux-form';
+import {reduxForm, Field } from 'redux-form';
 
 // Components
 import BtnMain from '../../common/btn-main/BtnMain';

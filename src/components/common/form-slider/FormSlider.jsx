@@ -3,38 +3,25 @@ import style from './formSlider.module.scss';
 
 const FormSlider = ({input, meta, element, ...props}) => {
 
-    const [minutes, setMinutes] = React.useState('');
-    let days = '';
-    let hours = '';
-
-    let timeInput = (e) => {
-        let zone = e.target.value;
-        if(zone < 100) {
-            let minutesValue = 
-           setMinutes(zone);
-        }
-        
-    }
-
 
     return(
         <div className={style.slideContainer}>
             <h4 className={style.heading}>Время на выполнения задания</h4>
             <div className={style.inputsTime}>
                 <div className={style.timeInput}>
-                     <label className={style.timeInput__label} for="days">days</label>
+                     <label className={style.timeInput__label} htmlFor="days">days</label>
                      <input name="days" type="text"/>
                 </div>
                 <div className={style.timeInput}>
-                     <label className={style.timeInput__label} for="hours">hours</label>
+                     <label className={style.timeInput__label} htmlFor="hours">hours</label>
                      <input name="hours" type="text"/>
                 </div>
                 <div className={style.timeInput}>
-                     <label  className={style.timeInput__label} for="minutes">minutes</label>
-                     <input value={minutes} name="minutes" type="text"/>
+                     <label  className={style.timeInput__label} htmlFor="minutes">minutes</label>
+                     <input name="minutes" type="text"/>
                 </div>
             </div>
-            <input onChange={timeInput} className={style.slider} type="range" id="myRange" />
+            <input  className={style.slider} type="range" id="myRange" />
             <ul className={style.data} id="myRange">
                 <li className={style.dataItem}>15min</li>
                 <li className={style.dataItem}>30min</li>

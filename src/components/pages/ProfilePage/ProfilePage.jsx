@@ -2,7 +2,7 @@ import React from 'react';
 import style from './profilePage.module.scss';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { NavLink, Route, useRouteMatch
+import { Route, useRouteMatch
 } from 'react-router-dom';
 
 // Components

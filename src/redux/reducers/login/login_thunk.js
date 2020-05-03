@@ -2,7 +2,7 @@
 import { auth, createUserProfileDocument } from '../../../api/firebase/firebase.utils';
 
 // Actions
-import {setUserAC, toggleFetching} from './login_actions';
+import {setUserAC} from './login_actions';
 import {set_initialized} from '../app/app_actions';
 
 
