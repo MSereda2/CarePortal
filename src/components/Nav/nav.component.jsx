@@ -14,41 +14,26 @@ import { getProfileImg, getUserData } from '../../redux/reducers/login/login_sel
 let Nav = (props) => {
 
   return (
-    <div className={style.navigation}>
-      <input type="checkbox" className={style.navigation__checkbox} id="navi-toggle" />
-
-      <label htmlFor="navi-toggle" className={style.navigation__button}>
-        <span className={style.navigation__icon}>&nbsp;</span>
-      </label>
-
-      <div className={style.navigation__background}>&nbsp;</div>
-
-      <nav className={style.navigation__nav}>
-        <ul className={style.navigation__list}>
-          <li className={style.navigation__item}>
-            <NavLink to="/" href="#" className={style.navigation__link}>Главная</NavLink>
-          </li>
-          <li className={style.navigation__item}>
-            <NavLink to="/advanced" href="#" className={style.navigation__link}>Продвинутый</NavLink>
-          </li>
-          <li className={style.navigation__item}>
-            <NavLink to="/users" href="#" className={style.navigation__link}>Пользователи</NavLink>
-          </li>
-          <li className={style.navigation__item}>
-            <NavLink to="/answers" href="#" className={style.navigation__link}>Ответы</NavLink>
-          </li>
-        </ul>
-
-      </nav>
+    <nav className={style.navigation}>
+      <div className={style.navigation__logo}>
+        <h1>Unical</h1>
+      </div>
+      <ul className={style.navigation__item}>
+        <NavLink to="/">Карта</NavLink>
+        <NavLink to="/none">none 1</NavLink>
+        <NavLink to="/none2">none 2</NavLink>
+        <NavLink to="/none3">none 3</NavLink>
+      </ul>
       {props.isAuth ? (
         <ProfileBlock {...props} />
       ) : (
           <NavLink className={style.signText} to="/signin">
             <img src={UserIcon} alt="userIcon" />
-          Войти / Регестрация
+            Войти / Регестрация
           </NavLink>
         )}
-    </div>
+
+    </nav>
   )
 };
 
@@ -59,6 +44,9 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, {})(Nav);
+
+
+
 
 
 /*<div className={`${style.menu} ${addClass()}`}>
