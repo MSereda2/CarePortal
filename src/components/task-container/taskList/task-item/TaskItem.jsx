@@ -9,26 +9,45 @@ import clock from '../../../../assets/img/clock.png'
 import CircleImg from '../../../common/circle-img/CircleImg';
 import TaskModal from '../../task-modal/TaskModal';
 
-let TaskItem = (props) => (
-    <>
-        <div className={style.taskItem} onClick={() => {props.showModal(props.id)}}>
-                <CircleImg img={props.photoURL} />
+let TaskItem = (props) => {
+    const {cost,description,id,photoURL,time,title,showModal} = props;
+
+    const limitLength = (description) => {
+        let descArr = description.split(' ');
+        if(descArr.length > 18) {
+            let newDes = [];
+            for(let i=0; i < 18; i++) {
+                newDes = [...newDes, descArr[i]]
+            }
+            newDes.push('...');
+            return newDes.join(' ')
+        } else {
+            return description;
+        }
+    }
+
+    return(
+        <>
+        <div className={style.taskItem} onClick={() => {showModal(id)}}>
+                <CircleImg img={photoURL} />
                 <div className={style.taskInfo}>
-                    <h4 className={style.taskTitle}>{props.title}</h4>
-                    <p className={style.taskDescription}>{props.description}</p>
+                    <h4 className={style.taskTitle}>{title}</h4>
+                    <p className={style.taskDescription}>{limitLength( description)}</p>
                     <p className={style.taskLocation}>Задание в 400м</p>
 
                 </div>
                 <div className={style.taskOrder}>
                     <div>
-                        <p className={style.taskCost}>{props.cost}<span>₽</span></p>
-                        <p className={style.taskTime}>{props.time}ч. <img src={clock} className={style.clock} alt='icon clock' /> </p>
+                        <p className={style.taskCost}>{cost}<span>₽</span></p>
+                        <p className={style.taskTime}>{time}ч. <img src={clock} className={style.clock} alt='icon clock' /> </p>
                     </div>
                     <button className={style.btn}>Начать <i className='fa fa-play'></i></button>
                 </div>
         </div>
         <TaskModal {...props} />
    </>
-)
+    )
+   
+}
 
 export default TaskItem;
