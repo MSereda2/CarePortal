@@ -23,7 +23,7 @@ const TaskModal = (props) => (
                 </div>
             </div>
             <div className={style.task_info}>
-                <div className={style.task}>
+                <div>
                     <h4 className={style.task_title}>{props.title}</h4>
                     <p className={style.task_description}>{props.description}</p>
                 </div>
