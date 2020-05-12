@@ -1,20 +1,12 @@
 @import '../../../assets/styles/variables';
 .dropdown {
-  position: absolute;
-  right: 10%;
-  font-size: 1.5rem;
-  top: 110%;
-  z-index: 1;
-  background-color: $COLOR-WHITE;
-  box-shadow: 0px 0px 3px 1px $COLOR-LIGHT-GRAY;
-
-
-  ul {
+ 
       height: min-content;
-      width: 13rem;
+    //   width: 10rem;
       text-align: center;
 
       a {
+          width: 100%;
           display: block;
           text-decoration: none;
           color: $COLOR-MAIN-BLACK;
@@ -22,6 +14,7 @@
 
           &:hover {
               background-color: $COLOR-MAIN-GRAY;
+              color: $COLOR-WHITE;
               
           }
       }
@@ -31,10 +24,10 @@
           cursor: pointer;
           padding: 1rem 1rem;
           transition: all .1s;
-          &:hover {  background-color: $COLOR-MAIN-GRAY; }
+          &:hover {  background-color: $COLOR-MAIN-GRAY; color: $COLOR-WHITE; }
       }
   }
-}
+
 
 .profile__name {
     cursor: pointer;

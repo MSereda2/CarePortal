@@ -1,7 +1,36 @@
 import React from 'react';
 import style from './formSlider.module.scss';
+import 'rc-slider/assets/index.css';
+import Slider, {Range} from 'rc-slider';
+
 
 const FormSlider = ({input, meta, element, ...props}) => {
+
+    const marks = {
+        0: <strong>0°C</strong>,
+        10: '15мин',
+        20: '30мин',
+        30: '60мин',
+        40: '90мин',
+        50: '3ч',
+        60: '5ч',
+        70: '10ч',
+        80: '18ч',
+        90: '1 день',
+        100: {
+          label: <strong>2 дня</strong>,
+        },
+    }
+
+    const [value,setValue] = React.useState({
+        min: 0,
+        max: 100,
+    })
+    const [inputValue,setInputValue] = React.useState(null)
+
+    const onSliderChange = (value) => {
+       setInputValue(value);
+    }
 
 
     return(
@@ -14,26 +43,18 @@ const FormSlider = ({input, meta, element, ...props}) => {
                 </div>
                 <div className={style.timeInput}>
                      <label className={style.timeInput__label} htmlFor="hours">hours</label>
-                     <input name="hours" type="text"/>
+                     <input  name="hours" type="text"/>
                 </div>
                 <div className={style.timeInput}>
                      <label  className={style.timeInput__label} htmlFor="minutes">minutes</label>
-                     <input name="minutes" type="text"/>
+                     <input value={inputValue} name="minutes" type="text"/>
                 </div>
             </div>
-            <input  className={style.slider} type="range" id="myRange" />
-            <ul className={style.data} id="myRange">
-                <li className={style.dataItem}>15min</li>
-                <li className={style.dataItem}>30min</li>
-                <li className={style.dataItem}>60min</li>
-                <li className={style.dataItem}>90min</li>
-                <li className={style.dataItem}>3h</li>
-                <li className={style.dataItem}>5h</li>
-                <li className={style.dataItem}>10h</li>
-                <li className={style.dataItem}>18h</li>
-                <li className={style.dataItem}>1d</li>
-                <li className={style.dataItem}>2d</li>  
-            </ul>
+            <Slider
+            marks={marks}
+            min={value.min} max={value.max}
+            onChange={onSliderChange}
+        />
         </div>
     )
     

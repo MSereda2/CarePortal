@@ -34,8 +34,6 @@ const CreateTaskForm = (props) => {
 
             <Field validate={[requiredField]} element={'input'} icon={'fa fa-dollar'} type={'text'} component={FormsControl} name={'cost'} placeholder={'Цена задания'} styleform={'true'} />
 
-
-
             <Field icon={'fa fa-map'} name="time" component={FormSlider} styleform={'true'} />
             <BtnMain text="Создать пост" {...props} />
         </form>
