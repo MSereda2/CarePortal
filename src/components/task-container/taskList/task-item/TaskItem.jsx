@@ -10,13 +10,13 @@ import CircleImg from '../../../common/circle-img/CircleImg';
 import TaskModal from '../../task-modal/TaskModal';
 
 let TaskItem = (props) => {
-    const {cost,description,id,photoURL,time,title,showModal} = props;
+    const { cost, description, id, photoURL, time, title, showModal } = props;
 
     const limitLength = (description) => {
         let descArr = description.split(' ');
-        if(descArr.length > 18) {
+        if (descArr.length > 18) {
             let newDes = [];
-            for(let i=0; i < 18; i++) {
+            for (let i = 0; i < 18; i++) {
                 newDes = [...newDes, descArr[i]]
             }
             newDes.push('...');
@@ -26,13 +26,13 @@ let TaskItem = (props) => {
         }
     }
 
-    return(
+    return (
         <>
-        <div className={style.taskItem} onClick={() => {showModal(id)}}>
+            <div className={style.taskItem} onClick={() => { showModal(id) }}>
                 <CircleImg img={photoURL} />
                 <div className={style.taskInfo}>
                     <h4 className={style.taskTitle}>{title}</h4>
-                    <p className={style.taskDescription}>{limitLength( description)}</p>
+                    <p className={style.taskDescription}>{limitLength(description)}</p>
                     <p className={style.taskLocation}>Задание в 400м</p>
 
                 </div>
@@ -43,11 +43,11 @@ let TaskItem = (props) => {
                     </div>
                     <button className={style.btn}>Начать <i className='fa fa-play'></i></button>
                 </div>
-        </div>
-        <TaskModal {...props} />
-   </>
+            </div>
+            <TaskModal {...props} />
+        </>
     )
-   
+
 }
 
 export default TaskItem;

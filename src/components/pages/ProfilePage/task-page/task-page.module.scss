@@ -1,0 +1,14 @@
+.taskPage {
+  padding: 4rem;
+  font-size: 1.5rem;
+
+  &__item {
+    width: 40rem;
+    margin-left: 1rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -8,6 +8,7 @@ import { Route, useRouteMatch
 // Components
 import Sidebar from './Sidebar/Sidebar';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+import TaskPage from './task-page/task-page';
 
 // Selectors
 import { getUserData } from '../../../redux/reducers/login/login_selectors';
@@ -26,8 +27,7 @@ const ProfilePage = (props) => {
       <Sidebar url={url} />
       <div className={style.view}>
         <Route exact path={path} render={() => <ProfileInfo {...props} />} />
-        
-        <Route path={`${path}/tasks`} render={() => <h1>hey</h1>} />
+        <Route path={`${path}/tasks`} render={() => <TaskPage />} />
         <Route path={`${path}/dialogs`} render={() => <h1>dialogs</h1>} />
 
       
